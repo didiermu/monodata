@@ -1,0 +1,13 @@
+// VALIDACION SAFARI
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+        & {
+        }
+        // /// TABLET
+        // @media (max-width: 1024px) {
+        // }
+        // /// MOBILE
+        // @media (max-width: 768px) {
+        // }
+    }
+}

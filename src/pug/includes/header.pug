@@ -1,0 +1,37 @@
+header.header
+    .container-fluid
+        .row.align-items-center
+            .col-lg-1.header--logo
+                a(href="../") 
+                    img.img-fluid(src=ruta+"img/Monodata.svg", alt="monodata")
+
+            .col-lg-11.header--navegacion.d-flex
+                nav.navbar-expand-lg
+                    .btn-ham(data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+
+                    .collapse.navbar-collapse#navbarNav
+                        ul.header--one
+
+                            li#li-lineup
+                                a(href=ruta+"index.html") Proyectos
+
+                            li#li-boletos
+                                a(href=ruta+"index.html#home--boletos") Experimentos
+
+                            li#li-beneficios
+                                a(href=ruta+"index.html#home--beneficios") Noticias
+
+                        ul.header--two
+                            li#li-lang
+                                a(href=ruta+"index.html#home--beneficios") EN
+                                a.active(href=ruta+"index.html#home--beneficios") ES
+
+                            li#li-beneficios
+                                a(href=ruta+"index.html#home--beneficios") Contacto
+
+                            li 
+                                button.icon-search
+
+
+
+
