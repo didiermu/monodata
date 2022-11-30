@@ -38,10 +38,10 @@
     // }
 
     ///// MEDIA MOBILE /////
-    @media (max-width: 1024px) {
-        --h1: calc(60px + 10 * ((100vw - 360px) / 1024));
+    @media (max-width: 768px) {
+        --h1: calc(100px + 10 * ((100vw - 360px) / 1024)); //
         --h2: calc(40px + 10 * ((100vw - 360px) / 1024)); //
-        --h3: calc(18px + 10 * ((100vw - 360px) / 1024)); //
+        --h3: calc(32px + 10 * ((100vw - 360px) / 1024)); //
         --h4: calc(18px + 10 * ((100vw - 360px) / 1024)); //
         --h5: calc(14px + 10 * ((100vw - 360px) / 1024)); //
         --h6: calc(12px + 10 * ((100vw - 360px) / 1024));

@@ -90,40 +90,62 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .header {
         height: 110px;
 
+        &--logo,
+        .btn-ham,
+        .icon-search {
+            top: 36px;
+            position: fixed;
+            transition: 0.3s ease-in-out all;
+        }
+
+        .btn-ham {
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            &::before {
+                content: "X";
+            }
+        }
+
+        .icon-search {
+            right: 32px;
+        }
+
         &.open {
+            height: 100vh;
+
             .header--logo,
             .btn-ham,
             .icon-search {
-                z-index: 9;
-                bottom: 32px;
-                position: fixed;
+                top: 90%;
+            }
+
+            .header--logo {
+                top: 89%;
             }
 
             .btn-ham {
-                left: 0;
-                right: 0;
-                margin: auto;
-
                 &::before {
                     content: "X";
                 }
             }
 
-            .icon-search {
-                right: 32px;
-            }
+            // .icon-search {
+            //     right: 32px;
+            // }
 
-            .header--navegacion {
-                display: block !important;
-            }
+            // .header--navegacion {
+            //     display: block !important;
+            // }
 
-            #navbarNav {
-                display: block;
-            }
+            // #navbarNav {
+            //     display: block;
+            // }
         }
 
         &--row {
@@ -134,38 +156,43 @@
             }
         }
 
-        // &--logo {
-        //     width: auto;
-        // }
+        &--logo {
+            z-index: 9;
+            top: 30px;
+        }
 
         .btn-ham {
-            // width: 30px;
+            // width: 100px;
             // height: 30px;
+            // background-color: red;
             // width: auto;
             display: block;
             text-align: center;
+            z-index: 9;
 
             &::before {
                 content: "MENU";
                 font-size: x-large;
                 transition: 0.3s ease-in-out all;
             }
-            &[aria-expanded="true"] {
-                &::before {
-                    content: "\e905";
-                }
-            }
+
+            // &[aria-expanded="true"] {
+            //     &::before {
+            //         content: "\e905";
+            //     }
+            // }
         }
 
         .icon-search {
             // width: auto;
             font-size: x-large;
             text-align: right;
+            z-index: 9;
         }
 
         #navbarNav {
             position: fixed;
-            height: 100vh;
+            // height: 100%;
             background: var(--bg-sec);
             top: 0;
             left: 0;
@@ -175,7 +202,7 @@
         }
 
         &--navegacion {
-            display: none !important;
+            // display: none !important;
             position: absolute;
 
             ul {

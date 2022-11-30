@@ -4,6 +4,7 @@
     font-family: var(--prm-regular);
     background: var(--bg-sec);
     color: var(--bg-prm);
+    scroll-behavior: smooth;
 
     .container-fluid {
         padding-right: var(--bs-gutter-x, 2rem);
@@ -74,16 +75,19 @@
 // }
 
 /// MOBILE
-@media (max-width: 360px) {
+@media (max-width: 768px) {
     & {
         .container-fluid {
             padding-right: var(--bs-gutter-x, 0.75rem);
             padding-left: var(--bs-gutter-x, 0.75rem);
         }
 
-        .icon-arrow-after::after {
-            font-size: medium;
-            margin-left: 1em;
+        .icon-arrow-after {
+            font-size: var(--h4);
+            &::after {
+                font-size: medium;
+                margin-left: 1em;
+            }
         }
 
         h2 {
