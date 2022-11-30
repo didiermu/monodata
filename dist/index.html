@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="preload" href="css/styles.min.css" as="style">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="...">
     <meta property="og:title" content="...">
@@ -15,9 +16,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" defer> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+    <script src="https://www.unpkg.com/spltjs@1.1.0"></script>
+    <script src="js/anime.min.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/styles.min.css">
     <title>Monodata</title>
     <script src="js/animations-home.min.js" defer> </script>
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
     <body>
       <header class="header">
         <div class="container-fluid">
@@ -50,44 +56,48 @@
           <div class="container-fluid"> 
             <div class="row"> 
               <div class="col-12 d-flex align-items-center info--api--content">
-                <h6>Ciudad de México 19:10 h</h6>
-                <h6>Elevación 2.240 m</h6>
-                <h6>Superficie 1.485 km²</h6>
-                <h6>22 °C</h6>
-                <h6>Viento del N a 18 km/h</h6>
-                <h6>Humedad 30%</h6>
+                <h6 id="one">Ciudad de México 19:10 h</h6>
+                <h6 id="two">Elevación 2.240 m</h6>
+                <h6 id="tre">Superficie 1.485 km²</h6>
+                <h6 id="fou">22 °C</h6>
+                <h6 id="fiv">Viento del N a 18 km/h</h6>
+                <h6 id="six">Humedad 30%</h6>
               </div>
             </div>
           </div>
         </section>
         <section class="hero">
           <div class="container-fluid">
-            <h1>Arte. Tecnología. <br>Experiencias. <br>Para cualquier audencia.</h1>
+            <div class="hero--contain">
+              <h1 class="splt">Arte. Tecnología. </h1>
+              <h2 class="splt">Experiencias.</h2>
+              <h2 class="splt">Para cualquier audencia.</h2>
+            </div>
           </div>
           <div class="hero--video">
-            <div class="cursor pointed"></div>
-            <picture> 
-              <source srcset="img/Reel_placeholder.webp" type="image/webp"><img class="img-fluid w-100" src="img/Reel_placeholder.jpg" alt="">
-            </picture>
+            <div class="cursor play"></div>
+            <video class="video-js" id="video-desktop" muted playsinline preload loop poster="img/Reel_placeholder.jpg"> 
+              <source src="video/TEASER_KIA-MOTION.mp4" type="video/mp4">
+            </video>
           </div>
         </section>
         <section class="projects">
           <div class="container-fluid">
-            <h2>Monodata Interactive Works es un estudio de diseño y arte digital con sede en la Ciudad de México. Creamos contenido y experiencias en espacios públicos desde un enfoque orientado al futuro integrando arte, diseño, desarrollo de software, nuevas tecnologías y sistemas interactivos.</h2><a href="#!"> 
+            <h2 class="splt">Monodata Interactive Works es un estudio de diseño y arte digital con sede en la Ciudad de México. Creamos contenido y experiencias en espacios públicos desde un enfoque orientado al futuro integrando arte, diseño, desarrollo de software, nuevas tecnologías y sistemas interactivos.</h2><a href="#!"> 
               <h3 class="icon-arrow-after">Ver proyectos</h3></a>
           </div>
         </section>
         <section class="servicios">
-          <picture> 
+          <picture class="servicios--pic">
             <source srcset="img/DSC_4541_2.webp" type="image/webp"><img class="img-fluid w-100" src="img/DSC_4541_2.jpg" alt="">
           </picture>
           <div class="container-fluid"> 
             <div class="row">
               <div class="servicios__item active">
                 <picture> 
-                  <source srcset="img/Copia_de_coral_surface3_1.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_1.jpg" alt="">
+                  <source srcset="img/Copia_de_coral_surface3_1.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_1.png" alt="">
                 </picture>
-                <h6>Ciudad de México 19:10 h</h6>
+                <h6 id="text">Ciudad de México 19:10 h<span id="cursor"></span></h6>
                 <div class="servicios__item__contain">
                   <h2 class="txt-big">01</h2>
                   <h3 class="title-item">Investigación y desarrollo  </h3>
@@ -97,7 +107,7 @@
               </div>
               <div class="servicios__item">
                 <picture> 
-                  <source srcset="img/Copia_de_coral_surface3_1.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_1.jpg" alt="">
+                  <source srcset="img/Copia_de_coral_surface3_12.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_12.png" alt="">
                 </picture>
                 <h6>Ciudad de México 19:10 h</h6>
                 <div class="servicios__item__contain">
@@ -109,7 +119,7 @@
               </div>
               <div class="servicios__item">
                 <picture> 
-                  <source srcset="img/Copia_de_coral_surface3_1.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_1.jpg" alt="">
+                  <source srcset="img/Copia_de_coral_surface3_13.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_13.png" alt="">
                 </picture>
                 <h6>Ciudad de México 19:10 h</h6>
                 <div class="servicios__item__contain">
@@ -121,7 +131,7 @@
               </div>
               <div class="servicios__item">
                 <picture> 
-                  <source srcset="img/Copia_de_coral_surface3_1.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_1.jpg" alt="">
+                  <source srcset="img/Copia_de_coral_surface3_14.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_14.png" alt="">
                 </picture>
                 <h6>Ciudad de México 19:10 h</h6>
                 <div class="servicios__item__contain">
@@ -149,12 +159,14 @@
           </div>
           <div class="container-fluid contact--access">
             <div class="row"> 
-              <div class="col-lg-4 offset-lg-3"> <a href=""> 
-                  <h4>Colaboremos</h4>
-                  <h3 class="icon-arrow-after">Cuéntanos sobre tu proyecto</h3></a></div>
-              <div class="col-lg-3 offset-lg-2"><a href=""> 
-                  <h4>Crezcamos juntos</h4>
-                  <h3 class="icon-arrow-after">Únete al equipo</h3></a></div>
+              <div class="col-lg-4 offset-lg-3"> 
+                <h4>Colaboremos</h4><a href=""> 
+                  <h3 class="icon-arrow-after">Cuéntanos sobre tu proyecto</h3></a>
+              </div>
+              <div class="col-lg-3 offset-lg-2">
+                <h4>Crezcamos juntos</h4><a href=""> 
+                  <h3 class="icon-arrow-after">Únete al equipo</h3></a>
+              </div>
             </div>
           </div>
           <div class="container-fluid contact--data">

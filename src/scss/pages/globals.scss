@@ -10,6 +10,15 @@
         padding-left: var(--bs-gutter-x, 2rem);
     }
 
+    .icon-arrow-after {
+        @media (hover: hover) {
+            &:hover {
+                font-family: var(--prm-medium);
+                color: var(--bg-prm);
+            }
+        }
+    }
+
     h1,
     h2,
     h3,

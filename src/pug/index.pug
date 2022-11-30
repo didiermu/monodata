@@ -2,6 +2,9 @@ extends includes/head.pug
 block head-page
     title Monodata
     script(src="js/animations-home.min.js" defer) 
+    link(href='https://vjs.zencdn.net/7.20.3/video-js.css', rel='stylesheet')
+    script(src='https://vjs.zencdn.net/7.20.3/video.min.js')
+
 
 block content
     -ruta = ""
@@ -13,38 +16,47 @@ block content
             .container-fluid 
                 .row 
                     .col-12.d-flex.align-items-center.info--api--content
-                        h6 Ciudad de México 19:10 h
-                        h6 Elevación 2.240 m
-                        h6 Superficie 1.485 km²
-                        h6 22 °C
-                        h6 Viento del N a 18 km/h
-                        h6 Humedad 30%
+                        //- h6#one
+                        //- h6#two
+                        //- h6#tre
+                        //- h6#fou
+                        //- h6#fiv
+                        //- h6#six
+                        h6#one Ciudad de México 19:10 h
+                        h6#two Elevación 2.240 m
+                        h6#tre Superficie 1.485 km²
+                        h6#fou 22 °C
+                        h6#fiv Viento del N a 18 km/h
+                        h6#six Humedad 30%
 
         section.hero
             .container-fluid
-                h1 Arte. Tecnología. 
-                    br
-                    | Experiencias. 
-                    br
-                    | Para cualquier audencia.
+                .hero--contain
+                    h1.splt Arte. Tecnología. 
+                    h2.splt Experiencias.
+                    h2.splt Para cualquier audencia.
 
 
             .hero--video
-                .cursor.pointed
-                picture 
-                    source(srcset="img/Reel_placeholder.webp", type="image/webp")
-                    img.img-fluid.w-100(src="img/Reel_placeholder.jpg", alt="")
+                //- .cursor.pause.hide
+                .cursor.play
+                video#video-desktop.video-js(muted playsinline preload loop poster="img/Reel_placeholder.jpg") 
+                    source(src="video/TEASER_KIA-MOTION.mp4", type="video/mp4")
+
+                //- picture 
+                //-     source(srcset="img/Reel_placeholder.webp", type="image/webp")
+                //-     img.img-fluid.w-100(src="img/Reel_placeholder.jpg", alt="")
 
         section.projects
             .container-fluid
-                h2 Monodata Interactive Works es un estudio de diseño y arte digital con sede en la Ciudad de México. Creamos contenido y experiencias en espacios públicos desde un enfoque orientado al futuro integrando arte, diseño, desarrollo de software, nuevas tecnologías y sistemas interactivos.
+                h2.splt Monodata Interactive Works es un estudio de diseño y arte digital con sede en la Ciudad de México. Creamos contenido y experiencias en espacios públicos desde un enfoque orientado al futuro integrando arte, diseño, desarrollo de software, nuevas tecnologías y sistemas interactivos.
 
                 a(href="#!") 
                     h3.icon-arrow-after Ver proyectos
 
 
         section.servicios
-            picture 
+            picture.servicios--pic
                 source(srcset="img/DSC_4541_2.webp", type="image/webp")
                 img.img-fluid.w-100(src="img/DSC_4541_2.jpg", alt="")
 
@@ -53,9 +65,10 @@ block content
                     .servicios__item.active
                         picture 
                             source(srcset="img/Copia_de_coral_surface3_1.webp", type="image/webp")
-                            img.img-fluid(src="img/Copia_de_coral_surface3_1.jpg", alt="")
+                            img.img-fluid(src="img/Copia_de_coral_surface3_1.png", alt="")
 
-                        h6 Ciudad de México 19:10 h
+                        h6#text Ciudad de México 19:10 h
+                            span#cursor
 
                         .servicios__item__contain
                             h2.txt-big 01
@@ -66,8 +79,8 @@ block content
 
                     .servicios__item
                         picture 
-                            source(srcset="img/Copia_de_coral_surface3_1.webp", type="image/webp")
-                            img.img-fluid(src="img/Copia_de_coral_surface3_1.jpg", alt="")
+                            source(srcset="img/Copia_de_coral_surface3_12.webp", type="image/webp")
+                            img.img-fluid(src="img/Copia_de_coral_surface3_12.png", alt="")
 
                         h6 Ciudad de México 19:10 h
                         .servicios__item__contain
@@ -79,8 +92,8 @@ block content
 
                     .servicios__item
                         picture 
-                            source(srcset="img/Copia_de_coral_surface3_1.webp", type="image/webp")
-                            img.img-fluid(src="img/Copia_de_coral_surface3_1.jpg", alt="")
+                            source(srcset="img/Copia_de_coral_surface3_13.webp", type="image/webp")
+                            img.img-fluid(src="img/Copia_de_coral_surface3_13.png", alt="")
 
                         h6 Ciudad de México 19:10 h
                         .servicios__item__contain
@@ -93,8 +106,8 @@ block content
 
                     .servicios__item
                         picture 
-                            source(srcset="img/Copia_de_coral_surface3_1.webp", type="image/webp")
-                            img.img-fluid(src="img/Copia_de_coral_surface3_1.jpg", alt="")
+                            source(srcset="img/Copia_de_coral_surface3_14.webp", type="image/webp")
+                            img.img-fluid(src="img/Copia_de_coral_surface3_14.png", alt="")
 
                         h6 Ciudad de México 19:10 h
                         .servicios__item__contain
@@ -119,13 +132,13 @@ block content
             .container-fluid.contact--access
                 .row 
                     .col-lg-4.offset-lg-3 
+                        h4 Colaboremos
                         a(href="") 
-                            h4 Colaboremos
                             h3.icon-arrow-after Cuéntanos sobre tu proyecto
 
                     .col-lg-3.offset-lg-2
+                        h4 Crezcamos juntos
                         a(href="") 
-                            h4 Crezcamos juntos
                             h3.icon-arrow-after Únete al equipo
 
             .container-fluid.contact--data

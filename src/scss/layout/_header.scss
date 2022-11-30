@@ -64,18 +64,22 @@
 
             li {
                 font-size: var(--h4);
-                transition: 0.3s ease-in-out all;
-
-                @media (hover: hover) {
-                    &:hover {
-                        color: var(--color-txt-prm);
-                    }
-                }
 
                 a {
                     color: inherit;
+                    transition: 0.3s ease-in-out all;
+                    will-change: width;
+
                     &.active {
                         font-family: var(--prm-medium);
+                    }
+
+                    @media (hover: hover) {
+                        &:hover {
+                            // font-family: var(--prm-regular-italic);
+                            font-style: italic;
+                            letter-spacing: 1px;
+                        }
                     }
                 }
             }
