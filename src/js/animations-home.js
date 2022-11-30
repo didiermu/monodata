@@ -415,8 +415,8 @@ animContenidoCorto(".projects", ".projects h2");
 animContenidoImage(".servicios--pic", ".servicios--pic img");
 // objParallaxArray(".papers__item");
 
-objParallaxSimple(".contact", ".contact--access *");
-objParallaxSimple(".contact", ".contact--data .col-lg-3");
+// objParallaxSimple(".contact", ".contact--access *");
+// objParallaxSimple(".contact", ".contact--data .col-lg-3");
 
 hoverServices();
 
@@ -429,24 +429,6 @@ const swiper = new Swiper(".swiper", {
         type: "bullets",
     },
 });
-
-// gsap.from("main", {
-//     yPercent: 0,
-// });
-
-// gsap.to("main", {
-//     yPercent: -100,
-//     ease: "none",
-//     scrollTrigger: {
-//         trigger: "body",
-//         start: "top center",
-//         end: "bottom center",
-//         scrub: 1,
-//         toggleActions: "restart pause reverse pause",
-//         markers: true,
-//         immediateRender: false,
-//     },
-// });
 
 smoothScroll("main");
 

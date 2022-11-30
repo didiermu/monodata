@@ -26,8 +26,9 @@ const nav = () => {
 };
 
 window.onresize = () => {
-    btnRemove();
     console.log("resize");
+    btnRemove();
 };
 
+btnRemove();
 nav();
