@@ -416,3 +416,77 @@
         }
     }
 }
+
+@media (max-width: 360px) {
+    .home {
+        .info--api--content {
+            height: auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            animation: slide-left 15s linear infinite;
+
+            @keyframes slide-left {
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(-100%);
+                }
+            }
+
+            h6 {
+                white-space: nowrap;
+                margin-right: 100px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .hero {
+            padding-top: 42px;
+
+            &--contain {
+                margin-bottom: 56px;
+
+                .splt {
+                    font-size: var(--h2);
+                    line-height: 40px;
+                }
+            }
+
+            &--video {
+                height: auto;
+
+                .cursor {
+                    transform: none !important;
+                    margin: auto;
+                    right: 0;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+        }
+
+        .projects {
+            padding: 0px 0 24px;
+
+            h2 {
+                font-size: var(--h4);
+                line-height: 24px;
+                margin-bottom: 86px;
+            }
+        }
+
+        .servicios {
+            &--pic {
+                height: auto;
+            }
+        }
+    }
+}

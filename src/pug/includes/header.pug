@@ -1,14 +1,14 @@
 header.header
     .container-fluid
-        .row.align-items-center
+        .row.align-items-center.header--row
             .col-lg-1.header--logo
                 a(href="../") 
                     img.img-fluid(src=ruta+"img/Monodata.svg", alt="monodata")
 
+            .btn-ham(data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+
             .col-lg-11.header--navegacion.d-flex
                 nav.navbar-expand-lg
-                    .btn-ham(data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
-
                     .collapse.navbar-collapse#navbarNav
                         ul.header--one
 
