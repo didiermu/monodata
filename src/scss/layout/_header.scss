@@ -65,14 +65,34 @@
             li {
                 font-size: var(--h4);
 
+                &.active {
+                    font-family: var(--prm-medium);
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        height: 1px;
+                        background: var(--bg-prm);
+                        width: 100%;
+                        left: 0;
+                        bottom: 0;
+                        position: absolute;
+                        transform: rotateZ(-13deg);
+                        // transform-origin: bottom left;
+                        bottom: 0;
+                        right: 0;
+                        top: 50%;
+                    }
+                }
+
                 a {
                     color: inherit;
                     transition: 0.3s ease-in-out all;
                     will-change: width;
 
-                    &.active {
-                        font-family: var(--prm-medium);
-                    }
+                    // &.active {
+                    //     font-family: var(--prm-medium);
+                    // }
 
                     @media (hover: hover) {
                         &:hover {

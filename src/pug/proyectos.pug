@@ -1,0 +1,99 @@
+extends includes/head.pug
+block head-page
+    title Monodata | Proyectos
+    script(src="js/anim-proyectos.min.js" defer) 
+    //- script(src="https://code.jquery.com/jquery-3.6.3.min.js", integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=", crossorigin="anonymous")
+
+block content
+    -ruta = ""
+    -proy =  "active"
+
+    #viewport
+        include includes/header
+        nav.filtros 
+            ul.container-fluid
+                li Destacados
+                    sup 05
+
+                li Todos
+                    sup 05
+
+                li 
+                    .combo
+                        select
+                            option(selected hidden) Tipo de proyecto
+                            option Test
+                            option Test 2
+                li 
+                    .combo
+                        select 
+                            option(selected hidden) Industria
+                            option Test
+                            option Test 2
+
+        main.proyectos
+
+            section.lista
+                - var n = 0;
+                    while n < 3
+                        - ++n
+                        a(href="proyecto-detalle.html") 
+                            .accordion-item
+                                h2.txt-4xl(id="heading"+n) Kia Motion
+                                .lista__data 
+                                    h5.txt-h6 Lugar 
+                                        span Ciudad de México
+                                    h5.txt-h6 Año 
+                                        span 2021
+                                    h5.txt-h6 Sede 
+                                        span World Trade Center
+                                    h5.txt-h6 Tipo de Proyecto
+                                        span Instalación lumínica
+
+                                .accordion-collapse.collapse(id="collapse"+n aria-labelledby='heading'+n, data-bs-parent='#accordionExample')
+                                    .accordion-body.p-0
+                                        picture 
+                                            source(srcset="img/pr1.webp", type="image/webp")
+                                            img.img-fluid.w-100(src="img/pr1.jpg", alt="")
+
+                        a(href="proyecto-detalle.html") 
+                            .accordion-item
+                                h2.txt-4xl(id="heading"+n) Absence
+                                .lista__data 
+                                    h5.txt-h6 Lugar 
+                                        span Ciudad de México
+                                    h5.txt-h6 Año 
+                                        span 2021
+                                    h5.txt-h6 Sede 
+                                        span World Trade Center
+                                    h5.txt-h6 Tipo de Proyecto
+                                        span Instalación lumínica
+
+                                .accordion-collapse.collapse(id="collapse"+n aria-labelledby='heading'+n, data-bs-parent='#accordionExample')
+                                    .accordion-body.p-0
+                                        picture 
+                                            source(srcset="img/pr1.webp", type="image/webp")
+                                            img.img-fluid.w-100(src="img/pr1.jpg", alt="")
+
+                        a(href="proyecto-detalle.html") 
+                            .accordion-item
+                                h2.txt-4xl(id="heading"+n) Telar
+                                .lista__data 
+                                    h5.txt-h6 Lugar 
+                                        span Ciudad de México
+                                    h5.txt-h6 Año 
+                                        span 2021
+                                    h5.txt-h6 Sede 
+                                        span World Trade Center
+                                    h5.txt-h6 Tipo de Proyecto
+                                        span Instalación lumínica
+
+                                .accordion-collapse.collapse(id="collapse"+n aria-labelledby='heading'+n, data-bs-parent='#accordionExample')
+                                    .accordion-body.p-0
+                                        picture 
+                                            source(srcset="img/pr1.webp", type="image/webp")
+                                            img.img-fluid.w-100(src="img/pr1.jpg", alt="")
+
+            include includes/footer
+
+

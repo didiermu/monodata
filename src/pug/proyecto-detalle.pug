@@ -1,0 +1,133 @@
+extends includes/head.pug
+block head-page
+    title Monodata | Proyectos detalle
+    link(href='https://vjs.zencdn.net/7.20.3/video-js.css', rel='stylesheet')
+    script(src='https://vjs.zencdn.net/7.20.3/video.min.js')
+    script(src='js/scroll-smooth.min.js' defer)
+    script(src="js/anim-detalle-proyecto.min.js" defer) 
+
+block content
+    -ruta = ""
+    -proy = "active"
+
+    #viewport
+        include includes/header
+        main.proyecto-detalle
+            section.lista.info-detalle
+                .accordion-item
+                    h2.txt-5xl(id="heading") Kia Motion
+                    .lista__data 
+                        h5.txt-h6 Lugar 
+                            span Ciudad de México
+                        h5.txt-h6 Año 
+                            span 2021
+                        h5.txt-h6 Sede 
+                            span World Trade Center
+                        h5.txt-h6 Tipo de Proyecto
+                            span Instalación lumínica
+
+                    .accordion-collapse.collapse.show(id="collapse", aria-labelledby='heading', data-bs-parent='#accordionExample')
+                        .accordion-body.p-0
+                            .hero--video
+                                //- .cursor.pause.hide
+                                .cursor.play
+                                video#video-desktop.video-js(muted playsinline preload loop poster="img/Reel_placeholder.jpg") 
+                                    source(src="video/TEASER_KIA-MOTION.mp4", type="video/mp4")
+
+                .container-fluid
+                    .info-detalle-resume.offset-lg-3.col-lg-9
+                        p.txt-3xl Kia Motion es una instalación lumínica que explora el encuentro entre forma y movimiento por medio de un lenguaje audiovisual: desplazamientos de vectores, paisajes sonoros, formas simétricas, destellos de color e iteraciones de luz. 
+                            br
+                            | Este proyecto fue comisionado por The Stüdio con el propósito de develar el nuevo logotipo de Kia en México.
+
+                    .info-detalle-quotes.offset-lg-7.col-lg-5
+                        p.txt-l Tomamos como base el concepto inspirado en el movimiento de la nueva imagen de Kia para representar la innovación en la marca creando en tiempo real patrones dinámicos a través de proyecciones en multicapas y veinte cuadriláteros luminosos en forma de pasaje.  
+
+            section.galeria 
+                .swiper 
+                    .swiper-wrapper
+                        .swiper-slide
+                            picture 
+                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
+                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+
+                        .swiper-slide
+                            picture 
+                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
+                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+
+                    .swiper-navigation
+                        .swiper-nav
+                            .swiper-button-prev
+                            .swiper-button-next
+                        .swiper-pagination
+
+            section.marquee 
+                .marquee-wrap
+                    .marquee-marquee.d-flex.align-items-center
+                        h2.txt-h1 Explora el encuentro entre forma y movimiento
+                    .marquee-marquee.d-flex.align-items-center
+                        h2.txt-h1 Explora el encuentro entre forma y movimiento
+
+                .marquee-content
+                    .marquee-data 
+                        .marquee-data_info 
+                            h5.txt-h6 Dirección de arte y UX
+                                span Cinthya A. Reyes Samperio 
+                        .marquee-data_info 
+                            h5.txt-h6 Diseño sonoro
+                                span Martín Rivera 
+                        .marquee-data_info 
+                            h5.txt-h6 Diseño industrial
+                                span El Taller del Mojo
+                        .marquee-data_info 
+                            h5.txt-h6 Arquitectura
+                                span Diego Alcalá 
+                        .marquee-data_info 
+                            h5.txt-h6 Desarrollo de software
+                                span Monodata
+                        .marquee-data_info 
+                            h5.txt-h6 Producción
+                                span Miguel Casatañeda y Gustavo Rivera
+
+                    .marquee-data 
+                        .marquee-data_info 
+                            h5.txt-h6 Dirección de arte y UX
+                                span Cinthya A. Reyes Samperio 
+                        .marquee-data_info 
+                            h5.txt-h6 Diseño sonoro
+                                span Martín Rivera 
+                        .marquee-data_info 
+                            h5.txt-h6 Diseño industrial
+                                span El Taller del Mojo
+                        .marquee-data_info 
+                            h5.txt-h6 Arquitectura
+                                span Diego Alcalá 
+                        .marquee-data_info 
+                            h5.txt-h6 Desarrollo de software
+                                span Monodata
+                        .marquee-data_info 
+                            h5.txt-h6 Producción
+                                span Miguel Casatañeda y Gustavo Rivera
+
+            section.lista.related
+                .accordion-item
+                    .lista-next
+                        a.txt-xl.icon-arrow-after(href="proyecto-detalle.html") Siguiente proyecto 
+                        h2.txt-4xl(id="heading") Kia Motion
+
+                    .lista__data 
+                        h5.txt-h6 Lugar 
+                            span Ciudad de México
+                        h5.txt-h6 Año 
+                            span 2021
+                        h5.txt-h6 Sede 
+                            span World Trade Center
+                        h5.txt-h6 Tipo de Proyecto
+                            span Instalación lumínica
+
+                    .accordion-collapse.collapse.show(id="collapse", aria-labelledby='heading', data-bs-parent='#accordionExample')
+                        .accordion-body.p-0
+                            picture 
+                                source(srcset="img/pr1.webp", type="image/webp")
+                                img.img-fluid.w-100(src="img/pr1.jpg", alt="")

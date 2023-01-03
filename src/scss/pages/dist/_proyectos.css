@@ -1,0 +1,62 @@
+.proyectos .filtros {
+  padding: 24px 0;
+  margin-bottom: 256px;
+}
+
+.proyectos .filtros ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.proyectos .filtros ul li {
+  border-radius: 50px;
+  border: 1px solid var(--bg-prm);
+  padding: 12px 24px;
+  text-align: center;
+  width: max-content;
+  font-size: var(--h4);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--prm-regular);
+}
+
+.proyectos .filtros ul li sup {
+  font-size: var(--s);
+  font-family: var(--prm-medium);
+}
+
+.proyectos .filtros ul li.active {
+  font-family: var(--prm-medium);
+}
+
+.proyectos .lista .accordion-item {
+  border: 0;
+}
+
+.proyectos .lista .accordion-item h2 {
+  text-align: right;
+  padding-right: var(--bs-gutter-x, 2rem);
+  border-bottom: 1px solid var(--bg-prm);
+  padding-bottom: 8px;
+}
+
+.proyectos .lista__data {
+  display: flex;
+  align-items: center;
+}
+
+.proyectos .lista__data h5 {
+  font-family: var(--sec-regular);
+  font-weight: 500;
+  -webkit-text-stroke: 0.5px;
+}
+
+.proyectos .lista__data h5 span {
+  display: block;
+  font-weight: normal;
+  -webkit-text-stroke: 0;
+}
+
+/*# sourceMappingURL=_proyectos.css.map */

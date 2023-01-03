@@ -28,6 +28,10 @@
   
 }
 
+.icon-arrow-bottom:before {
+  content: "\e90b";
+}
+
 .icon-Screw .path1:before {
   content: "\e900";
   color: rgb(22, 22, 22);

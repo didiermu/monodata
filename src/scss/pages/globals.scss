@@ -6,7 +6,29 @@
     color: var(--bg-prm);
     scroll-behavior: smooth;
 
+    // #viewport {
+    //     overflow: hidden;
+    //     position: fixed;
+    //     height: 100%;
+    //     width: 100%;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    // }
+
+    main {
+        overflow: visible;
+        width: 100%;
+        padding-top: 0;
+    }
+
     .container-fluid {
+        padding-right: var(--bs-gutter-x, 2rem);
+        padding-left: var(--bs-gutter-x, 2rem);
+    }
+
+    .padding-full {
         padding-right: var(--bs-gutter-x, 2rem);
         padding-left: var(--bs-gutter-x, 2rem);
     }
@@ -36,15 +58,30 @@
         line-height: 200px;
     }
 
-    h1 {
+    h1,
+    .txt-h1 {
         font-size: var(--h1);
         line-height: 100px;
     }
-    h2 {
+
+    .txt-5xl {
+        font-size: var(--5xl);
+        line-height: 88px;
+    }
+
+    h2,
+    .txt-3xl {
         font-size: var(--h2);
         line-height: 56px;
     }
-    h3 {
+
+    .txt-2xl {
+        font-size: var(--2xl);
+        line-height: 32px;
+    }
+
+    h3,
+    .txt-xl {
         font-size: var(--h3);
         line-height: 32px;
     }
@@ -52,11 +89,31 @@
         font-size: var(--h4);
         list-style: 24px;
     }
-    h5 {
+
+    h5,
+    .txt-h5 {
         font-size: var(--h5);
+        line-height: 24px;
     }
-    h6 {
+
+    .txt-l {
+        font-size: var(--l);
+        line-height: 36px;
+    }
+
+    .txt-h6 {
         font-size: var(--h6);
+        line-height: 14px;
+    }
+
+    .txt-4xl {
+        font-size: var(--4xl);
+        line-height: 80px;
+    }
+
+    .txt-s {
+        font-size: var(--s);
+        line-height: 18px;
     }
     p {
         font-size: var(--h4);

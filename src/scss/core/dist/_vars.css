@@ -1,0 +1,32 @@
+:root {
+  --bg-prm: #161616;
+  --bg-sec: #fdfdfd;
+  --prm-light: "Graphik-Light", sans-serif;
+  --prm-regular: "Graphik-Regular", sans-serif;
+  --prm-regular-italic: "Graphik-Regular-italic", sans-serif;
+  --prm-medium: "Graphik-Medium", sans-serif;
+  --sec-regular: "Space Mono", monospace;
+  --txt-big: calc(200px + 0 * ((100vw - 1280px) / 1920));
+  --h1: calc(100px + 10 * ((100vw - 1280px) / 1920));
+  --h2: calc(40px + 10 * ((100vw - 1280px) / 1920));
+  --h3: calc(24px + 10 * ((100vw - 1280px) / 1920));
+  --h4: calc(18px + 10 * ((100vw - 1280px) / 1920));
+  --h5: calc(16px + 10 * ((100vw - 1280px) / 1920));
+  --s: calc(14px + 10 * ((100vw - 1280px) / 1920));
+  --h6: calc(12px + 10 * ((100vw - 1280px) / 1920));
+  --paddingSection: 80px 40px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --h1: calc(100px + 10 * ((100vw - 360px) / 1024));
+    --h2: calc(40px + 10 * ((100vw - 360px) / 1024));
+    --h3: calc(32px + 10 * ((100vw - 360px) / 1024));
+    --h4: calc(18px + 10 * ((100vw - 360px) / 1024));
+    --h5: calc(14px + 10 * ((100vw - 360px) / 1024));
+    --h6: calc(12px + 10 * ((100vw - 360px) / 1024));
+    --paddingSection: 50px 0px;
+  }
+}
+
+/*# sourceMappingURL=_vars.css.map */

@@ -1,0 +1,89 @@
+.footer {
+    .contact {
+        padding: 120px 0 90px;
+        // overflow-x: hidden;
+
+        &--wrap {
+            display: flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            min-width: 100%;
+            margin-bottom: 170px;
+        }
+
+        &--marquee {
+            display: flex;
+            flex-shrink: 0;
+            // height: 50px;
+            align-items: center;
+            animation: slide-left 25s linear infinite;
+
+            @keyframes slide-left {
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(-100%);
+                }
+            }
+
+            h2 {
+                font-size: var(--h1);
+                line-height: 100px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin-right: 0.2em;
+                // animation: marquee 15s linear infinite;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 32px;
+                    height: 32px;
+                    background: url(../img/Monodata.svg) no-repeat center /
+                        contain;
+                    margin: 0.2em 0em 0 0.3em;
+                    animation: logo-mono 10s infinite linear;
+                }
+
+                @keyframes logo-mono {
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+
+        &--data {
+            padding-top: 120px;
+
+            a {
+                color: inherit;
+            }
+
+            .col-lg-3 {
+                border-left: 1px solid;
+                padding-bottom: 50px;
+
+                &:first-child {
+                    border: 0;
+                }
+            }
+
+            h4 {
+                margin-bottom: 0.3em;
+            }
+
+            a {
+                font-size: var(--h3);
+            }
+
+            &--redes {
+                a:not(:last-child) {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}

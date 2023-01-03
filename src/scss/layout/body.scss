@@ -1,8 +1,11 @@
-// **** \\ STYLES_CSS // **** // 
+// **** \\ STYLES_CSS // **** //
 body {
     @import "header";
     @import "footer";
     @import "media";
     @import "pages/globals";
     @import "pages/_home";
+    @import "pages/_proyectos";
+    @import "pages/_proyecto-detalle";
+    @import "pages/_experimentos";
 }

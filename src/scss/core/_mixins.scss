@@ -1,0 +1,103 @@
+@mixin listaProyecto {
+    .lista {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+        a {
+            color: inherit;
+        }
+
+        .accordion-item {
+            border: 0;
+
+            h2 {
+                text-align: right;
+                padding-right: var(--bs-gutter-x, 2rem);
+                border-bottom: 1px solid var(--bg-prm);
+                padding-bottom: 8px;
+            }
+        }
+
+        &__data {
+            display: flex;
+            align-items: center;
+            @extend .padding-full;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            justify-content: space-between;
+
+            h5 {
+                font-family: var(--sec-regular);
+                font-weight: 500;
+                -webkit-text-stroke: 0.5px;
+
+                span {
+                    display: block;
+                    font-weight: normal;
+                    -webkit-text-stroke: 0;
+                }
+            }
+        }
+
+        &-next {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--bg-prm);
+            padding: 0 var(--bs-gutter-x, 2rem) 8px;
+
+            h2 {
+                border-bottom: 0 !important;
+                padding: 0 !important;
+            }
+        }
+
+        &.related {
+            .accordion-collapse {
+                height: 250px;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+@mixin info-api {
+    .info--api {
+        &--content {
+            justify-content: space-between;
+            height: 30px;
+
+            h6 {
+                font-family: var(--sec-regular);
+                color: var(--bg-sec);
+
+                span {
+                    color: var(--bg-prm);
+                }
+
+                // &#one {
+                //     width: 162px;
+                // }
+                // &#two {
+                //     width: 115px;
+                // }
+                // &#tre {
+                //     width: 128px;
+                // }
+                // &#fou {
+                //     width: 34px;
+                // }
+                // &#fiv {
+                //     width: 149px;
+                // }
+                // &#six {
+                // width: 75px;
+                // }
+
+                // width: calc(100% / 6);
+                // text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+extends includes/head.pug
+block head-page
+    title Monodata | Experimentos
+    script(src='https://code.jquery.com/jquery-3.6.3.min.js', integrity='sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=', crossorigin='anonymous')
+    script(src='https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js')
+    script(src="js/anim-exp.min.js" defer) 
+
+
+block content
+    -ruta = ""
+    -exp = "active"
+
+    #viewport
+        include includes/header
+        main.exp
+            section.info--api 
+                .container-fluid 
+                    .row 
+                        .col-12.d-flex.align-items-center.info--api--content
+                            //- h6#one
+                            //- h6#two
+                            //- h6#tre
+                            //- h6#fou
+                            //- h6#fiv
+                            //- h6#six
+                            h6#one Ciudad de México 19:10 h
+                            h6#two Elevación 2.240 m
+                            h6#tre Superficie 1.485 km²
+                            h6#fou 22 °C
+                            h6#fiv Viento del N a 18 km/h
+                            h6#six Humedad 30%
+
+            section.marquee-exp 
+                .marquee-exp-wrap
+                    .marquee-exp_marquee.d-flex.align-items-center
+                        h2 Tabla periódica de experimentos
+
+                    .marquee-exp_marquee.d-flex.align-items-center
+                        h2 Tabla periódica de experimentos
+
+            section.summary
+                .container-fluid 
+                    .offset-lg-3.col-lg-7   
+                        h3.txt-l Disfrutamos explorar y compartir nuestros procesos diarios. Esta colección de experimentos surge de nuestro interés por las nuevas tecnologías y sus aplicaciones a futuros proyectos.  
+
+            section.tabla 
+                .container-fluid 
+                    .tabla-wrap.grid
+                        - var n = 0;
+                        while n < 16
+                            - ++n
+                            .grid-item
+                                .tabla-wrap_item
+                                    h2.txt-2xl Ct
+                                    picture 
+                                        source(srcset="img/Copia_de_coral_surface3_1.webp", type="image/webp")
+                                        img.img-fluid(src="img/Copia_de_coral_surface3_1.png", alt="image/webp")
+
+                                    .tabla-wrap_item_data
+                                        .tabla-wrap_item_data_name
+                                            h4.txt-h5 Coral Texture
+                                            h4.txt-h6 09.2019
+
+                                        h5.txt-h5.tabla-wrap_item_hash Self portraits #proceduralmodeling #houdini rendered on @touchdesigner @sidefxhoudini #new_media_art #glsl #creativecoding
+
+

@@ -1,0 +1,165 @@
+.exp {
+    @include info-api;
+
+    .marquee-exp {
+        padding: 74px 0 94px;
+
+        &-wrap {
+            display: flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            min-width: 100%;
+            margin-bottom: 170px;
+        }
+
+        &_marquee {
+            display: flex;
+            flex-shrink: 0;
+            // height: 50px;
+            align-items: center;
+            animation: slide-left 25s linear infinite;
+
+            @keyframes slide-left {
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(-100%);
+                }
+            }
+
+            h2 {
+                font-size: var(--h1);
+                line-height: 100px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin-right: 0.2em;
+                // animation: marquee 15s linear infinite;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 32px;
+                    height: 32px;
+                    background: url(../img/Monodata.svg) no-repeat center /
+                        contain;
+                    margin: 0.2em 0em 0 0.3em;
+                    animation: logo-mono 10s infinite linear;
+                }
+
+                @keyframes logo-mono {
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .summary {
+        padding-bottom: 132px;
+    }
+
+    .tabla {
+        padding-bottom: 60px;
+        &-wrap {
+            // display: flex;
+            // flex-wrap: wrap;
+            counter-reset: num;
+
+            .grid-item {
+                // height: fit-content;
+                height: 255px;
+                width: 25%;
+                // float: left;
+                &.active {
+                    width: 75%;
+                    height: 510px;
+
+                    picture {
+                        width: 45%;
+                    }
+                }
+            }
+
+            &_item {
+                // float: left;
+                // width: 25%;
+                // height: 255px;
+                // flex: 1 0 25%;
+                border: 1px solid var(--bg-prm);
+                border-width: 0 1px 1px 0;
+                padding: 20px;
+                height: 100%;
+                position: relative;
+                // transition: 0.3s ease-in-out all;
+                will-change: width;
+                cursor: pointer;
+
+                &.active {
+                    width: 75%;
+                    height: 510px;
+
+                    picture {
+                        width: 45%;
+                    }
+                }
+
+                // @media (hover: hover) {
+                //     &:hover {
+                //         // width: 50%;
+                //         flex: 1 0 50%;
+                //     }
+                // }
+
+                &:nth-child(4n) {
+                    border-right: 0;
+                }
+
+                &:nth-child(-n + 4) {
+                    border-top: 1px solid;
+                }
+
+                &:nth-child(-n + 4) {
+                    border-top: 1px solid;
+                }
+
+                h2 {
+                    border: 1px solid var(--bg-prm);
+                    padding: 8px;
+                    width: max-content;
+
+                    &::after {
+                        counter-increment: num;
+                        content: counter(num);
+                        font-size: var(--h4);
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+                    }
+                }
+
+                picture {
+                    display: block;
+                    border-radius: 50%;
+                    margin: auto;
+                    display: block;
+                    overflow: hidden;
+                    width: 50%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: none;
+                        object-position: center;
+                    }
+                }
+
+                &_hash {
+                    display: none;
+                }
+            }
+        }
+    }
+}

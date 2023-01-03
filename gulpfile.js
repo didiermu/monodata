@@ -99,7 +99,6 @@ gulp.task("sass", () => {
 gulp.task("minifyCSS", () => {
     return gulp
         .src("./src/css/*.css")
-
         .pipe(cssmin())
         .pipe(concat("styles.min.css"))
         .pipe(gulp.dest("./dist/css/"))
