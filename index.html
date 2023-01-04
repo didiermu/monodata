@@ -24,6 +24,7 @@
     <script src="js/nav.min.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/styles.min.css">
     <title>Monodata</title>
+    <script src="js/scroll-smooth.min.js" defer></script>
     <script src="js/animations-home.min.js" defer> </script>
     <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
     <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
@@ -38,9 +39,9 @@
                 <nav class="navbar-expand-lg">
                   <div class="navbar-collapse collapse" id="navbarNav">
                     <ul class="header--one">
-                      <li id="li-lineup"><a href="index.html">Proyectos</a></li>
-                      <li id="li-boletos"><a href="index.html#home--boletos">Experimentos</a></li>
-                      <li id="li-beneficios"><a href="index.html#home--beneficios">Noticias</a></li>
+                      <li id="li-proy"><a href="proyectos.html">Proyectos</a></li>
+                      <li id="li-exp"><a href="experimentos.html">Experimentos</a></li>
+                      <li id="li-news"><a href="noticias.html">Noticias</a></li>
                     </ul>
                     <ul class="header--two">
                       <li id="li-lang"><a href="index.html#home--beneficios">EN</a><a class="active" href="index.html#home--beneficios">ES</a></li>
@@ -56,16 +57,48 @@
           </div>
         </header>
         <main class="home">
+          <script>
+            const apiClima = () => {
+            // Datos:latitude, longitude, resolvedAddres,humidity, windspeed, uvindex, solarradiation description, pressure, conditions.
+            
+            fetch(
+                "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/ciudad%20de%20mexico/today?unitGroup=metric&include=hours&key=WYJ95FQXYZ7RLMEZBQVSG4BLX&contentType=json"
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    // console.log(data.days);
+            
+                    animTxt("#one", "Latitude:" + data.latitude);
+                    animTxt("#two", "Longitude:" + data.longitude);
+                    animTxt("#tre", data.resolvedAddress);
+                    data.days.map((item) => {
+                        animTxt("#fou", "Humidity:" + item.humidity);
+                        animTxt("#fiv", "Windspeed:" + item.windspeed);
+                        animTxt("#six", "Solar radiation:" + item.solarradiation);
+                        animTxt("#sev", "Description:" + item.description);
+                        animTxt("#eig", "Pressure:" + item.pressure);
+                        animTxt("#nin", "Conditions:" + item.conditions);
+                    });
+                });
+            };
+            
+            apiClima();
+            
+            
+          </script>
           <section class="info--api"> 
             <div class="container-fluid"> 
               <div class="row"> 
-                <div class="col-12 d-flex align-items-center info--api--content">
+                <div class="col-12 info--api--content">
                   <h6 id="one">Ciudad de México 19:10 h</h6>
                   <h6 id="two">Elevación 2.240 m</h6>
                   <h6 id="tre">Superficie 1.485 km²</h6>
                   <h6 id="fou">22 °C</h6>
                   <h6 id="fiv">Viento del N a 18 km/h</h6>
                   <h6 id="six">Humedad 30%</h6>
+                  <h6 id="sev">Humedad 30%</h6>
+                  <h6 id="eig">Humedad 30%</h6>
+                  <h6 id="nin">Humedad 30%</h6>
                 </div>
               </div>
             </div>
@@ -101,48 +134,56 @@
                   <picture> 
                     <source srcset="img/Copia_de_coral_surface3_1.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_1.png" alt="">
                   </picture>
-                  <h6 id="text">Ciudad de México 19:10 h<span id="cursor"></span></h6>
                   <div class="servicios__item__contain">
                     <h2 class="txt-big">01</h2>
-                    <h3 class="title-item">Investigación y desarrollo  </h3>
-                    <p>Nuestra experiencia con distintas tecnologías nos permite detectar tendencias del mañana para crear contenidos novedosos y, de esta forma, posicionar a nuestros clientes en nuevas dimensiones de proyección y visibilidad. Diseñamos a partir de fusionar ideas y tecnologías para desarrollar experiencias de usuario relevantes. </p><a href="#!"> 
-                      <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                    <h3 class="title-item-vert txt-h6">Investigación y desarrollo  </h3>
+                    <div class="servicios__item__contain__wrap">
+                      <h3 class="title-item txt-3xl">Investigación y desarrollo  </h3>
+                      <p>Nuestra experiencia con distintas tecnologías nos permite detectar tendencias del mañana para crear contenidos novedosos y, de esta forma, posicionar a nuestros clientes en nuevas dimensiones de proyección y visibilidad. Diseñamos a partir de fusionar ideas y tecnologías para desarrollar experiencias de usuario relevantes. </p><a href="#!"> 
+                        <h3 class="icon-arrow-after txt-xl">Ver servicio</h3></a>
+                    </div>
                   </div>
                 </div>
                 <div class="servicios__item">
                   <picture> 
                     <source srcset="img/Copia_de_coral_surface3_12.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_12.png" alt="">
                   </picture>
-                  <h6>Ciudad de México 19:10 h</h6>
                   <div class="servicios__item__contain">
                     <h2 class="txt-big">02</h2>
-                    <h3 class="title-item">Creación de contenido</h3>
-                    <p>Nuestra curiosidad y conocimiento interdisciplinario favorecen la creación de contenido dirigido a diferentes tipos de personas.</p><a href="#!"> 
-                      <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                    <h3 class="title-item-vert txt-h6">Creación de contenido</h3>
+                    <div class="servicios__item__contain__wrap">
+                      <h3 class="title-item txt-3xl">Creación de contenido</h3>
+                      <p>Nuestra curiosidad y conocimiento interdisciplinario favorecen la creación de contenido dirigido a diferentes tipos de personas.</p><a href="#!"> 
+                        <h3 class="icon-arrow-after txt-xl">Ver servicio</h3></a>
+                    </div>
                   </div>
                 </div>
                 <div class="servicios__item">
                   <picture> 
                     <source srcset="img/Copia_de_coral_surface3_13.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_13.png" alt="">
                   </picture>
-                  <h6>Ciudad de México 19:10 h</h6>
                   <div class="servicios__item__contain">
                     <h2 class="txt-big">03</h2>
-                    <h3 class="title-item">Producción </h3>
-                    <p>La operación e integración de todos los elementos del proceso de creación hacen posible que tanto nuestras ideas como las de nuestros clientes puedan ser plasmadas de forma tangible para las personas. </p><a href="#!"> 
-                      <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                    <h3 class="title-item-vert txt-h6">Producción </h3>
+                    <div class="servicios__item__contain__wrap">
+                      <h3 class="title-item txt-3xl">Producción </h3>
+                      <p>La operación e integración de todos los elementos del proceso de creación hacen posible que tanto nuestras ideas como las de nuestros clientes puedan ser plasmadas de forma tangible para las personas. </p><a href="#!"> 
+                        <h3 class="icon-arrow-after txt-xl">Ver servicio</h3></a>
+                    </div>
                   </div>
                 </div>
                 <div class="servicios__item">
                   <picture> 
                     <source srcset="img/Copia_de_coral_surface3_14.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_14.png" alt="">
                   </picture>
-                  <h6>Ciudad de México 19:10 h</h6>
                   <div class="servicios__item__contain">
                     <h2 class="txt-big">04</h2>
-                    <h3 class="title-item">Orientación y asesoría</h3>
-                    <p>La diversidad de talentos en el equipo posibilita que nuestras propuestas sean creativas y técnicamente viables.  </p><a href="#!"> 
-                      <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                    <h3 class="title-item-vert txt-h6">Orientación y asesoría</h3>
+                    <div class="servicios__item__contain__wrap">
+                      <h3 class="title-item txt-3xl">Orientación y asesoría</h3>
+                      <p>La diversidad de talentos en el equipo posibilita que nuestras propuestas sean creativas y técnicamente viables.  </p><a href="#!"> 
+                        <h3 class="icon-arrow-after txt-xl">Ver servicio</h3></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -155,110 +196,124 @@
                       <picture> 
                         <source srcset="img/Copia_de_coral_surface3_1.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_1.png" alt="">
                       </picture>
-                      <h6 id="text">Ciudad de México 19:10 h<span id="cursor"></span></h6>
                       <div class="servicios__item__contain">
-                        <h2 class="txt-big">01</h2>
-                        <h3 class="title-item">Investigación y desarrollo  </h3>
-                        <p>Nuestra experiencia con distintas tecnologías nos permite detectar tendencias del mañana para crear contenidos novedosos y, de esta forma, posicionar a nuestros clientes en nuevas dimensiones de proyección y visibilidad. Diseñamos a partir de fusionar ideas y tecnologías para desarrollar experiencias de usuario relevantes. </p><a href="#!"> 
-                          <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                        <div class="servicios__item__contain__num">
+                          <h2 class="txt-big">01</h2>
+                        </div>
+                        <div class="servicios__item__contain__info">
+                          <div class="swiper-pagination"></div>
+                          <h3 class="title-item">Investigación y desarrollo  </h3>
+                          <p>Nuestra experiencia con distintas tecnologías nos permite detectar tendencias del mañana para crear contenidos novedosos y, de esta forma, posicionar a nuestros clientes en nuevas dimensiones de proyección y visibilidad. Diseñamos a partir de fusionar ideas y tecnologías para desarrollar experiencias de usuario relevantes. </p><a href="#!"> 
+                            <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                        </div>
                       </div>
                     </div>
-                    <div class="swiper-pagination"></div>
                   </div>
                   <div class="swiper-slide"> 
                     <div class="servicios__item">
                       <picture> 
                         <source srcset="img/Copia_de_coral_surface3_12.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_12.png" alt="">
                       </picture>
-                      <h6>Ciudad de México 19:10 h</h6>
                       <div class="servicios__item__contain">
-                        <h2 class="txt-big">02</h2>
-                        <h3 class="title-item">Creación de contenido</h3>
-                        <p>Nuestra curiosidad y conocimiento interdisciplinario favorecen la creación de contenido dirigido a diferentes tipos de personas.</p><a href="#!"> 
-                          <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                        <div class="servicios__item__contain__num">
+                          <h2 class="txt-big">02</h2>
+                        </div>
+                        <div class="servicios__item__contain__info">
+                          <div class="swiper-pagination"></div>
+                          <h3 class="title-item">Creación de contenido</h3>
+                          <p>Nuestra curiosidad y conocimiento interdisciplinario favorecen la creación de contenido dirigido a diferentes tipos de personas.</p><a href="#!"> 
+                            <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                        </div>
                       </div>
                     </div>
-                    <div class="swiper-pagination"></div>
                   </div>
                   <div class="swiper-slide"> 
                     <div class="servicios__item">
                       <picture> 
                         <source srcset="img/Copia_de_coral_surface3_13.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_13.png" alt="">
                       </picture>
-                      <h6>Ciudad de México 19:10 h</h6>
                       <div class="servicios__item__contain">
-                        <h2 class="txt-big">03</h2>
-                        <h3 class="title-item">Producción </h3>
-                        <p>La operación e integración de todos los elementos del proceso de creación hacen posible que tanto nuestras ideas como las de nuestros clientes puedan ser plasmadas de forma tangible para las personas. </p><a href="#!"> 
-                          <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                        <div class="servicios__item__contain__num">
+                          <h2 class="txt-big">03</h2>
+                        </div>
+                        <div class="servicios__item__contain__info">
+                          <div class="swiper-pagination"></div>
+                          <h3 class="title-item">Producción </h3>
+                          <p>La operación e integración de todos los elementos del proceso de creación hacen posible que tanto nuestras ideas como las de nuestros clientes puedan ser plasmadas de forma tangible para las personas. </p><a href="#!"> 
+                            <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                        </div>
                       </div>
                     </div>
-                    <div class="swiper-pagination"></div>
                   </div>
                   <div class="swiper-slide"> 
                     <div class="servicios__item">
                       <picture> 
                         <source srcset="img/Copia_de_coral_surface3_14.webp" type="image/webp"><img class="img-fluid" src="img/Copia_de_coral_surface3_14.png" alt="">
                       </picture>
-                      <h6>Ciudad de México 19:10 h</h6>
                       <div class="servicios__item__contain">
-                        <h2 class="txt-big">04</h2>
-                        <h3 class="title-item">Orientación y asesoría</h3>
-                        <p>La diversidad de talentos en el equipo posibilita que nuestras propuestas sean creativas y técnicamente viables.  </p><a href="#!"> 
-                          <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                        <div class="servicios__item__contain__num">
+                          <h2 class="txt-big">04</h2>
+                        </div>
+                        <div class="servicios__item__contain__info">
+                          <div class="swiper-pagination"></div>
+                          <h3 class="title-item">Orientación y asesoría</h3>
+                          <p>La diversidad de talentos en el equipo posibilita que nuestras propuestas sean creativas y técnicamente viables.  </p><a href="#!"> 
+                            <h3 class="icon-arrow-after">Ver servicio</h3></a>
+                        </div>
                       </div>
                     </div>
-                    <div class="swiper-pagination"></div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <section class="contact"> 
-            <div class="contact--wrap">
-              <div class="contact--marquee d-flex align-items-center">
-                <h2>Arte</h2>
-                <h2>Tecnología</h2>
-                <h2>Experiencias</h2>
-              </div>
-              <div class="contact--marquee d-flex align-items-center">
-                <h2>Arte</h2>
-                <h2>Tecnología</h2>
-                <h2>Experiencias</h2>
-              </div>
-            </div>
-            <div class="container-fluid contact--access">
-              <div class="row"> 
-                <div class="col-lg-4 offset-lg-3"> 
-                  <h4>Colaboremos</h4><a href=""> 
-                    <h3 class="icon-arrow-after">Cuéntanos sobre tu proyecto</h3></a>
+          <footer class="footer">
+            <section class="contact"> 
+              <div class="contact--wrap">
+                <div class="contact--marquee d-flex align-items-center">
+                  <h2>Arte</h2>
+                  <h2>Tecnología</h2>
+                  <h2>Experiencias</h2>
                 </div>
-                <div class="col-lg-3 offset-lg-2">
-                  <h4>Crezcamos juntos</h4><a href=""> 
-                    <h3 class="icon-arrow-after">Únete al equipo</h3></a>
+                <div class="contact--marquee d-flex align-items-center">
+                  <h2>Arte</h2>
+                  <h2>Tecnología</h2>
+                  <h2>Experiencias</h2>
                 </div>
               </div>
-            </div>
-            <div class="container-fluid contact--data">
-              <div class="row"> 
-                <div class="col-lg-3">
-                  <h4>Calle Pitágoras 607</h4>
-                  <h4>Narvarte Poniente</h4>
-                  <h4>03020 Ciudad de México</h4>
-                </div>
-                <div class="col-lg-3">
-                  <h4>Llámanos</h4><a href="tel:+52 1 55 6719 7942">+52 1 55 6719 7942</a>
-                </div>
-                <div class="col-lg-3">
-                  <h4>Escríbenos</h4><a href="mailto:info@monodata.mx">info@monodata.mx </a>
-                </div>
-                <div class="col-lg-3">
-                  <h4>Síguenos</h4>
-                  <div class="contact--data--redes"><a class="icon-LinkedIn" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-Instagram" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-Facebook" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-Twitter" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-YouTube" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-Vimeo" href="" target="_blank" rel="noopener noreferrer"> </a></div>
+              <div class="container-fluid contact--access">
+                <div class="row"> 
+                  <div class="col-lg-4 offset-lg-3"> 
+                    <h4>Colaboremos</h4><a href=""> 
+                      <h3 class="icon-arrow-after">Cuéntanos sobre tu proyecto</h3></a>
+                  </div>
+                  <div class="col-lg-3 offset-lg-2">
+                    <h4>Crezcamos juntos</h4><a href=""> 
+                      <h3 class="icon-arrow-after">Únete al equipo</h3></a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+              <div class="container-fluid contact--data">
+                <div class="row"> 
+                  <div class="col-lg-3">
+                    <h4>Calle Pitágoras 607</h4>
+                    <h4>Narvarte Poniente</h4>
+                    <h4>03020 Ciudad de México</h4>
+                  </div>
+                  <div class="col-lg-3">
+                    <h4>Llámanos</h4><a href="tel:+52 1 55 6719 7942">+52 1 55 6719 7942</a>
+                  </div>
+                  <div class="col-lg-3">
+                    <h4>Escríbenos</h4><a href="mailto:info@monodata.mx">info@monodata.mx </a>
+                  </div>
+                  <div class="col-lg-3">
+                    <h4>Síguenos</h4>
+                    <div class="contact--data--redes"><a class="icon-LinkedIn" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-Instagram" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-Facebook" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-Twitter" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-YouTube" href="" target="_blank" rel="noopener noreferrer"> </a><a class="icon-Vimeo" href="" target="_blank" rel="noopener noreferrer"> </a></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </footer>
         </main>
       </div>
     </body>
