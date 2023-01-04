@@ -1,6 +1,7 @@
 extends includes/head.pug
 block head-page
     title Monodata
+    script(src='js/scroll-smooth.min.js' defer)
     script(src="js/animations-home.min.js" defer) 
     link(href='https://vjs.zencdn.net/7.20.3/video-js.css', rel='stylesheet')
     script(src='https://vjs.zencdn.net/7.20.3/video.min.js')
@@ -12,22 +13,7 @@ block content
     #viewport
         include includes/header
         main.home
-            section.info--api 
-                .container-fluid 
-                    .row 
-                        .col-12.d-flex.align-items-center.info--api--content
-                            //- h6#one
-                            //- h6#two
-                            //- h6#tre
-                            //- h6#fou
-                            //- h6#fiv
-                            //- h6#six
-                            h6#one Ciudad de México 19:10 h
-                            h6#two Elevación 2.240 m
-                            h6#tre Superficie 1.485 km²
-                            h6#fou 22 °C
-                            h6#fiv Viento del N a 18 km/h
-                            h6#six Humedad 30%
+            include includes/api
 
             section.hero
                 .container-fluid
@@ -67,56 +53,63 @@ block content
                                 source(srcset="img/Copia_de_coral_surface3_1.webp", type="image/webp")
                                 img.img-fluid(src="img/Copia_de_coral_surface3_1.png", alt="")
 
-                            h6#text Ciudad de México 19:10 h
-                                span#cursor
 
                             .servicios__item__contain
                                 h2.txt-big 01
-                                h3.title-item Investigación y desarrollo  
-                                p Nuestra experiencia con distintas tecnologías nos permite detectar tendencias del mañana para crear contenidos novedosos y, de esta forma, posicionar a nuestros clientes en nuevas dimensiones de proyección y visibilidad. Diseñamos a partir de fusionar ideas y tecnologías para desarrollar experiencias de usuario relevantes. 
-                                a(href="#!") 
-                                    h3.icon-arrow-after Ver servicio
+                                h3.title-item-vert.txt-h6 Investigación y desarrollo  
+
+                                .servicios__item__contain__wrap
+                                    h3.title-item.txt-3xl Investigación y desarrollo  
+                                    p Nuestra experiencia con distintas tecnologías nos permite detectar tendencias del mañana para crear contenidos novedosos y, de esta forma, posicionar a nuestros clientes en nuevas dimensiones de proyección y visibilidad. Diseñamos a partir de fusionar ideas y tecnologías para desarrollar experiencias de usuario relevantes. 
+                                    a(href="#!") 
+                                        h3.icon-arrow-after.txt-xl Ver servicio
 
                         .servicios__item
                             picture 
                                 source(srcset="img/Copia_de_coral_surface3_12.webp", type="image/webp")
                                 img.img-fluid(src="img/Copia_de_coral_surface3_12.png", alt="")
 
-                            h6 Ciudad de México 19:10 h
                             .servicios__item__contain
                                 h2.txt-big 02
-                                h3.title-item Creación de contenido
-                                p Nuestra curiosidad y conocimiento interdisciplinario favorecen la creación de contenido dirigido a diferentes tipos de personas.
-                                a(href="#!") 
-                                    h3.icon-arrow-after Ver servicio
+                                h3.title-item-vert.txt-h6 Creación de contenido
+
+                                .servicios__item__contain__wrap
+                                    h3.title-item.txt-3xl Creación de contenido
+                                    p Nuestra curiosidad y conocimiento interdisciplinario favorecen la creación de contenido dirigido a diferentes tipos de personas.
+                                    a(href="#!") 
+                                        h3.icon-arrow-after.txt-xl Ver servicio
 
                         .servicios__item
                             picture 
                                 source(srcset="img/Copia_de_coral_surface3_13.webp", type="image/webp")
                                 img.img-fluid(src="img/Copia_de_coral_surface3_13.png", alt="")
 
-                            h6 Ciudad de México 19:10 h
                             .servicios__item__contain
                                 h2.txt-big 03
-                                h3.title-item Producción 
-                                p La operación e integración de todos los elementos del proceso de creación hacen posible que tanto nuestras ideas como las de nuestros clientes puedan ser plasmadas de forma tangible para las personas. 
+                                h3.title-item-vert.txt-h6 Producción 
 
-                                a(href="#!") 
-                                    h3.icon-arrow-after Ver servicio
+                                .servicios__item__contain__wrap
+                                    h3.title-item.txt-3xl Producción 
+                                    p La operación e integración de todos los elementos del proceso de creación hacen posible que tanto nuestras ideas como las de nuestros clientes puedan ser plasmadas de forma tangible para las personas. 
+
+                                    a(href="#!") 
+                                        h3.icon-arrow-after.txt-xl Ver servicio
 
                         .servicios__item
                             picture 
                                 source(srcset="img/Copia_de_coral_surface3_14.webp", type="image/webp")
                                 img.img-fluid(src="img/Copia_de_coral_surface3_14.png", alt="")
 
-                            h6 Ciudad de México 19:10 h
                             .servicios__item__contain
                                 h2.txt-big 04
-                                h3.title-item Orientación y asesoría
-                                p La diversidad de talentos en el equipo posibilita que nuestras propuestas sean creativas y técnicamente viables.  
+                                h3.title-item-vert.txt-h6 Orientación y asesoría
 
-                                a(href="#!") 
-                                    h3.icon-arrow-after Ver servicio
+                                .servicios__item__contain__wrap
+                                    h3.title-item.txt-3xl Orientación y asesoría
+                                    p La diversidad de talentos en el equipo posibilita que nuestras propuestas sean creativas y técnicamente viables.  
+
+                                    a(href="#!") 
+                                        h3.icon-arrow-after.txt-xl Ver servicio
 
                 .container-fluid#services-m
                     .swiper
@@ -127,16 +120,19 @@ block content
                                         source(srcset="img/Copia_de_coral_surface3_1.webp", type="image/webp")
                                         img.img-fluid(src="img/Copia_de_coral_surface3_1.png", alt="")
 
-                                    h6#text Ciudad de México 19:10 h
-                                        span#cursor
-
                                     .servicios__item__contain
-                                        h2.txt-big 01
-                                        h3.title-item Investigación y desarrollo  
-                                        p Nuestra experiencia con distintas tecnologías nos permite detectar tendencias del mañana para crear contenidos novedosos y, de esta forma, posicionar a nuestros clientes en nuevas dimensiones de proyección y visibilidad. Diseñamos a partir de fusionar ideas y tecnologías para desarrollar experiencias de usuario relevantes. 
-                                        a(href="#!") 
-                                            h3.icon-arrow-after Ver servicio
-                                .swiper-pagination
+                                        .servicios__item__contain__num
+                                            h2.txt-big 01
+
+                                        .servicios__item__contain__info
+                                            .swiper-pagination
+
+                                            h3.title-item Investigación y desarrollo  
+                                            p Nuestra experiencia con distintas tecnologías nos permite detectar tendencias del mañana para crear contenidos novedosos y, de esta forma, posicionar a nuestros clientes en nuevas dimensiones de proyección y visibilidad. Diseñamos a partir de fusionar ideas y tecnologías para desarrollar experiencias de usuario relevantes. 
+                                            a(href="#!") 
+                                                h3.icon-arrow-after Ver servicio
+
+
 
                             .swiper-slide 
                                 .servicios__item
@@ -144,14 +140,18 @@ block content
                                         source(srcset="img/Copia_de_coral_surface3_12.webp", type="image/webp")
                                         img.img-fluid(src="img/Copia_de_coral_surface3_12.png", alt="")
 
-                                    h6 Ciudad de México 19:10 h
                                     .servicios__item__contain
-                                        h2.txt-big 02
-                                        h3.title-item Creación de contenido
-                                        p Nuestra curiosidad y conocimiento interdisciplinario favorecen la creación de contenido dirigido a diferentes tipos de personas.
-                                        a(href="#!") 
-                                            h3.icon-arrow-after Ver servicio
-                                .swiper-pagination
+                                        .servicios__item__contain__num
+                                            h2.txt-big 02
+
+                                        .servicios__item__contain__info
+                                            .swiper-pagination
+
+                                            h3.title-item Creación de contenido
+                                            p Nuestra curiosidad y conocimiento interdisciplinario favorecen la creación de contenido dirigido a diferentes tipos de personas.
+                                            a(href="#!") 
+                                                h3.icon-arrow-after Ver servicio
+
 
                             .swiper-slide 
                                 .servicios__item
@@ -159,15 +159,17 @@ block content
                                         source(srcset="img/Copia_de_coral_surface3_13.webp", type="image/webp")
                                         img.img-fluid(src="img/Copia_de_coral_surface3_13.png", alt="")
 
-                                    h6 Ciudad de México 19:10 h
                                     .servicios__item__contain
-                                        h2.txt-big 03
-                                        h3.title-item Producción 
-                                        p La operación e integración de todos los elementos del proceso de creación hacen posible que tanto nuestras ideas como las de nuestros clientes puedan ser plasmadas de forma tangible para las personas. 
+                                        .servicios__item__contain__num
+                                            h2.txt-big 03
 
-                                        a(href="#!") 
-                                            h3.icon-arrow-after Ver servicio
-                                .swiper-pagination
+                                        .servicios__item__contain__info
+                                            .swiper-pagination
+                                            h3.title-item Producción 
+                                            p La operación e integración de todos los elementos del proceso de creación hacen posible que tanto nuestras ideas como las de nuestros clientes puedan ser plasmadas de forma tangible para las personas. 
+
+                                            a(href="#!") 
+                                                h3.icon-arrow-after Ver servicio
 
                             .swiper-slide 
                                 .servicios__item
@@ -175,16 +177,19 @@ block content
                                         source(srcset="img/Copia_de_coral_surface3_14.webp", type="image/webp")
                                         img.img-fluid(src="img/Copia_de_coral_surface3_14.png", alt="")
 
-                                    h6 Ciudad de México 19:10 h
                                     .servicios__item__contain
-                                        h2.txt-big 04
-                                        h3.title-item Orientación y asesoría
-                                        p La diversidad de talentos en el equipo posibilita que nuestras propuestas sean creativas y técnicamente viables.  
+                                        .servicios__item__contain__num
+                                            h2.txt-big 04
 
-                                        a(href="#!") 
-                                            h3.icon-arrow-after Ver servicio
+                                        .servicios__item__contain__info
+                                            .swiper-pagination
 
-                                .swiper-pagination
+                                            h3.title-item Orientación y asesoría
+                                            p La diversidad de talentos en el equipo posibilita que nuestras propuestas sean creativas y técnicamente viables.  
+
+                                            a(href="#!") 
+                                                h3.icon-arrow-after Ver servicio
+
 
             include includes/footer.pug
 

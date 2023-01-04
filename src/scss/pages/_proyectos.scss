@@ -37,11 +37,67 @@
 }
 .proyectos {
     padding-top: 256px;
-    padding-bottom: 100px;
+    // padding-bottom: 100px;
 
     @include listaProyecto;
 
-    // .contact {
-    //     padding-bottom: 0;
-    // }
+    .contact {
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .filtros {
+        padding: 18px 0;
+
+        ul {
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+
+            li {
+                font-size: var(--s);
+                height: 48px;
+                display: flex;
+                align-items: center;
+                padding: 0 24px;
+                scroll-snap-align: start;
+
+                sup {
+                    font-size: var(--h6);
+                }
+            }
+        }
+    }
+
+    .proyectos {
+        padding-top: 135px;
+
+        .lista {
+            row-gap: 60px;
+
+            .accordion-item h2 {
+                font-size: var(--h3);
+                line-height: 32px;
+                padding-right: var(--bs-gutter-x, 0.75rem);
+            }
+
+            &__data {
+                flex-wrap: nowrap;
+                white-space: nowrap;
+                min-width: 100%;
+                gap: 40px;
+                padding: 8px 16px;
+                animation: slide-left 15s linear infinite;
+
+                @keyframes slide-left {
+                    from {
+                        transform: translateX(0);
+                    }
+                    to {
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+        }
+    }
 }

@@ -27,12 +27,12 @@ function efectoFade() {
   function sectionFade() {
     var sectionFade = $(".accordion-item");
     sectionFade.each(function () {
-      var mediaqueryList = window.matchMedia("(max-width: 992px)");
+      var mediaqueryList = window.matchMedia("(max-width: 768px)");
 
       if (mediaqueryList.matches) {
-        var posSection = $(this).offset().top; //console.log("mobile home")
+        var posSection = $(this).offset().top - 400; //console.log("mobile home")
       } else {
-        var posSection = $(this).offset().top - 500; //console.log("d home");
+        var posSection = $(this).offset().top - 300; //console.log("d home");
       } //var posSection = $(this).offset().top - 300;
 
 
@@ -43,11 +43,13 @@ function efectoFade() {
         // $(this).addClass("show");
         // var myCollapse = step.querySelector(".accordion-collapse");
         // var myCollapse = step;
-        var myCollapse = $(this);
-        var bsCollapse = new bootstrap.Collapse(myCollapse, {
-          toggle: true
-        });
-      } else {// $(this).removeClass("show");
+        // var myCollapse = $(this).find(".accordion-collapse");
+        // var bsCollapse = new bootstrap.Collapse(myCollapse, {
+        //     toggle: true,
+        // });
+        $(this).find(".accordion-collapse").addClass("show");
+      } else {
+        $(this).find(".accordion-collapse").removeClass("show");
       }
     });
   }
@@ -56,8 +58,9 @@ function efectoFade() {
   $(document).scroll(function () {
     sectionFade();
   });
-} // efectoFade();
-// const blogs = document.querySelectorAll(".accordion-item");
+}
+
+efectoFade(); // const blogs = document.querySelectorAll(".accordion-item");
 // const observer = new IntersectionObserver(function (entries, observer) {
 //     entries.forEach((entry) => {
 //         if (!entry.isIntersecting) {
@@ -67,7 +70,6 @@ function efectoFade() {
 //     });
 // });
 // blogs.forEach((blog) => observer.observe(blog));
-
 
 var itemLista = document.querySelectorAll(".accordion-item");
 var itemCollapse = document.querySelectorAll(".accordion-collapse");
@@ -115,6 +117,39 @@ try {
   } finally {
     if (_didIteratorError) {
       throw _iteratorError;
+    }
+  }
+}
+
+var combos = document.querySelectorAll(".combo");
+var _iteratorNormalCompletion2 = true;
+var _didIteratorError2 = false;
+var _iteratorError2 = undefined;
+
+try {
+  for (var _iterator2 = combos[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    var combosElem = _step2.value;
+    var select = combosElem.querySelector("select");
+  } // var span = document.getElementsByTagName("span")[0];
+  // var select = document.getElementsByTagName("select")[0];
+  // span.addEventListener("mousedown", function () {
+  //     var evt = event;
+  //     setTimeout(function () {
+  //         select.dispatchEvent(evt);
+  //     });
+  // });
+
+} catch (err) {
+  _didIteratorError2 = true;
+  _iteratorError2 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+      _iterator2["return"]();
+    }
+  } finally {
+    if (_didIteratorError2) {
+      throw _iteratorError2;
     }
   }
 }

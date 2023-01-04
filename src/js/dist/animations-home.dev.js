@@ -69,17 +69,30 @@ var playVideo = function playVideo() {
   var cursorPoint = document.querySelector(".cursor");
   var cursorPointPlay = document.querySelector(".cursor.pause");
   var wrapVideo = document.querySelector(".hero--video");
+  var wrapVideo_vie = document.querySelector("#video-desktop");
   var options = {
     fluid: true,
     responsive: true
   };
   var player = videojs("video-desktop", options, function onPlayerReady() {// videojs.log("Your player is ready!");
   });
+  var mediaquery = window.matchMedia("(max-width: 768px)");
 
-  wrapVideo.onclick = function () {
-    player.play(); // cursorPoint.classList.toggle("hide");
-    // cursorPointPlay.classList.toggle("show");
-  }; // cursorPointPlay.onclick = () => {
+  if (mediaquery.matches) {
+    player.play();
+  } else {
+    wrapVideo.onclick = function () {
+      if (player.paused()) {
+        player.play();
+      } else {
+        player.pause();
+      }
+
+      wrapVideo.classList.add("play");
+      cursorPoint.classList.add("hide"); // cursorPoint.remove();
+      // cursorPointPlay.classList.toggle("show");
+    };
+  } // cursorPointPlay.onclick = () => {
   //     player.pause();
   //     cursorPoint.classList.add("hide");
   //     cursorPointPlay.classList.remove("show");
@@ -106,8 +119,7 @@ var playVideo = function playVideo() {
 };
 
 playVideo();
-cursor();
-cursorPlay();
+cursor(); // cursorPlay();
 
 var animTxt = function animTxt(elem, texto) {
   // const dataApi = document.querySelectorAll(
@@ -133,14 +145,13 @@ var animTxt = function animTxt(elem, texto) {
     },
     ease: "none"
   });
-};
+}; // animTxt("#one", "Ciudad de México 19:10 h");
+// animTxt("#two", "Elevación 2.240 m");
+// animTxt("#tre", "Superficie 1.485 km²");
+// animTxt("#fou", "22 °C");
+// animTxt("#fiv", "Viento del N a 18 km/h");
+// animTxt("#six", "Humedad 30%");
 
-animTxt("#one", "Ciudad de México 19:10 h");
-animTxt("#two", "Elevación 2.240 m");
-animTxt("#tre", "Superficie 1.485 km²");
-animTxt("#fou", "22 °C");
-animTxt("#fiv", "Viento del N a 18 km/h");
-animTxt("#six", "Humedad 30%");
 
 var hoverServices = function hoverServices() {
   var itemsServices = document.querySelectorAll(".servicios__item");
@@ -349,9 +360,11 @@ var animContenidoImage = function animContenidoImage(trigger, elem) {
   var controller = new ScrollMagic.Controller();
   var info = new ScrollMagic.Scene({
     triggerElement: trigger,
-    triggerHook: 0.5,
+    triggerHook: 0.6,
     duration: 600
   }).setTween(elem, 0.5, {
+    scale: 1
+  }, {
     scale: 1.5
   } // TweenMax.fromTo(
   //     elem,
@@ -368,6 +381,8 @@ var animContenidoImage = function animContenidoImage(trigger, elem) {
   // )
   ).addTo(controller);
 };
+
+animContenidoImage(".servicios--pic", ".servicios--pic img");
 
 var objParallaxSimple = function objParallaxSimple(trigger, elem) {
   var boletosArr = gsap.utils.toArray(elem);
@@ -410,13 +425,12 @@ var animLetterDos = function animLetterDos() {
     target: ".projects .splt"
   });
 }; // animLetter();
+// animLetterDos(); // ok pero revisar para quqe no se corten las palabras
 
 
-animLetterDos();
 objLoadVerticalLetter(".hero--contain .splt"); // objText(".hero h1");
 
-animContenidoCorto(".projects", ".projects h2");
-animContenidoImage(".servicios--pic", ".servicios--pic img"); // objParallaxArray(".papers__item");
+animContenidoCorto(".projects", ".projects h2"); // objParallaxArray(".papers__item");
 // objParallaxSimple(".contact", ".contact--access *");
 // objParallaxSimple(".contact", ".contact--data .col-lg-3");
 

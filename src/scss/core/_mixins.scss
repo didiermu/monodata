@@ -17,6 +17,17 @@
                 border-bottom: 1px solid var(--bg-prm);
                 padding-bottom: 8px;
             }
+
+            .accordion-collapse {
+                transition: 0.3s ease-in-out all;
+                height: 0;
+                overflow: hidden;
+                display: block;
+
+                &.show {
+                    height: 600px;
+                }
+            }
         }
 
         &__data {
@@ -55,8 +66,34 @@
 
         &.related {
             .accordion-collapse {
-                height: 250px;
+                height: 250px !important;
                 overflow: hidden;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .lista {
+            .accordion-item {
+                .accordion-collapse {
+                    --alto-image: calc(260px + 500 * ((100vw - 360px) / 768));
+                    picture {
+                        display: block;
+                        height: var(--alto-image);
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+
+                    &.show {
+                        height: var(--alto-image);
+                    }
+                }
             }
         }
     }
@@ -64,11 +101,35 @@
 
 @mixin info-api {
     .info--api {
+        .row {
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            min-width: 100%;
+            gap: 300px;
+        }
+
         &--content {
-            justify-content: space-between;
             height: 30px;
+            // padding-top: 10px;
+            // padding-bottom: 10px;
+            display: flex;
+            // flex-shrink: 0;
+            align-items: center;
+            justify-content: space-between;
+            animation: slide-left 30s linear infinite;
+
+            @keyframes slide-left {
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(-100%);
+                }
+            }
 
             h6 {
+                white-space: nowrap;
+                margin-right: 100px;
                 font-family: var(--sec-regular);
                 color: var(--bg-sec);
 
@@ -76,27 +137,64 @@
                     color: var(--bg-prm);
                 }
 
-                // &#one {
-                //     width: 162px;
-                // }
-                // &#two {
-                //     width: 115px;
-                // }
-                // &#tre {
-                //     width: 128px;
-                // }
-                // &#fou {
-                //     width: 34px;
-                // }
-                // &#fiv {
-                //     width: 149px;
-                // }
-                // &#six {
-                // width: 75px;
-                // }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
 
-                // width: calc(100% / 6);
-                // text-align: center;
+            // justify-content: space-between;
+            // height: 30px;
+
+            // &#one {
+            //     width: 162px;
+            // }
+            // &#two {
+            //     width: 115px;
+            // }
+            // &#tre {
+            //     width: 128px;
+            // }
+            // &#fou {
+            //     width: 34px;
+            // }
+            // &#fiv {
+            //     width: 149px;
+            // }
+            // &#six {
+            // width: 75px;
+            // }
+
+            // width: calc(100% / 6);
+            // text-align: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .info--api--content {
+            height: auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            animation: slide-left 15s linear infinite;
+
+            @keyframes slide-left {
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(-100%);
+                }
+            }
+
+            h6 {
+                white-space: nowrap;
+                margin-right: 100px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }

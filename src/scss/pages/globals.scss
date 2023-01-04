@@ -36,8 +36,11 @@
     .icon-arrow-after {
         @media (hover: hover) {
             &:hover {
-                font-family: var(--prm-medium);
                 color: var(--bg-prm);
+
+                &::after {
+                    margin-left: 1em;
+                }
             }
         }
     }
@@ -121,7 +124,7 @@
     }
 
     a {
-        color: inherit;
+        color: inherit !important;
         text-decoration: none;
     }
 }
@@ -152,6 +155,11 @@
         }
 
         h4 {
+            line-height: 24px;
+        }
+
+        .txt-s {
+            font-size: var(--s);
             line-height: 24px;
         }
     }

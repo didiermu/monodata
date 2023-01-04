@@ -151,7 +151,8 @@
 
             .btn-ham {
                 &::before {
-                    content: "X";
+                    font-family: "icomoon" !important;
+                    content: "\e90c";
                 }
             }
 
@@ -191,7 +192,7 @@
             z-index: 9;
 
             &::before {
-                content: "MENU";
+                content: "Menú";
                 font-size: x-large;
                 transition: 0.3s ease-in-out all;
             }

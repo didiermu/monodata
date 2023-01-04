@@ -49,17 +49,24 @@
 
 @mixin combo {
     cursor: pointer;
+    background: url(../img/arrow-bottom.svg) no-repeat right center / 20px;
+    padding-right: 30px;
 
-    &::after {
-        font-family: "icomoon" !important;
-        content: "\e90b";
-        font-size: x-small;
-        margin-left: 5px;
-    }
+    // &::after {
+    //     font-family: "icomoon" !important;
+    //     content: "\e90b";
+    //     font-size: x-small;
+    //     margin-left: 5px;
+    // }
 
     select {
         appearance: none;
         border: 0;
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
     }
 }
 

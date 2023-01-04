@@ -57,16 +57,30 @@ const playVideo = () => {
     const cursorPoint = document.querySelector(".cursor");
     const cursorPointPlay = document.querySelector(".cursor.pause");
     const wrapVideo = document.querySelector(".hero--video");
+    const wrapVideo_vie = document.querySelector("#video-desktop");
     var options = { fluid: true, responsive: true };
     var player = videojs("video-desktop", options, function onPlayerReady() {
         // videojs.log("Your player is ready!");
     });
 
-    wrapVideo.onclick = () => {
+    const mediaquery = window.matchMedia("(max-width: 768px)");
+    if (mediaquery.matches) {
         player.play();
-        // cursorPoint.classList.toggle("hide");
-        // cursorPointPlay.classList.toggle("show");
-    };
+    } else {
+        wrapVideo.onclick = () => {
+            if (player.paused()) {
+                player.play();
+            } else {
+                player.pause();
+            }
+
+            wrapVideo.classList.add("play");
+            cursorPoint.classList.add("hide");
+
+            // cursorPoint.remove();
+            // cursorPointPlay.classList.toggle("show");
+        };
+    }
 
     // cursorPointPlay.onclick = () => {
     //     player.pause();
@@ -95,20 +109,38 @@ const playVideo = () => {
 };
 
 const swiper = new Swiper(".swiper", {
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+    autoplay: {
+        speed: 3000,
     },
-    pagination: {
-        el: ".swiper-pagination",
-        type: "custom",
-        clickable: true,
-        renderCustom: function (swiperContent, currentClass, totalClass) {
-            return currentClass + " / " + totalClass;
+
+    breakpoints: {
+        320: {
+            allowTouchMove: true,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "bullets",
+            },
+        },
+        768: {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                type: "custom",
+                clickable: true,
+                renderCustom: function (
+                    swiperContent,
+                    currentClass,
+                    totalClass
+                ) {
+                    return currentClass + " / " + totalClass;
+                },
+            },
         },
     },
 });
 
 playVideo();
 cursor();
-cursorPlay();

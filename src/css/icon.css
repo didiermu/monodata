@@ -28,6 +28,10 @@
   
 }
 
+.icon-close:before {
+  content: "\e90c";
+}
+
 .icon-arrow-bottom:before {
   content: "\e90b";
 }
@@ -81,4 +85,5 @@
   content: "\e90a";
   font-size: large;
   margin-left: 0.5em;
+  transition: 0.3s ease-in-out all;
 }

@@ -51,18 +51,20 @@
 
 .combo {
   cursor: pointer;
-}
-
-.combo::after {
-  font-family: "icomoon" !important;
-  content: "\e90b";
-  font-size: x-small;
-  margin-left: 5px;
+  background: url(../img/arrow-bottom.svg) no-repeat right center/20px;
+  padding-right: 30px;
 }
 
 .combo select {
   appearance: none;
   border: 0;
+}
+
+@media (max-width: 768px) {
+  .combo {
+    display: flex;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=_forms.css.map */

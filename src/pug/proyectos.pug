@@ -1,8 +1,8 @@
 extends includes/head.pug
 block head-page
     title Monodata | Proyectos
+    script(src="https://code.jquery.com/jquery-3.6.3.min.js", integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=", crossorigin="anonymous")
     script(src="js/anim-proyectos.min.js" defer) 
-    //- script(src="https://code.jquery.com/jquery-3.6.3.min.js", integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=", crossorigin="anonymous")
 
 block content
     -ruta = ""
@@ -72,8 +72,8 @@ block content
                                 .accordion-collapse.collapse(id="collapse"+n aria-labelledby='heading'+n, data-bs-parent='#accordionExample')
                                     .accordion-body.p-0
                                         picture 
-                                            source(srcset="img/pr1.webp", type="image/webp")
-                                            img.img-fluid.w-100(src="img/pr1.jpg", alt="")
+                                            source(srcset="img/image_3-1.webp", type="image/webp")
+                                            img.img-fluid.w-100(src="img/image_3-1.jpg", alt="")
 
                         a(href="proyecto-detalle.html") 
                             .accordion-item
@@ -91,8 +91,8 @@ block content
                                 .accordion-collapse.collapse(id="collapse"+n aria-labelledby='heading'+n, data-bs-parent='#accordionExample')
                                     .accordion-body.p-0
                                         picture 
-                                            source(srcset="img/pr1.webp", type="image/webp")
-                                            img.img-fluid.w-100(src="img/pr1.jpg", alt="")
+                                            source(srcset="img/image_3-2.webp", type="image/webp")
+                                            img.img-fluid.w-100(src="img/image_3-2.jpg", alt="")
 
             include includes/footer
 

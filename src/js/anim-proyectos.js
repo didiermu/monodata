@@ -26,12 +26,12 @@ function efectoFade() {
     function sectionFade() {
         var sectionFade = $(".accordion-item");
         sectionFade.each(function () {
-            var mediaqueryList = window.matchMedia("(max-width: 992px)");
+            var mediaqueryList = window.matchMedia("(max-width: 768px)");
             if (mediaqueryList.matches) {
-                var posSection = $(this).offset().top;
+                var posSection = $(this).offset().top - 400;
                 //console.log("mobile home")
             } else {
-                var posSection = $(this).offset().top - 500;
+                var posSection = $(this).offset().top - 300;
                 //console.log("d home");
             }
 
@@ -44,12 +44,13 @@ function efectoFade() {
                 // var myCollapse = step.querySelector(".accordion-collapse");
                 // var myCollapse = step;
 
-                var myCollapse = $(this);
-                var bsCollapse = new bootstrap.Collapse(myCollapse, {
-                    toggle: true,
-                });
+                // var myCollapse = $(this).find(".accordion-collapse");
+                // var bsCollapse = new bootstrap.Collapse(myCollapse, {
+                //     toggle: true,
+                // });
+                $(this).find(".accordion-collapse").addClass("show");
             } else {
-                // $(this).removeClass("show");
+                $(this).find(".accordion-collapse").removeClass("show");
             }
         });
     }
@@ -61,7 +62,7 @@ function efectoFade() {
     });
 }
 
-// efectoFade();
+efectoFade();
 
 // const blogs = document.querySelectorAll(".accordion-item");
 
@@ -107,3 +108,19 @@ for (const itemListaElem of itemLista) {
         // });
     };
 }
+
+const combos = document.querySelectorAll(".combo");
+
+for (const combosElem of combos) {
+    const select = combosElem.querySelector("select");
+}
+
+// var span = document.getElementsByTagName("span")[0];
+// var select = document.getElementsByTagName("select")[0];
+
+// span.addEventListener("mousedown", function () {
+//     var evt = event;
+//     setTimeout(function () {
+//         select.dispatchEvent(evt);
+//     });
+// });

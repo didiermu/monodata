@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header {
   height: 96px;
   position: sticky;
@@ -133,7 +134,8 @@
     top: 89%;
   }
   .header.open .btn-ham::before {
-    content: "X";
+    font-family: "icomoon" !important;
+    content: "\e90c";
   }
   .header--row {
     justify-content: space-between;
@@ -151,7 +153,7 @@
     z-index: 9;
   }
   .header .btn-ham::before {
-    content: "MENU";
+    content: "Menú";
     font-size: x-large;
     transition: 0.3s ease-in-out all;
   }

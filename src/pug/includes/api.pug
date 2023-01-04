@@ -1,0 +1,52 @@
+script.
+    const apiClima = () => {
+    // Datos:latitude, longitude, resolvedAddres,humidity, windspeed, uvindex, solarradiation description, pressure, conditions.
+
+    fetch(
+        "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/ciudad%20de%20mexico/today?unitGroup=metric&include=hours&key=WYJ95FQXYZ7RLMEZBQVSG4BLX&contentType=json"
+    )
+        .then((response) => response.json())
+        .then((data) => {
+            // console.log(data.days);
+
+            animTxt("#one", "Latitude:" + data.latitude);
+            animTxt("#two", "Longitude:" + data.longitude);
+            animTxt("#tre", data.resolvedAddress);
+            data.days.map((item) => {
+                animTxt("#fou", "Humidity:" + item.humidity);
+                animTxt("#fiv", "Windspeed:" + item.windspeed);
+                animTxt("#six", "Solar radiation:" + item.solarradiation);
+                animTxt("#sev", "Description:" + item.description);
+                animTxt("#eig", "Pressure:" + item.pressure);
+                animTxt("#nin", "Conditions:" + item.conditions);
+            });
+        });
+    };
+
+    apiClima();
+
+
+section.info--api 
+    .container-fluid 
+        .row 
+            .col-12.info--api--content
+                h6#one Ciudad de México 19:10 h
+                h6#two Elevación 2.240 m
+                h6#tre Superficie 1.485 km²
+                h6#fou 22 °C
+                h6#fiv Viento del N a 18 km/h
+                h6#six Humedad 30%
+                h6#sev Humedad 30%
+                h6#eig Humedad 30%
+                h6#nin Humedad 30%
+
+            //- .col-12.info--api--content
+            //-     h6#one Ciudad de México 19:10 h
+            //-     h6#two Elevación 2.240 m
+            //-     h6#tre Superficie 1.485 km²
+            //-     h6#fou 22 °C
+            //-     h6#fiv Viento del N a 18 km/h
+            //-     h6#six Humedad 30%
+            //-     h6#sev Humedad 30%
+            //-     h6#eig Humedad 30%
+            //-     h6#nin Humedad 30%

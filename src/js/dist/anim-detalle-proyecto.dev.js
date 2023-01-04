@@ -67,17 +67,30 @@ var playVideo = function playVideo() {
   var cursorPoint = document.querySelector(".cursor");
   var cursorPointPlay = document.querySelector(".cursor.pause");
   var wrapVideo = document.querySelector(".hero--video");
+  var wrapVideo_vie = document.querySelector("#video-desktop");
   var options = {
     fluid: true,
     responsive: true
   };
   var player = videojs("video-desktop", options, function onPlayerReady() {// videojs.log("Your player is ready!");
   });
+  var mediaquery = window.matchMedia("(max-width: 768px)");
 
-  wrapVideo.onclick = function () {
-    player.play(); // cursorPoint.classList.toggle("hide");
-    // cursorPointPlay.classList.toggle("show");
-  }; // cursorPointPlay.onclick = () => {
+  if (mediaquery.matches) {
+    player.play();
+  } else {
+    wrapVideo.onclick = function () {
+      if (player.paused()) {
+        player.play();
+      } else {
+        player.pause();
+      }
+
+      wrapVideo.classList.add("play");
+      cursorPoint.classList.add("hide"); // cursorPoint.remove();
+      // cursorPointPlay.classList.toggle("show");
+    };
+  } // cursorPointPlay.onclick = () => {
   //     player.pause();
   //     cursorPoint.classList.add("hide");
   //     cursorPointPlay.classList.remove("show");
@@ -104,20 +117,33 @@ var playVideo = function playVideo() {
 };
 
 var swiper = new Swiper(".swiper", {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+  autoplay: {
+    speed: 3000
   },
-  pagination: {
-    el: ".swiper-pagination",
-    type: "custom",
-    clickable: true,
-    renderCustom: function renderCustom(swiperContent, currentClass, totalClass) {
-      return currentClass + " / " + totalClass;
+  breakpoints: {
+    320: {
+      allowTouchMove: true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets"
+      }
+    },
+    768: {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "custom",
+        clickable: true,
+        renderCustom: function renderCustom(swiperContent, currentClass, totalClass) {
+          return currentClass + " / " + totalClass;
+        }
+      }
     }
   }
 });
 playVideo();
 cursor();
-cursorPlay();
 //# sourceMappingURL=anim-detalle-proyecto.dev.js.map
