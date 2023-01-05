@@ -306,8 +306,23 @@ const clicTabla = () => {
                 },
             });
 
+            setTimeout(() => {
+                window.scroll(
+                    0,
+                    grid_itemsElem.closest(".grid-item").offsetTop + 400
+                );
+            }, 100);
+
             // sliderTabla(sliderItem);
         };
+
+        /// TOGGLE
+        // const grid_items_open = document.querySelectorAll(".pause");
+        // for (const grid_items_openElem of grid_items_open) {
+        //     grid_items_openElem.onclick = () => {
+        //         grid_items_openElem.classList.remove("active");
+        //     };
+        // }
     }
 
     ///// close

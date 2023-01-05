@@ -57,6 +57,7 @@
 
 .icon-search:before {
   content: "\e903";
+  color: var(--bg-prm);
 }
 .icon-Vimeo:before {
   content: "\e904";
@@ -86,4 +87,6 @@
   font-size: large;
   margin-left: 0.5em;
   transition: 0.3s ease-in-out all;
+  transform: translateX(0px);
+  display: inline-block;
 }

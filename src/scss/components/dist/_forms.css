@@ -58,6 +58,8 @@
 .combo select {
   appearance: none;
   border: 0;
+  background: none;
+  color: inherit;
 }
 
 @media (max-width: 768px) {

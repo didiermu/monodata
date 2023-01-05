@@ -86,6 +86,7 @@
   }
   .footer .contact--wrap {
     margin-bottom: 126px;
+    overflow-x: hidden;
   }
   .footer .contact--marquee h2 {
     font-size: calc(60px + 10 * ((100vw - 360px) / 1024));

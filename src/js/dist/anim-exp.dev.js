@@ -396,8 +396,18 @@ var clicTabla = function clicTabla() {
             type: "bullets",
             clickable: true
           }
-        }); // sliderTabla(sliderItem);
-      };
+        });
+        setTimeout(function () {
+          window.scroll(0, grid_itemsElem.closest(".grid-item").offsetTop + 400);
+        }, 100); // sliderTabla(sliderItem);
+      }; /// TOGGLE
+      // const grid_items_open = document.querySelectorAll(".pause");
+      // for (const grid_items_openElem of grid_items_open) {
+      //     grid_items_openElem.onclick = () => {
+      //         grid_items_openElem.classList.remove("active");
+      //     };
+      // }
+
     };
 
     for (var _iterator5 = grid_items[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {

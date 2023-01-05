@@ -2,7 +2,7 @@
     overflow-x: hidden;
     position: relative;
     font-family: var(--prm-regular);
-    background: var(--bg-sec);
+    background: #fff;
     color: var(--bg-prm);
     scroll-behavior: smooth;
 
@@ -39,7 +39,7 @@
                 color: var(--bg-prm);
 
                 &::after {
-                    margin-left: 1em;
+                    transform: translateX(10px);
                 }
             }
         }

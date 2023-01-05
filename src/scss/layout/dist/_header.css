@@ -120,7 +120,7 @@
     content: "X";
   }
   .header .icon-search {
-    right: 32px;
+    right: 16px;
   }
   .header.open {
     height: 100vh;

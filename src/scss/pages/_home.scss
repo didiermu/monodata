@@ -66,6 +66,8 @@
 
         .icon-arrow-after {
             text-align: right;
+            width: max-content;
+            margin-left: auto;
         }
     }
 
@@ -86,6 +88,7 @@
                 height: 100%;
                 object-position: center;
                 object-fit: cover;
+                transform: scale(1.5);
             }
         }
 
@@ -253,21 +256,6 @@
 @media (min-width: 1440px) {
     .home {
         .servicios__item {
-            // &:nth-child(1) {
-            //     &.active {
-            //         p {
-            //             height: calc(110px + 130 * ((100vw - 1440px) / 1920));
-            //         }
-            //     }
-            // }
-            // &:nth-child(2) {
-            //     &.active {
-            //         p {
-            //             height: calc(44px + 90 * ((100vw - 1440px) / 1920));
-            //         }
-            //     }
-            // }
-
             &:nth-child(3) {
                 &.active {
                     p {
@@ -378,8 +366,8 @@
 
                 img {
                     top: 0 !important;
-                    right: -30% !important;
-                    width: 100% !important;
+                    right: -20% !important;
+                    width: 80% !important;
                     opacity: 1;
                     animation: anim-element 50s linear infinite;
                 }
@@ -388,7 +376,7 @@
                     position: relative;
 
                     &__num {
-                        height: calc(400px + 700 * (100vw - 360px) / 768);
+                        height: calc(300px + 700 * (100vw - 360px) / 768);
                     }
 
                     &__info {
