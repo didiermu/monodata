@@ -25,6 +25,7 @@
 function efectoFade() {
     function sectionFade() {
         var sectionFade = $(".accordion-item");
+
         sectionFade.each(function () {
             var mediaqueryList = window.matchMedia("(max-width: 768px)");
             if (mediaqueryList.matches) {
@@ -35,19 +36,9 @@ function efectoFade() {
                 //console.log("d home");
             }
 
-            //var posSection = $(this).offset().top - 300;
             var scrolleo = $(window).scrollTop();
 
             if (scrolleo > posSection) {
-                // $("section").removeClass("show");
-                // $(this).addClass("show");
-                // var myCollapse = step.querySelector(".accordion-collapse");
-                // var myCollapse = step;
-
-                // var myCollapse = $(this).find(".accordion-collapse");
-                // var bsCollapse = new bootstrap.Collapse(myCollapse, {
-                //     toggle: true,
-                // });
                 $(this).find(".accordion-collapse").addClass("show");
             } else {
                 $(this).find(".accordion-collapse").removeClass("show");
@@ -60,6 +51,8 @@ function efectoFade() {
     $(document).scroll(function () {
         sectionFade();
     });
+
+    document.querySelector("#collapse1").classList.add("show");
 }
 
 efectoFade();
@@ -124,3 +117,21 @@ for (const combosElem of combos) {
 //         select.dispatchEvent(evt);
 //     });
 // });
+
+//////////////////////// CLASS BODY
+
+if (window.location.pathname.includes("proyectos")) {
+    document.querySelector("body").classList.add("body-projects");
+}
+//////////////////////// FILTROS
+
+const filtro = document.querySelectorAll(".filtros li");
+
+for (const filtroElem of filtro) {
+    filtroElem.onclick = () => {
+        for (const filtroElem of filtro) {
+            filtroElem.classList.remove("active");
+        }
+        filtroElem.classList.add("active");
+    };
+}

@@ -33,20 +33,11 @@ function efectoFade() {
         var posSection = $(this).offset().top - 400; //console.log("mobile home")
       } else {
         var posSection = $(this).offset().top - 300; //console.log("d home");
-      } //var posSection = $(this).offset().top - 300;
-
+      }
 
       var scrolleo = $(window).scrollTop();
 
       if (scrolleo > posSection) {
-        // $("section").removeClass("show");
-        // $(this).addClass("show");
-        // var myCollapse = step.querySelector(".accordion-collapse");
-        // var myCollapse = step;
-        // var myCollapse = $(this).find(".accordion-collapse");
-        // var bsCollapse = new bootstrap.Collapse(myCollapse, {
-        //     toggle: true,
-        // });
         $(this).find(".accordion-collapse").addClass("show");
       } else {
         $(this).find(".accordion-collapse").removeClass("show");
@@ -58,6 +49,7 @@ function efectoFade() {
   $(document).scroll(function () {
     sectionFade();
   });
+  document.querySelector("#collapse1").classList.add("show");
 }
 
 efectoFade(); // const blogs = document.querySelectorAll(".accordion-item");
@@ -138,6 +130,7 @@ try {
   //         select.dispatchEvent(evt);
   //     });
   // });
+  //////////////////////// CLASS BODY
 
 } catch (err) {
   _didIteratorError2 = true;
@@ -150,6 +143,68 @@ try {
   } finally {
     if (_didIteratorError2) {
       throw _iteratorError2;
+    }
+  }
+}
+
+if (window.location.pathname.includes("proyectos")) {
+  document.querySelector("body").classList.add("body-projects");
+} //////////////////////// FILTROS
+
+
+var filtro = document.querySelectorAll(".filtros li");
+var _iteratorNormalCompletion3 = true;
+var _didIteratorError3 = false;
+var _iteratorError3 = undefined;
+
+try {
+  var _loop = function _loop() {
+    var filtroElem = _step3.value;
+
+    filtroElem.onclick = function () {
+      var _iteratorNormalCompletion4 = true;
+      var _didIteratorError4 = false;
+      var _iteratorError4 = undefined;
+
+      try {
+        for (var _iterator4 = filtro[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+          var _filtroElem = _step4.value;
+
+          _filtroElem.classList.remove("active");
+        }
+      } catch (err) {
+        _didIteratorError4 = true;
+        _iteratorError4 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+            _iterator4["return"]();
+          }
+        } finally {
+          if (_didIteratorError4) {
+            throw _iteratorError4;
+          }
+        }
+      }
+
+      filtroElem.classList.add("active");
+    };
+  };
+
+  for (var _iterator3 = filtro[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+    _loop();
+  }
+} catch (err) {
+  _didIteratorError3 = true;
+  _iteratorError3 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+      _iterator3["return"]();
+    }
+  } finally {
+    if (_didIteratorError3) {
+      throw _iteratorError3;
     }
   }
 }

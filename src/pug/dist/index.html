@@ -33,7 +33,7 @@
         <header class="header">
           <div class="container-fluid">
             <div class="row align-items-center header--row">
-              <div class="col-lg-1 header--logo"><a href="../"> <img class="img-fluid" src="img/Monodata.svg" alt="monodata"></a></div>
+              <div class="col-lg-1 header--logo"><a href="./"> <img class="img-fluid" src="img/Monodata.svg" alt="monodata"></a></div>
               <div class="btn-ham navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></div>
               <div class="col-lg-11 header--navegacion d-flex">
                 <nav class="navbar-expand-lg">
@@ -57,19 +57,59 @@
           </div>
         </header>
         <main class="home">
+          <script>
+            const apiClima = () => {
+            // Datos:latitude, longitude, resolvedAddres,humidity, windspeed, uvindex, solarradiation description, pressure, conditions.
+            
+            fetch(
+                "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/ciudad%20de%20mexico/today?unitGroup=metric&include=hours&key=WYJ95FQXYZ7RLMEZBQVSG4BLX&contentType=json"
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    // console.log(data.days);
+            
+                    animTxt("#one", "Latitude:" + data.latitude);
+                    animTxt("#two", "Longitude:" + data.longitude);
+                    animTxt("#tre", data.resolvedAddress);
+                    data.days.map((item) => {
+                        animTxt("#fou", "Humidity:" + item.humidity);
+                        animTxt("#fiv", "Windspeed:" + item.windspeed);
+                        animTxt("#six", "Solar radiation:" + item.solarradiation);
+                        animTxt("#sev", "Description:" + item.description);
+                        animTxt("#eig", "Pressure:" + item.pressure);
+                        animTxt("#nin", "Conditions:" + item.conditions);
+                    });
+                });
+            };
+            
+            apiClima();
+            
+            
+          </script>
           <section class="info--api"> 
             <div class="container-fluid"> 
               <div class="row"> 
                 <div class="col-12 info--api--content">
-                  <h6 id="one">Ciudad de México 19:10 h</h6>
-                  <h6 id="two">Elevación 2.240 m</h6>
-                  <h6 id="tre">Superficie 1.485 km²</h6>
-                  <h6 id="fou">22 °C</h6>
-                  <h6 id="fiv">Viento del N a 18 km/h</h6>
-                  <h6 id="six">Humedad 30%</h6>
-                  <h6 id="sev">Humedad 30%</h6>
-                  <h6 id="eig">Humedad 30%</h6>
-                  <h6 id="nin">Humedad 30%</h6>
+                  <h6 id="one">Latitude -99.9999</h6>
+                  <h6 id="two">Longitude -99.9999</h6>
+                  <h6 id="tre">Ciudad de México CDXM Mexico</h6>
+                  <h6 id="fou">Humidity 44.0</h6>
+                  <h6 id="fiv">Windspeed 16</h6>
+                  <h6 id="six">Solar radiation 230.6</h6>
+                  <h6 id="sev">Description Clear conditions throtug the day</h6>
+                  <h6 id="eig">Pressure 1000</h6>
+                  <h6 id="nin">Conditions Clear</h6>
+                </div>
+                <div class="col-12 info--api--content">
+                  <h6 id="one">Latitude -99.9999</h6>
+                  <h6 id="two">Longitude -99.9999</h6>
+                  <h6 id="tre">Ciudad de México CDXM Mexico</h6>
+                  <h6 id="fou">Humidity 44.0</h6>
+                  <h6 id="fiv">Windspeed 16</h6>
+                  <h6 id="six">Solar radiation 230.6</h6>
+                  <h6 id="sev">Description Clear conditions throtug the day</h6>
+                  <h6 id="eig">Pressure 1000</h6>
+                  <h6 id="nin">Conditions Clear</h6>
                 </div>
               </div>
             </div>
@@ -160,7 +200,7 @@
               </div>
             </div>
             <div class="container-fluid" id="services-m">
-              <div class="swiper">
+              <div class="swiper swiper-mobile">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide"> 
                     <div class="servicios__item active">

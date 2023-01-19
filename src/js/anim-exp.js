@@ -272,10 +272,10 @@ const clicTabla = () => {
                         .classList.contains("active")
                 ) {
                     toggleArray(clase);
+                } else {
+                    // removeArray(clase);
+                    // console.log("no");
                 }
-                // else {
-                //     removeArray(clase);
-                // }
             };
 
             condicion("0", "first");

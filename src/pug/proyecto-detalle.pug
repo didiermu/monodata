@@ -3,7 +3,7 @@ block head-page
     title Monodata | Proyectos detalle
     link(href='https://vjs.zencdn.net/7.20.3/video-js.css', rel='stylesheet')
     script(src='https://vjs.zencdn.net/7.20.3/video.min.js')
-    script(src='js/scroll-smooth.min.js' defer)
+    //- script(src='js/scroll-smooth.min.js' defer)
     script(src="js/anim-detalle-proyecto.min.js" defer) 
 
 block content
@@ -29,7 +29,6 @@ block content
                     .accordion-collapse.collapse.show(id="collapse", aria-labelledby='heading', data-bs-parent='#accordionExample')
                         .accordion-body.p-0
                             .hero--video
-                                //- .cursor.pause.hide
                                 .cursor.play
                                 video#video-desktop.video-js(muted playsinline preload loop poster="img/Reel_placeholder.jpg") 
                                     source(src="video/TEASER_KIA-MOTION.mp4", type="video/mp4")
@@ -43,82 +42,78 @@ block content
                     .info-detalle-quotes.offset-lg-7.col-lg-5.offset-2
                         p.txt-l Tomamos como base el concepto inspirado en el movimiento de la nueva imagen de Kia para representar la innovación en la marca creando en tiempo real patrones dinámicos a través de proyecciones en multicapas y veinte cuadriláteros luminosos en forma de pasaje.  
 
-            section.galeria 
-                .swiper 
-                    .swiper-wrapper
-                        .swiper-slide
-                            picture 
-                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
-                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+            section.galeria
+                .galeria--banner 
+                    picture 
+                        source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
+                        img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
 
-                        .swiper-slide
-                            picture 
-                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
-                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+                    h3.txt-xl.icon-icon-plus(data-bs-toggle="modal", data-bs-target="#exampleModal") Ampliar
 
-                        .swiper-slide
-                            picture 
-                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
-                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+                .modal.fade#exampleModal(aria-labelledby='exampleModalLabel', aria-hidden='true')
+                    .modal-dialog.modal-dialog-centered.modal-fullscreen
+                        .modal-content
+                            button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
 
-                        .swiper-slide
-                            picture 
-                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
-                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+                            .modal-body
+                                .swiper 
+                                    .swiper-wrapper
+                                        .swiper-slide
+                                            picture 
+                                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
+                                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
 
-                    .swiper-navigation
-                        .swiper-nav
-                            .swiper-button-prev
-                            .swiper-button-next
-                        .swiper-pagination
+                                        .swiper-slide
+                                            picture 
+                                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
+                                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+
+                                        .swiper-slide
+                                            picture 
+                                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
+                                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+
+                                        .swiper-slide
+                                            picture 
+                                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
+                                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+
+                                    .swiper-navigation
+                                        .swiper-nav
+                                            .swiper-button-prev
+                                            .swiper-button-next
+                                        .swiper-pagination
 
             section.marquee 
+                .marquee-content
+                    .marquee-data_info 
+                        h5.txt-h6 Conceptualización, análisis de datos y dirección de arte
+                            span Juan Pablo de la Vega Studio
+
+                    .marquee-data_info 
+                        h5.txt-h6 UX, diseño y modelado 3D
+                            span Cinthya A. Reyes Samperio
+
+                    .marquee-data_info 
+                        h5.txt-h6 Asesoría tipográfica
+                            span Estudio Polímata
+
+                    .marquee-data_info 
+                        h5.txt-h6 Desarrollo de software
+                            span Eduardo Jiménez
+
+                    .marquee-data_info 
+                        h5.txt-h6 Producción en sitio
+                            span Miguel Castañeda
+
+
+
                 .marquee-wrap
                     .marquee-marquee.d-flex.align-items-center
                         h2.txt-h1 Explora el encuentro entre forma y movimiento
                     .marquee-marquee.d-flex.align-items-center
                         h2.txt-h1 Explora el encuentro entre forma y movimiento
 
-                .marquee-content
-                    .marquee-data 
-                        .marquee-data_info 
-                            h5.txt-h6 Dirección de arte y UX
-                                span Cinthya A. Reyes Samperio 
-                        .marquee-data_info 
-                            h5.txt-h6 Diseño sonoro
-                                span Martín Rivera 
-                        .marquee-data_info 
-                            h5.txt-h6 Diseño industrial
-                                span El Taller del Mojo
-                        .marquee-data_info 
-                            h5.txt-h6 Arquitectura
-                                span Diego Alcalá 
-                        .marquee-data_info 
-                            h5.txt-h6 Desarrollo de software
-                                span Monodata
-                        .marquee-data_info 
-                            h5.txt-h6 Producción
-                                span Miguel Casatañeda y Gustavo Rivera
-
-                    .marquee-data 
-                        .marquee-data_info 
-                            h5.txt-h6 Dirección de arte y UX
-                                span Cinthya A. Reyes Samperio 
-                        .marquee-data_info 
-                            h5.txt-h6 Diseño sonoro
-                                span Martín Rivera 
-                        .marquee-data_info 
-                            h5.txt-h6 Diseño industrial
-                                span El Taller del Mojo
-                        .marquee-data_info 
-                            h5.txt-h6 Arquitectura
-                                span Diego Alcalá 
-                        .marquee-data_info 
-                            h5.txt-h6 Desarrollo de software
-                                span Monodata
-                        .marquee-data_info 
-                            h5.txt-h6 Producción
-                                span Miguel Casatañeda y Gustavo Rivera
 
             section.lista.related
                 .accordion-item

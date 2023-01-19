@@ -28,6 +28,10 @@
                 &.show {
                     height: 600px;
                 }
+
+                &#collapse0 {
+                    height: 600px;
+                }
             }
         }
 
@@ -133,6 +137,7 @@
                 margin-right: 100px;
                 font-family: var(--sec-regular);
                 color: var(--bg-sec);
+                font-weight: 400;
 
                 span {
                     color: var(--bg-prm);

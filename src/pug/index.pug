@@ -24,7 +24,6 @@ block content
 
 
                 .hero--video
-                    //- .cursor.pause.hide
                     .cursor.play
                     video#video-desktop.video-js(muted playsinline preload loop poster="img/Reel_placeholder.jpg") 
                         source(src="video/TEASER_KIA-MOTION.mp4", type="video/mp4")
@@ -112,7 +111,7 @@ block content
                                         h3.icon-arrow-after.txt-xl Ver servicio
 
                 .container-fluid#services-m
-                    .swiper
+                    .swiper.swiper-mobile
                         .swiper-wrapper
                             .swiper-slide 
                                 .servicios__item.active
@@ -132,8 +131,6 @@ block content
                                             a(href="#!") 
                                                 h3.icon-arrow-after Ver servicio
 
-
-
                             .swiper-slide 
                                 .servicios__item
                                     picture 
@@ -151,7 +148,6 @@ block content
                                             p Nuestra curiosidad y conocimiento interdisciplinario favorecen la creación de contenido dirigido a diferentes tipos de personas.
                                             a(href="#!") 
                                                 h3.icon-arrow-after Ver servicio
-
 
                             .swiper-slide 
                                 .servicios__item

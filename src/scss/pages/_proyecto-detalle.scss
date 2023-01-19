@@ -105,8 +105,55 @@
         }
     }
 
+    .galeria {
+        position: relative;
+
+        h3 {
+            position: absolute;
+            right: 24px;
+            bottom: 24px;
+            color: var(--bg-sec);
+            cursor: pointer;
+
+            &::before {
+                margin-right: 14px;
+            }
+        }
+
+        .modal {
+            // &-dialog {
+            //     max-width: none;
+            //     margin: 0;
+            // }
+
+            // &-content {
+            //     border: 0;
+            //     height: 100vh;
+            // }
+
+            // &-body {
+            //     display: flex;
+            //     align-items: center;
+            // }
+        }
+
+        .swiper-slide {
+            picture {
+                height: 640px;
+                display: block;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-position: center;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
     .marquee {
-        margin-bottom: 240px;
+        margin-bottom: 64px;
 
         &-wrap {
             display: flex;
@@ -149,9 +196,21 @@
 
         &-content {
             display: flex;
-            flex-wrap: nowrap;
-            white-space: nowrap;
-            min-width: 100%;
+            column-gap: 48px;
+            padding: 40px;
+
+            .marquee-data_info {
+                max-width: 212px;
+
+                h5 {
+                    font-family: var(--prm-medium);
+                }
+                span {
+                    display: block;
+                    font-family: var(--prm-regular);
+                    margin-top: 4px;
+                }
+            }
         }
 
         &-data {
@@ -163,17 +222,7 @@
             flex-shrink: 0;
             column-gap: 150px;
             align-items: center;
-            animation: slide-right 25s linear infinite;
             animation-direction: reverse;
-
-            @keyframes slide-right {
-                from {
-                    transform: translateX(0);
-                }
-                to {
-                    transform: translateX(-100%);
-                }
-            }
 
             h5 {
                 font-family: var(--sec-regular);
@@ -190,7 +239,7 @@
     }
 
     .related {
-        padding-bottom: 95px;
+        padding-bottom: 100px;
     }
 }
 
@@ -257,6 +306,11 @@
             }
         }
 
+        .galeria {
+            .swiper-slide picture {
+                height: calc(258px + 238 * ((100vw - 360px) / 768));
+            }
+        }
         .swiper {
             &-nav {
                 display: none;

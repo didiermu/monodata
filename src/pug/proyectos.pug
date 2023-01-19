@@ -13,7 +13,7 @@ block content
         include includes/header
         nav.filtros 
             ul.container-fluid
-                li Destacados
+                li.active Destacados
                     sup 05
 
                 li Todos
@@ -35,6 +35,24 @@ block content
         main.proyectos
 
             section.lista
+                a(href="proyecto-detalle.html") 
+                    .accordion-item
+                        h2.txt-4xl(id="heading0") Kia Motion
+                        .lista__data 
+                            h5.txt-h6 Lugar 
+                                span Ciudad de México
+                            h5.txt-h6 Año 
+                                span 2021
+                            h5.txt-h6 Sede 
+                                span World Trade Center
+                            h5.txt-h6 Tipo de Proyecto
+                                span Instalación lumínica
+
+                        .accordion-collapse.collapse(id="collapse0", aria-labelledby='heading0', data-bs-parent='#accordionExample')
+                            .accordion-body.p-0
+                                picture 
+                                    source(srcset="img/pr1.webp", type="image/webp")
+                                    img.img-fluid.w-100(src="img/pr1.jpg", alt="")
                 - var n = 0;
                     while n < 3
                         - ++n

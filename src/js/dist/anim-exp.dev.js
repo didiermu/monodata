@@ -365,10 +365,9 @@ var clicTabla = function clicTabla() {
         var condicion = function condicion(elem, clase) {
           if (document.querySelector(".grid-item[data-item='item" + elem + "']").classList.contains("active")) {
             toggleArray(clase);
-          } // else {
-          //     removeArray(clase);
-          // }
-
+          } else {// removeArray(clase);
+            // console.log("no");
+          }
         };
 
         condicion("0", "first");
