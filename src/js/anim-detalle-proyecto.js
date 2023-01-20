@@ -85,43 +85,61 @@ const playVideo = () => {
     // });
 };
 
-const swiper = new Swiper(".swiper", {
-    loop: true,
-    autoplay: {
-        speed: 3000,
-    },
-
-    breakpoints: {
-        320: {
-            allowTouchMove: true,
-            pagination: {
-                el: ".swiper-pagination",
-                type: "bullets",
-            },
-        },
-        768: {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                type: "custom",
-                clickable: true,
-                renderCustom: function (
-                    swiperContent,
-                    currentClass,
-                    totalClass
-                ) {
-                    return currentClass + " / " + totalClass;
-                },
-            },
-        },
-    },
-});
-
 playVideo();
 cursor();
+
+//////////////////////// REMOVE MODAL
+
+const sliderDetalle = () => {
+    const swiper = new Swiper(".swiper", {
+        loop: true,
+        autoplay: {
+            speed: 3000,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "custom",
+            clickable: true,
+            renderCustom: function (swiperContent, currentClass, totalClass) {
+                return currentClass + " / " + totalClass;
+            },
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+        // breakpoints: {
+        //     320: {
+        //         allowTouchMove: true,
+        //     },
+        //     768: {
+        //         allowTouchMove: false,
+        //     },
+        // },
+    });
+};
+
+const sliderResp = () => {
+    const mediaquery = window.matchMedia("(max-width: 768px)");
+    const galeria = document.querySelector(".galeria");
+    const modal = document.querySelector(".modal-body");
+    const slider = document.querySelector(".swiper");
+
+    if (mediaquery.matches) {
+        galeria.insertAdjacentElement("afterbegin", slider);
+    } else {
+        modal.insertAdjacentElement("afterbegin", slider);
+    }
+};
+
+sliderResp();
+sliderDetalle();
+
+window.addEventListener("resize", () => {
+    sliderResp();
+    sliderDetalle();
+});
 
 //////////////////////// CLASS BODY
 

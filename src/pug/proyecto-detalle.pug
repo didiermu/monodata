@@ -43,17 +43,17 @@ block content
                         p.txt-l Tomamos como base el concepto inspirado en el movimiento de la nueva imagen de Kia para representar la innovación en la marca creando en tiempo real patrones dinámicos a través de proyecciones en multicapas y veinte cuadriláteros luminosos en forma de pasaje.  
 
             section.galeria
-                .galeria--banner 
+                .galeria--banner(data-bs-toggle="modal", data-bs-target="#exampleModal")
                     picture 
                         source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
                         img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
 
-                    h3.txt-xl.icon-icon-plus(data-bs-toggle="modal", data-bs-target="#exampleModal") Ampliar
+                    h3.txt-xl.icon-icon-plus Ampliar
 
                 .modal.fade#exampleModal(aria-labelledby='exampleModalLabel', aria-hidden='true')
                     .modal-dialog.modal-dialog-centered.modal-fullscreen
                         .modal-content
-                            button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                            button.btn-close.icon-close(type='button', data-bs-dismiss='modal', aria-label='Close')
 
                             .modal-body
                                 .swiper 
@@ -78,11 +78,10 @@ block content
                                                 source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
                                                 img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
 
-                                    .swiper-navigation
-                                        .swiper-nav
-                                            .swiper-button-prev
-                                            .swiper-button-next
-                                        .swiper-pagination
+                                    .swiper-button-prev
+                                    .swiper-button-next
+                                    .swiper-pagination
+
 
             section.marquee 
                 .marquee-content

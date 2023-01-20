@@ -85,37 +85,57 @@ var playVideo = function playVideo() {
 
 };
 
-var swiper = new Swiper(".swiper", {
-  loop: true,
-  autoplay: {
-    speed: 3000
-  },
-  breakpoints: {
-    320: {
-      allowTouchMove: true,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets"
+playVideo();
+cursor(); //////////////////////// REMOVE MODAL
+
+var sliderDetalle = function sliderDetalle() {
+  var swiper = new Swiper(".swiper", {
+    loop: true,
+    autoplay: {
+      speed: 3000
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "custom",
+      clickable: true,
+      renderCustom: function renderCustom(swiperContent, currentClass, totalClass) {
+        return currentClass + " / " + totalClass;
       }
     },
-    768: {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        type: "custom",
-        clickable: true,
-        renderCustom: function renderCustom(swiperContent, currentClass, totalClass) {
-          return currentClass + " / " + totalClass;
-        }
-      }
-    }
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    } // breakpoints: {
+    //     320: {
+    //         allowTouchMove: true,
+    //     },
+    //     768: {
+    //         allowTouchMove: false,
+    //     },
+    // },
+
+  });
+};
+
+var sliderResp = function sliderResp() {
+  var mediaquery = window.matchMedia("(max-width: 768px)");
+  var galeria = document.querySelector(".galeria");
+  var modal = document.querySelector(".modal-body");
+  var slider = document.querySelector(".swiper");
+
+  if (mediaquery.matches) {
+    galeria.insertAdjacentElement("afterbegin", slider);
+  } else {
+    modal.insertAdjacentElement("afterbegin", slider);
   }
-});
-playVideo();
-cursor(); //////////////////////// CLASS BODY
+};
+
+sliderResp();
+sliderDetalle();
+window.addEventListener("resize", function () {
+  sliderResp();
+  sliderDetalle();
+}); //////////////////////// CLASS BODY
 
 if (window.location.pathname.includes("proyecto")) {
   document.querySelector("body").classList.add("body-projects");

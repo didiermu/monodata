@@ -86,16 +86,16 @@
             </div>
           </section>
           <section class="galeria">
-            <div class="galeria--banner"> 
+            <div class="galeria--banner" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <picture> 
                 <source srcset="img/MONODATA_KIA_WTC-21.webp" type="image/webp"><img class="img-fluid" srcset="img/MONODATA_KIA_WTC-21.webp" alt="image/webp">
               </picture>
-              <h3 class="txt-xl icon-icon-plus" data-bs-toggle="modal" data-bs-target="#exampleModal">Ampliar</h3>
+              <h3 class="txt-xl icon-icon-plus">Ampliar</h3>
             </div>
             <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-fullscreen">
                 <div class="modal-content">
-                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button class="btn-close icon-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                   <div class="modal-body">
                     <div class="swiper"> 
                       <div class="swiper-wrapper">
@@ -120,13 +120,9 @@
                           </picture>
                         </div>
                       </div>
-                      <div class="swiper-navigation">
-                        <div class="swiper-nav">
-                          <div class="swiper-button-prev"></div>
-                          <div class="swiper-button-next"></div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                      </div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-pagination"></div>
                     </div>
                   </div>
                 </div>
