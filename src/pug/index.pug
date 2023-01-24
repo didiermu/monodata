@@ -24,7 +24,8 @@ block content
 
 
                 .hero--video
-                    .cursor.play
+                    .cursor.pause PAUSE VIDEO
+                    .cursor.play PLAY VIDEO
                     video#video-desktop.video-js(muted playsinline preload loop poster="img/Reel_placeholder.jpg") 
                         source(src="video/TEASER_KIA-MOTION.mp4", type="video/mp4")
 
@@ -189,6 +190,7 @@ block content
 
             include includes/footer.pug
 
+    include includes/modal-contact.pug
 
 
 

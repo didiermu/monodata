@@ -28,11 +28,20 @@
             }
 
             .cursor {
-                background: url("../img/Screw.svg") no-repeat center / contain;
-                width: 160px;
-                height: 160px;
+                // background: url("../img/Screw.svg") no-repeat center / contain;
+                // width: 160px;
+                // height: 160px;
+                // width: 100px;
+                // height: 160px;
                 position: absolute;
                 z-index: 2;
+                bottom: 32px;
+                right: 24px;
+                padding: 12px;
+                color: var(--bg-sec);
+                border: 1px solid var(--bg-sec);
+                border-radius: 20px;
+                cursor: pointer;
 
                 &.show {
                     display: block;
@@ -41,8 +50,12 @@
                     display: none;
                 }
 
-                &.pause {
-                    filter: invert(1);
+                // &.pause {
+                //     // filter: invert(1);
+                // }
+
+                &.play {
+                    display: none;
                 }
             }
 
@@ -234,9 +247,9 @@
         }
     }
 
-    .related {
-        padding-bottom: 100px;
-    }
+    // .related {
+    //     padding-bottom: 100px;
+    // }
 }
 
 @media (max-width: 768px) {

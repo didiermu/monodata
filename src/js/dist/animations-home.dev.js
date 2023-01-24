@@ -35,13 +35,14 @@ var cursor = function cursor() {
 };
 
 var playVideo = function playVideo() {
-  var cursorPoint = document.querySelector(".cursor");
+  var cursorPoint = document.querySelector(".cursor.pause");
+  var cursorPlay = document.querySelector(".cursor.play");
   var wrapVideo = document.querySelector(".hero--video");
   var options = {
     fluid: true,
     responsive: true,
     autoplay: true,
-    controls: true
+    controls: false
   };
   var player = videojs("video-desktop", options, function onPlayerReady() {// videojs.log("Your player is ready!");
   });
@@ -60,12 +61,26 @@ var playVideo = function playVideo() {
   // } else {
   //     player.play();
   // }
+  // cursorPoint.onclick = () => {
+  //     console.log("pa");
+  //     player.pause();
+  //     cursorPoint.classList.add("hide");
+  //     cursorPointPlay.classList.remove("show");
+  // };
 
   cursorPoint.onclick = function () {
     console.log("pa");
     player.pause();
-    cursorPoint.classList.add("hide");
-    cursorPointPlay.classList.remove("show");
+    cursorPoint.style.display = "none";
+    cursorPlay.style.display = "block"; // cursorPoint.classList.add("hide");
+    // cursorPointPlay.classList.remove("show");
+  };
+
+  cursorPlay.onclick = function () {
+    player.play();
+    cursorPoint.style.display = "block";
+    cursorPlay.style.display = "none"; // cursorPoint.classList.add("hide");
+    // cursorPointPlay.classList.remove("show");
   }; // gsap.to(".hero--video", {
   //     scrollTrigger: {
   //         trigger: ".hero",
@@ -85,9 +100,9 @@ var playVideo = function playVideo() {
   //     },
   // });
 
-};
+}; // cursor();
 
-cursor();
+
 playVideo(); // cursorPlay();
 
 var animTxt = function animTxt(elem, texto) {

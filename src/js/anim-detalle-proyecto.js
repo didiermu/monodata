@@ -27,13 +27,14 @@ const cursor = () => {
 };
 
 const playVideo = () => {
-    const cursorPoint = document.querySelector(".cursor");
+    const cursorPoint = document.querySelector(".cursor.pause");
+    const cursorPlay = document.querySelector(".cursor.play");
     const wrapVideo = document.querySelector(".hero--video");
     var options = {
         fluid: true,
         responsive: true,
         autoplay: true,
-        controls: true,
+        controls: false,
     };
     var player = videojs("video-desktop", options, function onPlayerReady() {
         // videojs.log("Your player is ready!");
@@ -61,8 +62,18 @@ const playVideo = () => {
     cursorPoint.onclick = () => {
         console.log("pa");
         player.pause();
-        cursorPoint.classList.add("hide");
-        cursorPointPlay.classList.remove("show");
+        cursorPoint.style.display = "none";
+        cursorPlay.style.display = "block";
+        // cursorPoint.classList.add("hide");
+        // cursorPointPlay.classList.remove("show");
+    };
+
+    cursorPlay.onclick = () => {
+        player.play();
+        cursorPoint.style.display = "block";
+        cursorPlay.style.display = "none";
+        // cursorPoint.classList.add("hide");
+        // cursorPointPlay.classList.remove("show");
     };
 
     // gsap.to(".hero--video", {
@@ -86,7 +97,7 @@ const playVideo = () => {
 };
 
 playVideo();
-cursor();
+// cursor();
 
 //////////////////////// REMOVE MODAL
 

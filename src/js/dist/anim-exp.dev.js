@@ -544,9 +544,8 @@ var clicTabla = function clicTabla() {
       }
     }
   }
-};
+}; // clicTabla();
 
-clicTabla();
 
 var mansory = function mansory() {
   var $grid = $(".grid").masonry({
@@ -577,5 +576,159 @@ var mansory = function mansory() {
 
     $grid.masonry("layout");
   });
-};
+}; /// TABLA GSAP
+
+
+var sliderTabla = function sliderTabla(slider) {
+  var swiper = new Swiper(slider, {
+    direction: "horizontal",
+    // enabled: false,
+    slidesPerView: 1,
+    allowTouchMove: false,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true
+    }
+  }); // swiper.destroy(true, true);
+}; // const sliderTablaDestroy = (sliderDes) => {
+//     console.log("sdetroy");
+//     const swiperDes = new Swiper(sliderDes, {
+//         direction: "horizontal",
+//         enabled: false,
+//         allowTouchMove: false,
+//     });
+//     swiperDes.destroy(true, true);
+// };
+
+
+gsap.registerPlugin(Flip);
+var grid_items = document.querySelectorAll(".tabla-wrap_item");
+
+for (var index = 0; index < grid_items.length; index++) {
+  grid_items[index].closest(".grid-item").setAttribute("data-item", "item" + index);
+} /// OPEN CARDS
+
+
+var targets = gsap.utils.toArray(".grid-item, .grid-items.pause"); // var targets = gsap.utils.toArray(".grid-item .swiper");
+
+function flip(target) {
+  var state = Flip.getState(targets);
+  var openClass = gsap.utils.toArray(".active");
+  var allItems = document.querySelectorAll(".grid-item");
+  var itemActive = document.querySelectorAll(".grid-item.pause"); // state.targets.classList.remove("active");
+
+  var _iteratorNormalCompletion11 = true;
+  var _didIteratorError11 = false;
+  var _iteratorError11 = undefined;
+
+  try {
+    for (var _iterator11 = allItems[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+      var allItemsElem = _step11.value;
+      allItemsElem.classList.remove("active"); // allItemsElem.classList.add("pause");
+    }
+  } catch (err) {
+    _didIteratorError11 = true;
+    _iteratorError11 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion11 && _iterator11["return"] != null) {
+        _iterator11["return"]();
+      }
+    } finally {
+      if (_didIteratorError11) {
+        throw _iteratorError11;
+      }
+    }
+  }
+
+  target.classList.toggle("active"); // target.closest(".grid-item").classList.toggle("active");
+
+  gsap.set(openClass, {
+    zIndex: 7
+  });
+  Flip.from(state, {
+    duration: 0.25,
+    absolute: true,
+    ease: "power1.out",
+    nested: true
+  }).set(targets, {
+    clearProps: "zIndex"
+  });
+}
+
+for (var i = 0; i < targets.length; i++) {
+  targets[i].addEventListener("click", function () {
+    // flip(this.closest(".grid-item"));
+    flip(this); //// AGREGA ALTO EN LA FILA FINAL
+
+    var item12 = document.querySelector(".grid-item[data-item=item12]");
+    var item13 = document.querySelector(".grid-item[data-item=item13]");
+    var item14 = document.querySelector(".grid-item[data-item=item14]");
+    var item15 = document.querySelector(".grid-item[data-item=item15]");
+    var wrapItem = document.querySelector(".tabla-wrap");
+
+    if (item12.classList.contains("active") || item13.classList.contains("active") || item14.classList.contains("active") || item15.classList.contains("active")) {
+      wrapItem.classList.add("lastItem");
+    } else {
+      wrapItem.classList.remove("lastItem");
+    } // WRAP ACTIVE
+
+
+    document.querySelector(".tabla-wrap").classList.add("wrapActive"); // SLIDER
+
+    sliderTabla(this.querySelector(".swiper"));
+  });
+}
+
+var allItems = document.querySelectorAll(".grid-item");
+var close_item = document.querySelectorAll(".icon-close");
+var _iteratorNormalCompletion12 = true;
+var _didIteratorError12 = false;
+var _iteratorError12 = undefined;
+
+try {
+  for (var _iterator12 = close_item[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
+    var close_itemElem = _step12.value;
+
+    close_itemElem.onclick = function () {
+      var _iteratorNormalCompletion13 = true;
+      var _didIteratorError13 = false;
+      var _iteratorError13 = undefined;
+
+      try {
+        for (var _iterator13 = allItems[Symbol.iterator](), _step13; !(_iteratorNormalCompletion13 = (_step13 = _iterator13.next()).done); _iteratorNormalCompletion13 = true) {// allItemsElem.classList.remove("active");
+
+          var allItemsElem = _step13.value;
+        }
+      } catch (err) {
+        _didIteratorError13 = true;
+        _iteratorError13 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion13 && _iterator13["return"] != null) {
+            _iterator13["return"]();
+          }
+        } finally {
+          if (_didIteratorError13) {
+            throw _iteratorError13;
+          }
+        }
+      }
+    };
+  }
+} catch (err) {
+  _didIteratorError12 = true;
+  _iteratorError12 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion12 && _iterator12["return"] != null) {
+      _iterator12["return"]();
+    }
+  } finally {
+    if (_didIteratorError12) {
+      throw _iteratorError12;
+    }
+  }
+}
 //# sourceMappingURL=anim-exp.dev.js.map

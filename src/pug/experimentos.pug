@@ -6,6 +6,7 @@ block head-page
     script(src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
 
     script(src="js/anim-exp.min.js" defer) 
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js', integrity='sha512-RL2ypMFkOs/iB79bWnNiFrZRCqyExtQ38n/K+t7Xjf09YZcvSzqgSaGVj+fiVYEqVRLf/WjdHmwGImZM3XO5gA==', crossorigin='anonymous', referrerpolicy='no-referrer')
 
 
 block content
@@ -32,7 +33,7 @@ block content
 
             section.tabla 
                 .container-xxl.container-fluid
-                    .tabla-wrap.grid
+                    .tabla-wrap.grid.displayContainer
                         - var n = 0;
                             while n < 2
                                 - ++n
@@ -299,4 +300,4 @@ block content
 
             include includes/footer
 
-
+    include includes/modal-contact.pug

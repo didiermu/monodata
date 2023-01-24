@@ -16,7 +16,7 @@
         &--video {
             position: relative;
             overflow: hidden;
-            cursor: none;
+            // cursor: none;
             // height: calc(600px + 700 * ((100vw - 1280px) / 1920));
 
             &.play {
@@ -25,20 +25,29 @@
                 }
             }
 
-            & * {
-                cursor: none;
-            }
+            // & * {
+            //     cursor: none;
+            // }
 
             .vjs-poster {
                 background-size: cover;
             }
 
             .cursor {
-                background: url("../img/Screw.svg") no-repeat center / contain;
-                width: 160px;
-                height: 160px;
+                // background: url("../img/Screw.svg") no-repeat center / contain;
+                // width: 160px;
+                // height: 160px;
+                // width: 100px;
+                // height: 160px;
                 position: absolute;
                 z-index: 2;
+                bottom: 32px;
+                right: 24px;
+                padding: 12px;
+                color: var(--bg-sec);
+                border: 1px solid var(--bg-sec);
+                border-radius: 20px;
+                cursor: pointer;
 
                 &.show {
                     display: block;
@@ -47,8 +56,12 @@
                     display: none;
                 }
 
-                &.pause {
-                    filter: invert(1);
+                // &.pause {
+                //     // filter: invert(1);
+                // }
+
+                &.play {
+                    display: none;
                 }
             }
 

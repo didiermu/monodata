@@ -69,4 +69,75 @@
   }
 }
 
+.input__group {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.input__group > label {
+  margin-bottom: 32px !important;
+}
+
+.input__group input {
+  appearance: none;
+  border: 1px solid;
+  border-width: 0 0 1px 0;
+}
+
+.input__group .error-input {
+  display: none;
+}
+
+.input__group .error-input.show {
+  display: block;
+}
+
+.input__chip {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  flex-flow: row wrap;
+  height: 48px;
+}
+
+.input__chip input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  transition: 0.3s ease-in-out all;
+}
+
+.input__chip input:checked ~ .chip {
+  font-family: var(--prm-medium);
+  border-width: 2px;
+}
+
+.input__chip .chip {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--bg-prm);
+  border-radius: 50px;
+  width: max-content;
+  padding: 12px 24px;
+  font-size: var(--h4);
+  line-height: 24px;
+}
+
+.input__chip .chip sup {
+  font-family: var(--prm-medium);
+  margin-left: 4px;
+  font-size: var(--s);
+  top: -0.3em;
+}
+
+.input__chip .error-input {
+  flex: 0 0 100%;
+  padding-left: 24px;
+  font-size: var(--xs);
+}
+
 /*# sourceMappingURL=_forms.css.map */

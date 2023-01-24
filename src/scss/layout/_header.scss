@@ -70,6 +70,7 @@
 
             li {
                 font-size: var(--h4);
+                cursor: pointer;
 
                 &.active {
                     font-family: var(--prm-medium);

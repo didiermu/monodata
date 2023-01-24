@@ -1,0 +1,122 @@
+.modal.fade#modal-contact(aria-labelledby='exampleModalLabel', aria-hidden='true')
+    .modal-dialog.modal-dialog-centered.modal-fullscreen
+        .modal-content
+            img#logo(src="img/MD.svg", alt="")
+            button.btn-close.icon-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+
+            .modal-body
+                form.col-lg-10
+                    .input__group.show#input--group1
+                        label.h3 ¿Cuál es tu nombre?
+                        input#input-name.txt-3xl(type="text", name="input-name") 
+                        .error-input *Campo obligatorio
+
+                    .input__group#input--group2
+                        label.h3 ¿Cuál es el nombre de tu empresa?
+                        input#input-empresa.txt-3xl(type="text", name="input-empresa") 
+                        .error-input *Campo obligatorio
+
+                    .input__group#input--group3 
+                        label.h3 ¿Qué tipo de proyecto necesitas?
+                        .input__chips
+                            .input__chip
+                                input#chip1.checkbox(type='checkbox')
+                                label.chip(for='chip1') Experiencia inmersiva
+
+                            .input__chip
+                                input#chip2.checkbox(type='checkbox')
+                                label.chip(for='chip2') Instalación interactiva lumínica
+
+                            .input__chip
+                                input#chip3.checkbox(type='checkbox')
+                                label.chip(for='chip3') Escultura de datos
+
+                            .input__chip
+                                input#chip4.checkbox(type='checkbox')
+                                label.chip(for='chip4') Visuales generativos
+
+                            .input__chip
+                                input#chip5.checkbox(type='checkbox')
+                                label.chip(for='chip5') Visualización de datos
+
+                            .input__chip
+                                input#chip6.checkbox(type='checkbox')
+                                label.chip(for='chip6') Contenido visual en domos
+
+                            .input__chip
+                                input#chip7.checkbox(type='checkbox')
+                                label.chip(for='chip7') Contenido visual en domos
+
+                            .input__chip
+                                input#chip8.checkbox(type='checkbox')
+                                label.chip(for='chip8') Desarrollo de apps
+
+                            .input__chip
+                                input#chip9.checkbox(type='checkbox')
+                                label.chip(for='chip9') No lo sé
+
+                        .error-input *Campo obligatorio
+
+                    .input__group#input--group4 
+                        label.h3 ¿Cuál es tu presupuesto para este proyecto?
+                        .input__chips
+                            .input__chip
+                                input#chip10.checkbox(type='checkbox')
+                                label.chip(for='chip10') － 300,000
+                                    sup MXN
+
+                            .input__chip
+                                input#chip11.checkbox(type='checkbox')
+                                label.chip(for='chip11') 300,000 a 500,000
+                                    sup MXN
+
+                            .input__chip
+                                input#chip12.checkbox(type='checkbox')
+                                label.chip(for='chip12') 500,000 a 1 millón
+                                    sup MXN
+
+                            .input__chip
+                                input#chip13.checkbox(type='checkbox')
+                                label.chip(for='chip13') 1 a 4 millones
+                                    sup MXN
+
+                            .input__chip
+                                input#chip14.checkbox(type='checkbox')
+                                label.chip(for='chip14') + 4 millones
+                                    sup MXN
+
+                    .input__group#input--group5 
+                        label.h3 ¿En cuánto tiempo necesitas el proyecto terminado?
+                        .input__chips
+                            .input__chip
+                                input#chip14.checkbox(type='checkbox')
+                                label.chip(for='chip14') 3 meses
+
+                            .input__chip
+                                input#chip15.checkbox(type='checkbox')
+                                label.chip(for='chip15') 6 meses
+
+                            .input__chip
+                                input#chip16.checkbox(type='checkbox')
+                                label.chip(for='chip16') 1 año
+
+                            .input__chip
+                                input#chip17.checkbox(type='checkbox')
+                                label.chip(for='chip17') Próximo año
+
+                    .input__group#input--group6
+                        label.h3 Compártenos tu correo electrónico
+                        input#input-email.txt-3xl(type="text", name="input-email") 
+
+                    .input__group#input--group7
+                        label.h3 ¿Deseas añadir algo más? (opcional)
+                        input#input-msj.txt-3xl(type="text", name="input-msj") 
+
+                    .input__group#input--group8
+                        h1.txt-4xl ¡Gracias por tu interés! 
+                            br
+                            | Te contactaremos muy pronto 😎
+
+
+                    .icon-arrow-64#prev-form.hide
+                    .icon-arrow-64#next-form

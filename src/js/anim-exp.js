@@ -394,7 +394,7 @@ const clicTabla = () => {
     }
 };
 
-clicTabla();
+// clicTabla();
 
 const mansory = () => {
     var $grid = $(".grid").masonry({
@@ -428,3 +428,116 @@ const mansory = () => {
         $grid.masonry("layout");
     });
 };
+
+/// TABLA GSAP
+
+const sliderTabla = (slider) => {
+    const swiper = new Swiper(slider, {
+        direction: "horizontal",
+        // enabled: false,
+        slidesPerView: 1,
+        allowTouchMove: false,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+            clickable: true,
+        },
+    });
+
+    // swiper.destroy(true, true);
+};
+
+// const sliderTablaDestroy = (sliderDes) => {
+//     console.log("sdetroy");
+//     const swiperDes = new Swiper(sliderDes, {
+//         direction: "horizontal",
+//         enabled: false,
+//         allowTouchMove: false,
+//     });
+
+//     swiperDes.destroy(true, true);
+// };
+
+gsap.registerPlugin(Flip);
+
+const grid_items = document.querySelectorAll(".tabla-wrap_item");
+
+for (let index = 0; index < grid_items.length; index++) {
+    grid_items[index]
+        .closest(".grid-item")
+        .setAttribute("data-item", "item" + index);
+}
+
+/// OPEN CARDS
+
+var targets = gsap.utils.toArray(".grid-item, .grid-items.pause");
+// var targets = gsap.utils.toArray(".grid-item .swiper");
+
+function flip(target) {
+    const state = Flip.getState(targets);
+    const openClass = gsap.utils.toArray(".active");
+    const allItems = document.querySelectorAll(".grid-item");
+    const itemActive = document.querySelectorAll(".grid-item.pause");
+
+    // state.targets.classList.remove("active");
+
+    for (const allItemsElem of allItems) {
+        allItemsElem.classList.remove("active");
+        // allItemsElem.classList.add("pause");
+    }
+
+    target.classList.toggle("active");
+
+    // target.closest(".grid-item").classList.toggle("active");
+
+    gsap.set(openClass, { zIndex: 7 });
+
+    Flip.from(state, {
+        duration: 0.25,
+        absolute: true,
+        ease: "power1.out",
+        nested: true,
+    }).set(targets, { clearProps: "zIndex" });
+}
+
+for (var i = 0; i < targets.length; i++) {
+    targets[i].addEventListener("click", function () {
+        // flip(this.closest(".grid-item"));
+        flip(this);
+
+        //// AGREGA ALTO EN LA FILA FINAL
+
+        const item12 = document.querySelector(".grid-item[data-item=item12]");
+        const item13 = document.querySelector(".grid-item[data-item=item13]");
+        const item14 = document.querySelector(".grid-item[data-item=item14]");
+        const item15 = document.querySelector(".grid-item[data-item=item15]");
+        const wrapItem = document.querySelector(".tabla-wrap");
+
+        if (
+            item12.classList.contains("active") ||
+            item13.classList.contains("active") ||
+            item14.classList.contains("active") ||
+            item15.classList.contains("active")
+        ) {
+            wrapItem.classList.add("lastItem");
+        } else {
+            wrapItem.classList.remove("lastItem");
+        }
+
+        // WRAP ACTIVE
+        document.querySelector(".tabla-wrap").classList.add("wrapActive");
+
+        // SLIDER
+        sliderTabla(this.querySelector(".swiper"));
+    });
+}
+
+const allItems = document.querySelectorAll(".grid-item");
+const close_item = document.querySelectorAll(".icon-close");
+for (const close_itemElem of close_item) {
+    close_itemElem.onclick = () => {
+        for (const allItemsElem of allItems) {
+            // allItemsElem.classList.remove("active");
+        }
+    };
+}
