@@ -10,7 +10,7 @@
     <meta property="og:description" content="...">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer> </script>
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/nav.min.js" defer></script>
+    <script src="js/forms.min.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/styles.min.css">
     <title>Monodata | Proyectos</title>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -42,8 +43,8 @@
                       <li id="li-news"><a href="noticias.html">Noticias</a></li>
                     </ul>
                     <ul class="header--two">
-                      <li id="li-lang"><a href="index.html#home--beneficios">EN</a><a class="active" href="index.html#home--beneficios">ES</a></li>
-                      <li id="li-beneficios"><a href="index.html#home--beneficios">Contacto</a></li>
+                      <li id="li-lang"><a>EN</a><a class="active">ES</a></li>
+                      <li id="li-beneficios" data-bs-toggle="modal" data-bs-target="#modal-contact"><a>Contacto</a></li>
                       <li> 
                         <button class="icon-search"></button>
                       </li>
@@ -56,7 +57,7 @@
         </header>
         <nav class="filtros"> 
           <ul class="container-fluid">
-            <li>Destacados<sup>05</sup></li>
+            <li class="active">Destacados<sup>05</sup></li>
             <li>Todos<sup>05</sup></li>
             <li> 
               <div class="combo">
@@ -80,6 +81,22 @@
         </nav>
         <main class="proyectos">
           <section class="lista"><a href="proyecto-detalle.html"> 
+              <div class="accordion-item">
+                <h2 class="txt-4xl" id="heading0">Kia Motion</h2>
+                <div class="lista__data"> 
+                  <h5 class="txt-h6">Lugar <span>Ciudad de México</span></h5>
+                  <h5 class="txt-h6">Año <span>2021</span></h5>
+                  <h5 class="txt-h6">Sede <span>World Trade Center</span></h5>
+                  <h5 class="txt-h6">Tipo de Proyecto<span>Instalación lumínica</span></h5>
+                </div>
+                <div class="accordion-collapse collapse" id="collapse0" aria-labelledby="heading0" data-bs-parent="#accordionExample">
+                  <div class="accordion-body p-0">
+                    <picture> 
+                      <source srcset="img/pr1.webp" type="image/webp"><img class="img-fluid w-100" src="img/pr1.jpg" alt="">
+                    </picture>
+                  </div>
+                </div>
+              </div></a><a href="proyecto-detalle.html"> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading1">Kia Motion</h2>
                 <div class="lista__data"> 
@@ -273,6 +290,128 @@
             </section>
           </footer>
         </main>
+      </div>
+      <div class="modal fade" id="modal-contact" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div class="modal-content"><img id="logo" src="img/MD.svg" alt="">
+            <button class="btn-close icon-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+              <form class="col-lg-10">
+                <div class="input__group show" id="input--group1">
+                  <label class="h3">¿Cuál es tu nombre?</label>
+                  <input class="txt-3xl" id="input-name" type="text" name="input-name">
+                  <div class="error-input">*Campo obligatorio</div>
+                </div>
+                <div class="input__group" id="input--group2">
+                  <label class="h3">¿Cuál es el nombre de tu empresa?</label>
+                  <input class="txt-3xl" id="input-empresa" type="text" name="input-empresa">
+                  <div class="error-input">*Campo obligatorio</div>
+                </div>
+                <div class="input__group" id="input--group3"> 
+                  <label class="h3">¿Qué tipo de proyecto necesitas?</label>
+                  <div class="input__chips">
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip1" type="checkbox">
+                      <label class="chip" for="chip1">Experiencia inmersiva</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip2" type="checkbox">
+                      <label class="chip" for="chip2">Instalación interactiva lumínica</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip3" type="checkbox">
+                      <label class="chip" for="chip3">Escultura de datos</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip4" type="checkbox">
+                      <label class="chip" for="chip4">Visuales generativos</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip5" type="checkbox">
+                      <label class="chip" for="chip5">Visualización de datos</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip6" type="checkbox">
+                      <label class="chip" for="chip6">Contenido visual en domos</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip7" type="checkbox">
+                      <label class="chip" for="chip7">Contenido visual en domos</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip8" type="checkbox">
+                      <label class="chip" for="chip8">Desarrollo de apps</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip9" type="checkbox">
+                      <label class="chip" for="chip9">No lo sé</label>
+                    </div>
+                  </div>
+                  <div class="error-input">*Campo obligatorio</div>
+                </div>
+                <div class="input__group" id="input--group4"> 
+                  <label class="h3">¿Cuál es tu presupuesto para este proyecto?</label>
+                  <div class="input__chips">
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip10" type="checkbox">
+                      <label class="chip" for="chip10">－ 300,000<sup>MXN</sup></label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip11" type="checkbox">
+                      <label class="chip" for="chip11">300,000 a 500,000<sup>MXN</sup></label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip12" type="checkbox">
+                      <label class="chip" for="chip12">500,000 a 1 millón<sup>MXN</sup></label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip13" type="checkbox">
+                      <label class="chip" for="chip13">1 a 4 millones<sup>MXN</sup></label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip14" type="checkbox">
+                      <label class="chip" for="chip14">+ 4 millones<sup>MXN</sup></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input__group" id="input--group5"> 
+                  <label class="h3">¿En cuánto tiempo necesitas el proyecto terminado?</label>
+                  <div class="input__chips">
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip14" type="checkbox">
+                      <label class="chip" for="chip14">3 meses</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip15" type="checkbox">
+                      <label class="chip" for="chip15">6 meses</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip16" type="checkbox">
+                      <label class="chip" for="chip16">1 año</label>
+                    </div>
+                    <div class="input__chip">
+                      <input class="checkbox" id="chip17" type="checkbox">
+                      <label class="chip" for="chip17">Próximo año</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input__group" id="input--group6">
+                  <label class="h3">Compártenos tu correo electrónico</label>
+                  <input class="txt-3xl" id="input-email" type="text" name="input-email">
+                </div>
+                <div class="input__group" id="input--group7">
+                  <label class="h3">¿Deseas añadir algo más? (opcional)</label>
+                  <input class="txt-3xl" id="input-msj" type="text" name="input-msj">
+                </div>
+                <div class="input__group" id="input--group8">
+                  <h1 class="txt-4xl">¡Gracias por tu interés! <br>Te contactaremos muy pronto 😎</h1>
+                </div>
+                <div class="icon-arrow-64 hide" id="prev-form"></div>
+                <div class="icon-arrow-64" id="next-form"></div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </body>
   </head>
