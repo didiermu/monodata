@@ -259,6 +259,12 @@
                         display: flex;
                     }
                 }
+
+                &:nth-child(4n) {
+                    .tabla-wrap_item {
+                        border-right: 0;
+                    }
+                }
             }
 
             &_item {
@@ -1462,15 +1468,21 @@
                 height: auto;
                 // inset: inherit !important;
 
+                &:nth-child(4n) {
+                    .tabla-wrap_item {
+                        border-left: 0;
+                    }
+                }
+
                 .icon-close {
                     top: 26px;
                 }
 
-                &:nth-child(3n) {
-                    .tabla-wrap_item {
-                        border-right: 1px solid;
-                    }
-                }
+                // &:nth-child(3n) {
+                //     .tabla-wrap_item {
+                //         border-right: 1px solid;
+                //     }
+                // }
 
                 &:nth-child(2n) {
                     .tabla-wrap_item {
