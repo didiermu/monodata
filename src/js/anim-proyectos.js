@@ -102,12 +102,6 @@ for (const itemListaElem of itemLista) {
     };
 }
 
-const combos = document.querySelectorAll(".combo");
-
-for (const combosElem of combos) {
-    const select = combosElem.querySelector("select");
-}
-
 // var span = document.getElementsByTagName("span")[0];
 // var select = document.getElementsByTagName("select")[0];
 
@@ -126,6 +120,12 @@ if (window.location.pathname.includes("proyectos")) {
 //////////////////////// FILTROS
 
 const filtro = document.querySelectorAll(".filtros li");
+const destacados = document.querySelector(".filtros #Destacados");
+const todos = document.querySelector(".filtros #todos");
+const lista = document.querySelector(".lista");
+const listaItems = document.querySelectorAll(".lista a");
+const comboTipo = document.querySelector("#combo-tipo select");
+const comboIndustria = document.querySelector("#combo-industria select");
 
 for (const filtroElem of filtro) {
     filtroElem.onclick = () => {
@@ -135,3 +135,44 @@ for (const filtroElem of filtro) {
         filtroElem.classList.add("active");
     };
 }
+
+comboTipo.onchange = () => {
+    lista.setAttribute("class", "lista lista-combo");
+
+    let valorCombo = comboTipo.value;
+    let itemActive = document.querySelectorAll(".lista a[" + valorCombo + "]");
+    for (const listaItemsElem of listaItems) {
+        listaItemsElem.classList.remove("active");
+    }
+    for (const itemActiveElem of itemActive) {
+        itemActiveElem.classList.add("active");
+    }
+};
+
+comboIndustria.onchange = () => {
+    lista.setAttribute("class", "lista lista-combo");
+    let valueIndustria = comboIndustria.value;
+    let itemActive = document.querySelectorAll(
+        ".lista a[industria='" + valueIndustria + "']"
+    );
+    for (const listaItemsElem of listaItems) {
+        listaItemsElem.classList.remove("active");
+    }
+    for (const itemActiveElem of itemActive) {
+        itemActiveElem.classList.add("active");
+    }
+};
+
+destacados.addEventListener("click", () => {
+    lista.setAttribute("class", "lista lista-destacados");
+    for (const listaItemsElem of listaItems) {
+        listaItemsElem.classList.remove("active");
+    }
+});
+
+todos.addEventListener("click", () => {
+    lista.setAttribute("class", "lista");
+    for (const listaItemsElem of listaItems) {
+        listaItemsElem.classList.remove("active");
+    }
+});

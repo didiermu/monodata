@@ -6,6 +6,10 @@
 
         a {
             color: inherit;
+
+            &:first-child .accordion-collapse {
+                height: 600px;
+            }
         }
 
         .accordion-item {
@@ -26,10 +30,6 @@
                 display: block;
 
                 &.show {
-                    height: 600px;
-                }
-
-                &#collapse0 {
                     height: 600px;
                 }
             }
@@ -73,6 +73,11 @@
             .accordion-collapse {
                 height: 250px !important;
                 overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
@@ -96,7 +101,7 @@
                     }
 
                     &.show {
-                        height: var(--alto-image);
+                        height: var(--alto-image) !important;
                     }
                 }
             }
@@ -107,72 +112,6 @@
 @mixin info-api {
     .info--api {
         overflow-x: hidden;
-
-        // .row {
-        //     flex-wrap: nowrap;
-        //     white-space: nowrap;
-        //     min-width: 100%;
-        //     gap: 300px;
-        // }
-
-        // &--content {
-        //     height: 30px;
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: space-between;
-        //     margin-right: 600px;
-        //     animation: slide-left 30s linear infinite;
-
-        //     @keyframes slide-left {
-        //         from {
-        //             transform: translateX(0);
-        //         }
-        //         to {
-        //             transform: translateX(-100%);
-        //         }
-        //     }
-
-        //     h6 {
-        //         white-space: nowrap;
-        //         margin-right: 100px;
-        //         font-family: var(--sec-regular);
-        //         color: var(--bg-sec);
-        //         font-weight: 400;
-
-        //         span {
-        //             color: var(--bg-prm);
-        //         }
-
-        //         &:last-child {
-        //             margin-right: 0;
-        //         }
-        //     }
-
-        //     // justify-content: space-between;
-        //     // height: 30px;
-
-        //     // &#one {
-        //     //     width: 162px;
-        //     // }
-        //     // &#two {
-        //     //     width: 115px;
-        //     // }
-        //     // &#tre {
-        //     //     width: 128px;
-        //     // }
-        //     // &#fou {
-        //     //     width: 34px;
-        //     // }
-        //     // &#fiv {
-        //     //     width: 149px;
-        //     // }
-        //     // &#six {
-        //     // width: 75px;
-        //     // }
-
-        //     // width: calc(100% / 6);
-        //     // text-align: center;
-        // }
 
         .row {
             width: 100%;

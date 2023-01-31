@@ -3,15 +3,19 @@
     .info-detalle {
         padding-top: 256px;
 
+        .accordion-collapse.show {
+            height: auto !important;
+        }
+
         .hero--video {
             position: relative;
             overflow: hidden;
-            cursor: none;
-            height: calc(600px + 700 * ((100vw - 1280px) / 1920));
+            // cursor: none;
+            // height: calc(600px + 700 * ((100vw - 1280px) / 1920));
 
-            & * {
-                cursor: none;
-            }
+            // & * {
+            //     cursor: none;
+            // }
 
             &.play {
                 * {
@@ -19,9 +23,9 @@
                 }
             }
 
-            & * {
-                cursor: none;
-            }
+            // & * {
+            //     cursor: none;
+            // }
 
             .vjs-poster {
                 background-size: cover;
@@ -165,26 +169,23 @@
         margin-bottom: 64px;
 
         &-wrap {
-            display: flex;
-            flex-wrap: nowrap;
-            white-space: nowrap;
-            min-width: 100%;
             padding: 90px 0;
 
             @keyframes slide-left {
-                from {
+                0% {
                     transform: translateX(0);
                 }
-                to {
+                100% {
                     transform: translateX(-100%);
                 }
             }
 
             h2 {
-                position: relative;
-                display: flex;
-                align-items: center;
-                margin-right: 0.2em;
+                // position: relative;
+                // display: flex;
+                // align-items: center;
+                // margin-right: 0.2em;
+                flex-shrink: 0;
                 // animation: marquee 15s linear infinite;
 
                 @keyframes logo-mono {
@@ -197,10 +198,11 @@
 
         &-marquee {
             display: flex;
-            flex-shrink: 0;
+            // flex-shrink: 0;
             // height: 50px;
             align-items: center;
-            animation: slide-left 25s linear infinite;
+            gap: 20px;
+            animation: slide-left 20s linear infinite;
         }
 
         &-content {

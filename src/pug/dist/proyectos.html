@@ -43,8 +43,8 @@
                       <li id="li-news"><a href="noticias.html">Noticias</a></li>
                     </ul>
                     <ul class="header--two">
-                      <li id="li-lang"><a href="index.html#home--beneficios">EN</a><a class="active" href="index.html#home--beneficios">ES</a></li>
-                      <li id="li-beneficios" data-bs-toggle="modal" data-bs-target="#modal-contact"><a href="index.html#home--beneficios">Contacto</a></li>
+                      <li id="li-lang"><a>EN</a><a class="active">ES</a></li>
+                      <li id="li-beneficios" data-bs-toggle="modal" data-bs-target="#modal-contact"><a>Contacto</a></li>
                       <li> 
                         <button class="icon-search"></button>
                       </li>
@@ -57,30 +57,31 @@
         </header>
         <nav class="filtros"> 
           <ul class="container-fluid">
-            <li class="active">Destacados<sup>05</sup></li>
-            <li>Todos<sup>05</sup></li>
+            <li class="active chip" id="Destacados">Destacados<sup>05</sup></li>
+            <li class="chip" id="todos">Todos<sup>05</sup></li>
             <li> 
-              <div class="combo">
+              <div class="combo" id="combo-tipo">
                 <select>
-                  <option selected hidden>Tipo de proyecto</option>
-                  <option>Test</option>
-                  <option>Test 2</option>
+                  <option selected hidden value="">Tipo de proyecto</option>
+                  <option value="iluminacion">iluminacion</option>
+                  <option value="estructura">estructura</option>
+                  <option value="destacado">estructura</option>
                 </select>
               </div>
             </li>
             <li> 
-              <div class="combo">
+              <div class="combo" id="combo-industria">
                 <select> 
-                  <option selected hidden>Industria</option>
-                  <option>Test</option>
-                  <option>Test 2</option>
+                  <option selected hidden value="">Industria</option>
+                  <option value="Educación">Educación </option>
+                  <option value="Público">Público </option>
                 </select>
               </div>
             </li>
           </ul>
         </nav>
         <main class="proyectos">
-          <section class="lista"><a href="proyecto-detalle.html"> 
+          <section class="lista lista-destacados"><a class="Destacado" href="proyecto-detalle.html"> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading0">Kia Motion</h2>
                 <div class="lista__data"> 
@@ -96,7 +97,7 @@
                     </picture>
                   </div>
                 </div>
-              </div></a><a href="proyecto-detalle.html"> 
+              </div></a><a href="proyecto-detalle.html" destacado industria="Público"> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading1">Kia Motion</h2>
                 <div class="lista__data"> 
@@ -112,7 +113,7 @@
                     </picture>
                   </div>
                 </div>
-              </div></a><a href="proyecto-detalle.html"> 
+              </div></a><a href="proyecto-detalle.html" iluminacion industria="Educación"> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading1">Absence</h2>
                 <div class="lista__data"> 
@@ -128,7 +129,7 @@
                     </picture>
                   </div>
                 </div>
-              </div></a><a href="proyecto-detalle.html"> 
+              </div></a><a href="proyecto-detalle.html" estructura> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading1">Telar</h2>
                 <div class="lista__data"> 
@@ -144,7 +145,7 @@
                     </picture>
                   </div>
                 </div>
-              </div></a><a href="proyecto-detalle.html"> 
+              </div></a><a href="proyecto-detalle.html" destacado industria="Público"> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading2">Kia Motion</h2>
                 <div class="lista__data"> 
@@ -160,7 +161,7 @@
                     </picture>
                   </div>
                 </div>
-              </div></a><a href="proyecto-detalle.html"> 
+              </div></a><a href="proyecto-detalle.html" iluminacion industria="Educación"> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading2">Absence</h2>
                 <div class="lista__data"> 
@@ -176,7 +177,7 @@
                     </picture>
                   </div>
                 </div>
-              </div></a><a href="proyecto-detalle.html"> 
+              </div></a><a href="proyecto-detalle.html" estructura> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading2">Telar</h2>
                 <div class="lista__data"> 
@@ -192,7 +193,7 @@
                     </picture>
                   </div>
                 </div>
-              </div></a><a href="proyecto-detalle.html"> 
+              </div></a><a href="proyecto-detalle.html" destacado industria="Público"> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading3">Kia Motion</h2>
                 <div class="lista__data"> 
@@ -208,7 +209,7 @@
                     </picture>
                   </div>
                 </div>
-              </div></a><a href="proyecto-detalle.html"> 
+              </div></a><a href="proyecto-detalle.html" iluminacion industria="Educación"> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading3">Absence</h2>
                 <div class="lista__data"> 
@@ -224,7 +225,7 @@
                     </picture>
                   </div>
                 </div>
-              </div></a><a href="proyecto-detalle.html"> 
+              </div></a><a href="proyecto-detalle.html" estructura> 
               <div class="accordion-item">
                 <h2 class="txt-4xl" id="heading3">Telar</h2>
                 <div class="lista__data"> 

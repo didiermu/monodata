@@ -13,29 +13,30 @@ block content
         include includes/header
         nav.filtros 
             ul.container-fluid
-                li.active Destacados
+                li.active.chip#Destacados Destacados
                     sup 05
 
-                li Todos
+                li.chip#todos Todos
                     sup 05
 
                 li 
-                    .combo
+                    .combo#combo-tipo
                         select
-                            option(selected hidden) Tipo de proyecto
-                            option Test
-                            option Test 2
+                            option(selected hidden value="") Tipo de proyecto
+                            option(value="iluminacion") iluminacion
+                            option(value="estructura") estructura
+                            option(value="destacado") estructura
                 li 
-                    .combo
+                    .combo#combo-industria
                         select 
-                            option(selected hidden) Industria
-                            option Test
-                            option Test 2
+                            option(selected hidden value="") Industria
+                            option(value="Educación") Educación 
+                            option(value="Público") Público 
 
         main.proyectos
 
-            section.lista
-                a(href="proyecto-detalle.html") 
+            section.lista.lista-destacados
+                a.Destacado(href="proyecto-detalle.html") 
                     .accordion-item
                         h2.txt-4xl(id="heading0") Kia Motion
                         .lista__data 
@@ -56,7 +57,7 @@ block content
                 - var n = 0;
                     while n < 3
                         - ++n
-                        a(href="proyecto-detalle.html") 
+                        a(href="proyecto-detalle.html" destacado industria="Público") 
                             .accordion-item
                                 h2.txt-4xl(id="heading"+n) Kia Motion
                                 .lista__data 
@@ -75,7 +76,7 @@ block content
                                             source(srcset="img/pr1.webp", type="image/webp")
                                             img.img-fluid.w-100(src="img/pr1.jpg", alt="")
 
-                        a(href="proyecto-detalle.html") 
+                        a(href="proyecto-detalle.html" iluminacion industria="Educación") 
                             .accordion-item
                                 h2.txt-4xl(id="heading"+n) Absence
                                 .lista__data 
@@ -94,7 +95,7 @@ block content
                                             source(srcset="img/image_3-1.webp", type="image/webp")
                                             img.img-fluid.w-100(src="img/image_3-1.jpg", alt="")
 
-                        a(href="proyecto-detalle.html") 
+                        a(href="proyecto-detalle.html" estructura) 
                             .accordion-item
                                 h2.txt-4xl(id="heading"+n) Telar
                                 .lista__data 

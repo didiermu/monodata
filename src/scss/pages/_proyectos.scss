@@ -16,24 +16,36 @@
         li {
             border-radius: 50px;
             border: 1px solid var(--bg-prm);
-            padding: 12px 24px;
+            // padding: 12px 24px;
             text-align: center;
             width: max-content;
             font-size: var(--h4);
             display: flex;
-            align-items: baseline;
+            align-items: center;
             gap: 4px;
             font-family: var(--prm-regular);
             cursor: pointer;
+            height: 48px;
 
             sup {
                 font-size: var(--s);
                 font-family: var(--prm-medium);
+                top: -0.2em;
             }
 
             &.active {
                 font-family: var(--prm-medium);
                 border-width: 2px;
+            }
+        }
+
+        .chip {
+            padding: 0 24px;
+        }
+
+        .combo {
+            option[value="destacado"] {
+                display: none;
             }
         }
     }
@@ -44,6 +56,43 @@
     // padding-bottom: 100px;
 
     @include listaProyecto;
+
+    .lista {
+        &.lista-combo {
+            a {
+                display: none;
+                &.active {
+                    display: block;
+                    &:first-child .accordion-collapse {
+                        height: 600px;
+                    }
+                }
+            }
+        }
+
+        &.lista-destacados {
+            a {
+                display: none;
+
+                &.Destacado {
+                    display: block;
+                    &:first-child .accordion-collapse {
+                        height: 600px;
+                    }
+                }
+                &.active {
+                    display: block;
+                    &:first-child .accordion-collapse {
+                        height: 600px;
+                    }
+                }
+
+                &.hide {
+                    display: none;
+                }
+            }
+        }
+    }
 
     .contact {
         padding-bottom: 0;
