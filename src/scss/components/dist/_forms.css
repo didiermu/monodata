@@ -118,12 +118,17 @@
   border-width: 0 0 1px 0;
 }
 
+.input__group#input--group3 .error-input p, .input__group#input--group4 .error-input p, .input__group#input--group5 .error-input p {
+  margin-top: 2em;
+}
+
 .input__group .error-input {
   display: none;
 }
 
 .input__group .error-input.show {
   display: block;
+  margin-top: 2em;
 }
 
 .input__chip {
@@ -136,6 +141,12 @@
   height: 48px;
 }
 
+.input__chip.set .chip,
+.input__chip.set label {
+  font-family: var(--prm-medium);
+  border-width: 2px;
+}
+
 .input__chip input {
   position: absolute;
   opacity: 0;
@@ -144,12 +155,8 @@
   transition: 0.3s ease-in-out all;
 }
 
-.input__chip input:checked ~ .chip {
-  font-family: var(--prm-medium);
-  border-width: 2px;
-}
-
-.input__chip .chip {
+.input__chip .chip,
+.input__chip label {
   cursor: pointer;
   height: 100%;
   width: 100%;
@@ -161,7 +168,8 @@
   line-height: 24px;
 }
 
-.input__chip .chip sup {
+.input__chip .chip sup,
+.input__chip label sup {
   font-family: var(--prm-medium);
   margin-left: 4px;
   font-size: var(--s);
@@ -172,6 +180,12 @@
   flex: 0 0 100%;
   padding-left: 24px;
   font-size: var(--xs);
+  margin-top: 2em;
+}
+
+.screen-reader-response,
+.wpcf7-response-output {
+  display: none;
 }
 
 /*# sourceMappingURL=_forms.css.map */

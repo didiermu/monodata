@@ -70,6 +70,13 @@
 
         &-resume {
             padding: 64px 0 104px;
+
+            p {
+                @extend .txt-3xl;
+                a {
+                    text-decoration: underline;
+                }
+            }
         }
 
         &-quotes {

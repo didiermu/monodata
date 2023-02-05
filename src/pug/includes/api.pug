@@ -1,6 +1,17 @@
 script.
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    const animTxt = (elem, texto) => {
+        gsap.to(elem, {
+            duration: 2,
+            text: {
+                value: texto,
+                newClass: "class2",
+                // delimiter: " ",
+            },
+            ease: "none",
+        });
+    };
     const apiClima = () => {
-    // Datos:latitude, longitude, resolvedAddres,humidity, windspeed, uvindex, solarradiation description, pressure, conditions.
 
     fetch(
         "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/ciudad%20de%20mexico/today?unitGroup=metric&include=hours&key=WYJ95FQXYZ7RLMEZBQVSG4BLX&contentType=json"

@@ -1,21 +1,6 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 const animTxt = (elem, texto) => {
-    // const dataApi = document.querySelectorAll(
-    //     ".info--api--content.info--api--content h6"
-    // );
-    // for (const dataApiElem of dataApi) {
-    //     console.log(dataApiElem.textContent);
-    //     let tween = gsap.to(".info--api--content h6", {
-    //         text: {
-    //             value: dataApiElem.textContent,
-    //         },
-    //         duration: 5,
-    //         delay: 1,
-    //         ease: "none",
-    //     });
-    // }
-
     gsap.to(elem, {
         duration: 2,
         text: {
@@ -35,14 +20,6 @@ animTxt("#fiv", "Viento del N a 18 km/h");
 animTxt("#six", "Humedad 30%");
 
 ///////// TABLA
-
-// var elem = document.querySelector(".grid");
-// var iso = new Isotope(elem, {
-//     // options
-//     itemSelector: ".grid-item",
-//     layoutMode: "masonry",
-//     percentPosition: true,
-// });
 
 const isotopo = () => {
     var $grid = $(".grid").isotope({
@@ -186,28 +163,6 @@ const orderItems = () => {
         };
     }
 };
-
-// orderItems();
-
-// const clickItemLab = () => {
-//     const itemTabla = document.querySelectorAll(".grid-item");
-
-//     for (const itemTablaElem of itemTabla) {
-//         itemTablaElem.onclick = () => {
-//             // for (const itemTablaElem of itemTabla) {
-//             //     itemTablaElem.classList.toggle("pasive");
-//             // }
-//             // itemTablaElem.classList.toggle("active");
-//             itemTablaElem.classList.toggle("active");
-//             // iso.layout();
-//         };
-//     }
-
-//     orderItems();
-// };
-
-// orderItems();
-// clickItemLab();
 
 const clicTabla = () => {
     const sliderTabla = (slider) => {

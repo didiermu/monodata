@@ -6,6 +6,7 @@
 
             .modal-body
                 form.col-lg-10
+
                     .input__group.show#input--group1
                         label.h3 ¿Cuál es tu nombre?
                         input#input-name.txt-3xl(type="text", name="input-name") 
@@ -20,8 +21,14 @@
                         label.h3 ¿Qué tipo de proyecto necesitas?
                         .input__chips
                             .input__chip
-                                input#chip1.checkbox(type='checkbox')
-                                label.chip(for='chip1') Experiencia inmersiva
+                                p
+                                    span 
+                                        span 
+                                            span 
+                                                label
+                                                    span Experiencia inmersiva
+                                                    input#chip1.checkbox(type='checkbox')
+                                                        //- label.chip(for='chip1') Experiencia inmersiva
 
                             .input__chip
                                 input#chip2.checkbox(type='checkbox')
@@ -84,6 +91,7 @@
                                 input#chip14.checkbox(type='checkbox')
                                 label.chip(for='chip14') + 4 millones
                                     sup MXN
+                        .error-input *Campo obligatorio
 
                     .input__group#input--group5 
                         label.h3 ¿En cuánto tiempo necesitas el proyecto terminado?
@@ -103,14 +111,17 @@
                             .input__chip
                                 input#chip17.checkbox(type='checkbox')
                                 label.chip(for='chip17') Próximo año
+                        .error-input *Campo obligatorio
 
                     .input__group#input--group6
                         label.h3 Compártenos tu correo electrónico
                         input#input-email.txt-3xl(type="text", name="input-email") 
+                        .error-input *Campo obligatorio
 
                     .input__group#input--group7
                         label.h3 ¿Deseas añadir algo más? (opcional)
                         input#input-msj.txt-3xl(type="text", name="input-msj") 
+
 
                     .input__group#input--group8
                         h1.txt-4xl ¡Gracias por tu interés! 
@@ -118,5 +129,6 @@
                             | Te contactaremos muy pronto 😎
 
 
-                    .icon-arrow-64#prev-form.hide
-                    .icon-arrow-64#next-form
+                    .nav-modal
+                        .icon-arrow-64#prev-form.hide
+                        .icon-arrow-64#next-form

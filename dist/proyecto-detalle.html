@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" defer> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js" defer></script>
     <script src="https://www.unpkg.com/spltjs@1.1.0"></script>
     <script src="js/anime.min.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
@@ -199,8 +199,10 @@
                   <label class="h3">¿Qué tipo de proyecto necesitas?</label>
                   <div class="input__chips">
                     <div class="input__chip">
-                      <input class="checkbox" id="chip1" type="checkbox">
-                      <label class="chip" for="chip1">Experiencia inmersiva</label>
+                      <p><span> <span> <span> 
+                              <label><span>Experiencia inmersiva</span>
+                                <input class="checkbox" id="chip1" type="checkbox">
+                              </label></span></span></span></p>
                     </div>
                     <div class="input__chip">
                       <input class="checkbox" id="chip2" type="checkbox">
@@ -261,6 +263,7 @@
                       <label class="chip" for="chip14">+ 4 millones<sup>MXN</sup></label>
                     </div>
                   </div>
+                  <div class="error-input">*Campo obligatorio</div>
                 </div>
                 <div class="input__group" id="input--group5"> 
                   <label class="h3">¿En cuánto tiempo necesitas el proyecto terminado?</label>
@@ -282,10 +285,12 @@
                       <label class="chip" for="chip17">Próximo año</label>
                     </div>
                   </div>
+                  <div class="error-input">*Campo obligatorio</div>
                 </div>
                 <div class="input__group" id="input--group6">
                   <label class="h3">Compártenos tu correo electrónico</label>
                   <input class="txt-3xl" id="input-email" type="text" name="input-email">
+                  <div class="error-input">*Campo obligatorio</div>
                 </div>
                 <div class="input__group" id="input--group7">
                   <label class="h3">¿Deseas añadir algo más? (opcional)</label>
@@ -294,8 +299,10 @@
                 <div class="input__group" id="input--group8">
                   <h1 class="txt-4xl">¡Gracias por tu interés! <br>Te contactaremos muy pronto 😎</h1>
                 </div>
-                <div class="icon-arrow-64 hide" id="prev-form"></div>
-                <div class="icon-arrow-64" id="next-form"></div>
+                <div class="nav-modal">
+                  <div class="icon-arrow-64 hide" id="prev-form"></div>
+                  <div class="icon-arrow-64" id="next-form"></div>
+                </div>
               </form>
             </div>
           </div>

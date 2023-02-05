@@ -2,10 +2,8 @@ extends includes/head.pug
 block head-page
     title Monodata | Experimentos
     script(src='https://code.jquery.com/jquery-3.6.3.min.js', integrity='sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=', crossorigin='anonymous')
-    //- script(src='https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js')
-    script(src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
 
-    script(src="js/anim-exp.min.js" defer) 
+    script(src="js/anim-exp-new.min.js" defer) 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js', integrity='sha512-RL2ypMFkOs/iB79bWnNiFrZRCqyExtQ38n/K+t7Xjf09YZcvSzqgSaGVj+fiVYEqVRLf/WjdHmwGImZM3XO5gA==', crossorigin='anonymous', referrerpolicy='no-referrer')
 
 
@@ -16,7 +14,7 @@ block content
     #viewport
         include includes/header
         main.exp
-            include includes/api
+            //- include includes/api
 
             section.marquee-exp 
                 .marquee-exp-wrap
@@ -59,7 +57,7 @@ block content
                                                         source(srcset="img/Copia_de_coral_surface3_1.webp", type="image/webp")
                                                         img.img-fluid(src="img/Copia_de_coral_surface3_1.png", alt="image/webp")
 
-                                            .swiper-pagination
+                                            .swiper-pagination#pag-uno
 
                                         .tabla-wrap_item_data
                                             .tabla-wrap_item_data_name
@@ -67,6 +65,8 @@ block content
                                                 h4.txt-h6 09.2019
 
                                             h5.txt-h5.tabla-wrap_item_hash Self portraits #proceduralmodeling #houdini rendered on @touchdesigner @sidefxhoudini #new_media_art #glsl #creativecoding
+
+
 
                                 .grid-item
                                     .icon-close

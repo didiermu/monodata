@@ -120,96 +120,26 @@
         border-width: 0 0 1px 0;
     }
 
+    &#input--group3,
+    &#input--group4,
+    &#input--group5 {
+        .error-input p {
+            margin-top: 2em;
+        }
+    }
+
     .error-input {
         display: none;
 
         &.show {
             display: block;
+            margin-top: 2em;
+            // p {
+            //     margin-top: 2em;
+            // }
         }
     }
 }
-
-// @mixin checkbox {
-//     display: flex;
-//     align-items: center;
-//     position: relative;
-//     cursor: pointer;
-//     user-select: none;
-//     flex-flow: row wrap;
-//     width: 100%;
-
-//     input {
-//         position: absolute;
-//         opacity: 0;
-//         height: 0;
-//         width: 0;
-
-//         &:checked ~ .checkmark {
-//             background-color: var(--color-sec);
-//         }
-
-//         &:checked ~ .checkmark:after {
-//             display: block;
-//         }
-//     }
-
-//     .label {
-//         color: var(--color-sec);
-
-//         a {
-//             color: inherit;
-//             text-decoration: underline;
-//             font-weight: bold;
-//         }
-//     }
-
-//     .checkmark {
-//         height: 14px;
-//         width: 14px;
-//         border-radius: 2px;
-//         border: 2px solid var(--color-sec);
-//         margin-right: 10px;
-//         position: relative;
-//         background: var(--color-sec);
-//         cursor: pointer;
-
-//         &:after {
-//             left: 2px;
-//             top: 0;
-//             bottom: 0;
-//             margin: auto;
-//             width: 5px;
-//             height: 8px;
-//             border: solid;
-//             border-width: 0 2px 2px 0;
-//             -webkit-transform: rotate(45deg);
-//             -ms-transform: rotate(45deg);
-//             transform: rotate(45deg);
-//             content: "";
-//             position: absolute;
-//             display: none;
-//             color: #fff;
-//         }
-//     }
-
-//     .labelLegales {
-//         color: var(--color-prm);
-//         margin: 0;
-//         font-size: var(--xs);
-//         font-weight: 600;
-//         flex-basis: 90%;
-
-//         a {
-//             font-weight: 900;
-//         }
-//     }
-
-//     .error-input {
-//         flex: 0 0 100%;
-//         padding-left: 24px;
-//         font-size: var(--xs);
-//     }
-// }
 
 .input__chip {
     display: flex;
@@ -222,6 +152,14 @@
     // width: max-content;
     // padding: 12px 24px;
 
+    &.set {
+        .chip,
+        label {
+            font-family: var(--prm-medium);
+            border-width: 2px;
+        }
+    }
+
     input {
         position: absolute;
         opacity: 0;
@@ -229,13 +167,14 @@
         width: 0;
         transition: 0.3s ease-in-out all;
 
-        &:checked ~ .chip {
-            font-family: var(--prm-medium);
-            border-width: 2px;
-        }
+        // &:checked ~ .chip {
+        //     font-family: var(--prm-medium);
+        //     border-width: 2px;
+        // }
     }
 
-    .chip {
+    .chip,
+    label {
         cursor: pointer;
         height: 100%;
         width: 100%;
@@ -258,5 +197,11 @@
         flex: 0 0 100%;
         padding-left: 24px;
         font-size: var(--xs);
+        margin-top: 2em;
     }
+}
+
+.screen-reader-response,
+.wpcf7-response-output {
+    display: none;
 }
