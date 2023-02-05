@@ -29,13 +29,18 @@ const sliderTabla = (slider) => {
 const swipOp = {
     // const swiper = new Swiper(slider, {
     direction: "horizontal",
-    slidesPerView: 1,
-    loop: true,
-    allowTouchMove: false,
+    slidesPerView: "auto",
+    // allowTouchMove: true,
+    loop: false,
+
     pagination: {
         el: ".swiper-pagination",
-        type: "bullets",
+        // type: "bullets",
         clickable: true,
+        enabled: true,
+        renderBullet: function (index, className) {
+            return '<div class="' + className + '">0' + (index + 1) + "</div>";
+        },
     },
 };
 
@@ -76,33 +81,39 @@ const tablaExp = () => {
 
     for (var i = 0; i < targets.length; i++) {
         targets[i].addEventListener("click", function () {
-            flip(this);
-
-            //// AGREGA ALTO EN LA FILA FINAL
-
-            const item12 = document.querySelector(
-                ".grid-item[data-item=item12]"
-            );
-            const item13 = document.querySelector(
-                ".grid-item[data-item=item13]"
-            );
-            const item14 = document.querySelector(
-                ".grid-item[data-item=item14]"
-            );
-            const item15 = document.querySelector(
-                ".grid-item[data-item=item15]"
-            );
-
-            if (
-                item12.classList.contains("active") ||
-                item13.classList.contains("active") ||
-                item14.classList.contains("active") ||
-                item15.classList.contains("active")
-            ) {
-                wrapItem.classList.add("lastItem");
+            if (this.closest(".grid-item").classList.contains("active")) {
+                console.log("si");
+                return false;
             } else {
-                wrapItem.classList.remove("lastItem");
+                console.log("no");
+                flip(this);
             }
+
+            //// AGREGA ALTO EN LA FILA FINAL ESTO HAY QUE AJUSTARLO PARA QUE NO SEA FIJO A¿LAS CLASES
+
+            // const item12 = document.querySelector(
+            //     ".grid-item[data-item=item12]"
+            // );
+            // const item13 = document.querySelector(
+            //     ".grid-item[data-item=item13]"
+            // );
+            // const item14 = document.querySelector(
+            //     ".grid-item[data-item=item14]"
+            // );
+            // const item15 = document.querySelector(
+            //     ".grid-item[data-item=item15]"
+            // );
+
+            // if (
+            //     item12.classList.contains("active") ||
+            //     item13.classList.contains("active") ||
+            //     item14.classList.contains("active") ||
+            //     item15.classList.contains("active")
+            // ) {
+            //     wrapItem.classList.add("lastItem");
+            // } else {
+            //     wrapItem.classList.remove("lastItem");
+            // }
 
             // WRAP ACTIVE
             document.querySelector(".tabla-wrap").classList.add("wrapActive");

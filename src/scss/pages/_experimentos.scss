@@ -351,12 +351,12 @@
                             display: grid;
                             place-items: center;
 
-                            &::after {
-                                content: "0" counter(slide);
-                                counter-increment: slide;
-                                text-align: center;
-                                font-size: var(--h4);
-                            }
+                            // &::after {
+                            //     content: "0" counter(slide);
+                            //     counter-increment: slide;
+                            //     text-align: center;
+                            //     font-size: var(--h4);
+                            // }
 
                             &-active {
                                 background: var(--bg-prm);
