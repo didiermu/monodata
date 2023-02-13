@@ -78,17 +78,11 @@
 
                     &::after {
                         content: "";
-                        height: 1px;
+                        height: 4px;
                         background: var(--bg-prm);
-                        width: 100%;
-                        left: 0;
-                        bottom: 0;
-                        position: absolute;
-                        transform: rotateZ(-13deg);
-                        // transform-origin: bottom left;
-                        bottom: 0;
-                        right: 0;
-                        top: 50%;
+                        width: 4px;
+                        display: block;
+                        margin: auto;
                     }
                 }
 
@@ -116,9 +110,9 @@
         display: none;
     }
 
-    .icon-search {
-        display: none;
-    }
+    // .icon-search {
+    //     display: none;
+    // }
 }
 
 @media (max-width: 768px) {

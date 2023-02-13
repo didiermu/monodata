@@ -1,31 +1,5 @@
 "use strict";
 
-var sliderTabla = function sliderTabla(slider) {
-  // const swiperOb = document.querySelector(slider);
-  var swipOp = {
-    // const swiper = new Swiper(slider, {
-    direction: "horizontal",
-    slidesPerView: 1,
-    loop: true,
-    allowTouchMove: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true
-    }
-  };
-  var mySwiper = new Swiper(slider, swipOp); // function resetSwiper() {
-  //     var swiperWrapper = $(".swiper-wrapper");
-  //     var newSlides = $(".swiper-wrapper")
-  //         .children(".swiper-slide")
-  //         .clone(true);
-  //     mySwiper.destroy();
-  //     swiperWrapper.empty().append(newSlides);
-  //     $(".swiper-wrapper").attr("style", "");
-  //     mySwiper = new Swiper(slider, settings);
-  // }
-};
-
 var swipOp = {
   // const swiper = new Swiper(slider, {
   direction: "horizontal",
@@ -89,10 +63,11 @@ var tablaExp = function tablaExp() {
       zIndex: 7
     });
     Flip.from(state, {
-      duration: 0.25,
+      duration: 0.5,
       absolute: true,
       ease: "power1.out",
-      nested: true
+      nested: true // stagger: 0.01,
+
     }).set(targets, {
       clearProps: "zIndex"
     });
@@ -107,29 +82,18 @@ var tablaExp = function tablaExp() {
         console.log("no");
         flip(this);
       } //// AGREGA ALTO EN LA FILA FINAL ESTO HAY QUE AJUSTARLO PARA QUE NO SEA FIJO A¿LAS CLASES
-      // const item12 = document.querySelector(
-      //     ".grid-item[data-item=item12]"
-      // );
-      // const item13 = document.querySelector(
-      //     ".grid-item[data-item=item13]"
-      // );
-      // const item14 = document.querySelector(
-      //     ".grid-item[data-item=item14]"
-      // );
-      // const item15 = document.querySelector(
-      //     ".grid-item[data-item=item15]"
-      // );
-      // if (
-      //     item12.classList.contains("active") ||
-      //     item13.classList.contains("active") ||
-      //     item14.classList.contains("active") ||
-      //     item15.classList.contains("active")
-      // ) {
-      //     wrapItem.classList.add("lastItem");
-      // } else {
-      //     wrapItem.classList.remove("lastItem");
-      // }
-      // WRAP ACTIVE
+
+
+      var item12 = document.querySelector(".grid-item[data-item=item12]");
+      var item13 = document.querySelector(".grid-item[data-item=item13]");
+      var item14 = document.querySelector(".grid-item[data-item=item14]");
+      var item15 = document.querySelector(".grid-item[data-item=item15]");
+
+      if (item12.classList.contains("active") || item13.classList.contains("active") || item14.classList.contains("active") || item15.classList.contains("active")) {
+        wrapItem.classList.add("lastItem");
+      } else {
+        wrapItem.classList.remove("lastItem");
+      } // WRAP ACTIVE
 
 
       document.querySelector(".tabla-wrap").classList.add("wrapActive"); // ACTIVE SLIDER
@@ -147,10 +111,11 @@ var tablaExp = function tablaExp() {
       zIndex: 7
     });
     Flip.from(state, {
-      duration: 0.25,
+      duration: 0.5,
       absolute: true,
       ease: "power1.out",
-      nested: true
+      nested: true // stagger: 0.01,
+
     }).set(targets, {
       clearProps: "zIndex"
     });
@@ -163,14 +128,7 @@ var tablaExp = function tablaExp() {
 
       mySwiper.destroy(true, true);
     });
-  } /// CERRA ITEM
-  // const itemClose = document.querySelectorAll(".grid-item .icon-close");
-  // for (const itemCloseElem of itemClose) {
-  //     itemCloseElem.addEventListener("click", () => {
-  //         itemCloseElem.closest(".grid-item").classList.remove("active");
-  //     });
-  // }
-
+  }
 };
 
 tablaExp();

@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="css/styles.min.css">
     <title>Monodata | Experimentos</title>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="js/anim-exp-new.min.js" defer> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js" integrity="sha512-RL2ypMFkOs/iB79bWnNiFrZRCqyExtQ38n/K+t7Xjf09YZcvSzqgSaGVj+fiVYEqVRLf/WjdHmwGImZM3XO5gA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/anim-exp-new.min.js" defer> </script>
     <body>
       <div id="viewport">
         <header class="header">
@@ -57,6 +57,71 @@
           </div>
         </header>
         <main class="exp">
+          <script>
+            const animTxt = (elem, texto) => {
+                gsap.to(elem, {
+                    duration: 2,
+                    text: {
+                        value: texto,
+                        newClass: "class2",
+                        // delimiter: " ",
+                    },
+                    ease: "none",
+                });
+            };
+            const apiClima = () => {
+            
+            fetch(
+                "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/ciudad%20de%20mexico/today?unitGroup=metric&include=hours&key=WYJ95FQXYZ7RLMEZBQVSG4BLX&contentType=json"
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    // console.log(data.days);
+            
+                    animTxt("#one", "Latitude:" + data.latitude);
+                    animTxt("#two", "Longitude:" + data.longitude);
+                    animTxt("#tre", data.resolvedAddress);
+                    data.days.map((item) => {
+                        animTxt("#fou", "Humidity:" + item.humidity);
+                        animTxt("#fiv", "Windspeed:" + item.windspeed);
+                        animTxt("#six", "Solar radiation:" + item.solarradiation);
+                        animTxt("#sev", "Description:" + item.description);
+                        animTxt("#eig", "Pressure:" + item.pressure);
+                        animTxt("#nin", "Conditions:" + item.conditions);
+                    });
+                });
+            };
+            
+            apiClima();
+            
+            
+          </script>
+          <section class="info--api"> 
+            <div class="container-fluid"> 
+              <div class="row"> 
+                <div class="col-12 info--api--content">
+                  <h6 id="one">Latitude -99.9999</h6>
+                  <h6 id="two">Longitude -99.9999</h6>
+                  <h6 id="tre">Ciudad de México CDXM Mexico</h6>
+                  <h6 id="fou">Humidity 44.0</h6>
+                  <h6 id="fiv">Windspeed 16</h6>
+                  <h6 id="six">Solar radiation 230.6</h6>
+                  <h6 id="sev">Description Clear conditions throtug the day</h6>
+                  <h6 id="eig">Pressure 1000</h6>
+                  <h6 id="nin">Conditions Clear</h6>
+                  <h6 id="one">Latitude -99.9999</h6>
+                  <h6 id="two">Longitude -99.9999</h6>
+                  <h6 id="tre">Ciudad de México CDXM Mexico</h6>
+                  <h6 id="fou">Humidity 44.0</h6>
+                  <h6 id="fiv">Windspeed 16</h6>
+                  <h6 id="six">Solar radiation 230.6</h6>
+                  <h6 id="sev">Description Clear conditions throtug the day</h6>
+                  <h6 id="eig">Pressure 1000</h6>
+                  <h6 id="nin">Conditions Clear</h6>
+                </div>
+              </div>
+            </div>
+          </section>
           <section class="marquee-exp"> 
             <div class="marquee-exp-wrap">
               <div class="marquee-exp_marquee d-flex align-items-center">
@@ -611,10 +676,10 @@
           <section class="marquee-exp marquee--resume"> 
             <div class="marquee-exp-wrap">
               <div class="marquee-exp_marquee d-flex align-items-center">
-                <h2 class="txt-h2">To raise new questions, new possibilities, to regard old problems from a new angle, requires creative imagination and marks real advance in science.</h2>
+                <h2 class="txt-h2">Para plantear nuevas preguntas, vislumbrar nuevas posibilidades y considerar viejos problemas desde puntos de vista nuevos que marcan los avances positivos de la ciencia se requiere una imaginación creadora”</h2>
               </div>
               <div class="marquee-exp_marquee d-flex align-items-center">
-                <h2 class="txt-h2">To raise new questions, new possibilities, to regard old problems from a new angle, requires creative imagination and marks real advance in science.</h2>
+                <h2 class="txt-h2">Para plantear nuevas preguntas, vislumbrar nuevas posibilidades y considerar viejos problemas desde puntos de vista nuevos que marcan los avances positivos de la ciencia se requiere una imaginación creadora”</h2>
               </div>
             </div>
             <div class="marquee--resume">  

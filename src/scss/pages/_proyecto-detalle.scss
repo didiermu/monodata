@@ -32,19 +32,15 @@
             }
 
             .cursor {
-                // background: url("../img/Screw.svg") no-repeat center / contain;
-                // width: 160px;
-                // height: 160px;
-                // width: 100px;
-                // height: 160px;
+                background: url("../img/vector-pause.svg") no-repeat center /
+                    contain;
+                width: 104px;
+                height: 104px;
                 position: absolute;
                 z-index: 2;
                 bottom: 32px;
                 right: 24px;
-                padding: 12px;
                 color: var(--bg-sec);
-                border: 1px solid var(--bg-sec);
-                border-radius: 20px;
                 cursor: pointer;
 
                 &.show {
@@ -60,6 +56,7 @@
 
                 &.play {
                     display: none;
+                    background-image: url("../img/vector-play.svg");
                 }
             }
 
@@ -160,8 +157,11 @@
                 }
             }
 
+            &-wrapper {
+                margin-bottom: 48px;
+            }
+
             &-pagination {
-                display: none;
                 &-custom {
                     color: #fff;
                     position: relative;
