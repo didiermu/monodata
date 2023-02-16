@@ -64,6 +64,10 @@
                         &:first-child {
                             margin-right: 8px;
                         }
+
+                        &.active {
+                            font-family: var(--prm-medium);
+                        }
                     }
                 }
             }
@@ -83,6 +87,7 @@
                         width: 4px;
                         display: block;
                         margin: auto;
+                        border-radius: 50%;
                     }
                 }
 

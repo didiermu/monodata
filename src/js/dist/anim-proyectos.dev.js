@@ -48,8 +48,7 @@ function efectoFade() {
   sectionFade();
   $(document).scroll(function () {
     sectionFade();
-  });
-  document.querySelector("#collapse1").classList.add("show");
+  }); // document.querySelector("#collapse1").classList.add("show");
 }
 
 efectoFade(); // const blogs = document.querySelectorAll(".accordion-item");
@@ -347,5 +346,8 @@ todos.addEventListener("click", function () {
       }
     }
   }
+});
+$("select option").val(function (idx, val) {
+  $(this).siblings('[value="' + val + '"]').remove();
 });
 //# sourceMappingURL=anim-proyectos.dev.js.map

@@ -52,7 +52,7 @@ function efectoFade() {
         sectionFade();
     });
 
-    document.querySelector("#collapse1").classList.add("show");
+    // document.querySelector("#collapse1").classList.add("show");
 }
 
 efectoFade();
@@ -175,4 +175,10 @@ todos.addEventListener("click", () => {
     for (const listaItemsElem of listaItems) {
         listaItemsElem.classList.remove("active");
     }
+});
+
+$("select option").val(function (idx, val) {
+    $(this)
+        .siblings('[value="' + val + '"]')
+        .remove();
 });

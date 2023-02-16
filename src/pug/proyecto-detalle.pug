@@ -5,6 +5,8 @@ block head-page
     script(src='https://vjs.zencdn.net/7.20.3/video.min.js')
     //- script(src='js/scroll-smooth.min.js' defer)
     script(src="js/anim-detalle-proyecto.min.js" defer) 
+    script(src='https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js')
+
 
 block content
     -ruta = ""
@@ -40,16 +42,64 @@ block content
                             br
                             | Este proyecto fue comisionado por The Stüdio con el propósito de develar el nuevo logotipo de Kia en México.
 
-                    .info-detalle-quotes.offset-lg-7.col-lg-5.offset-2
+                    .info-detalle-quotes.offset-lg-7.col-lg-5
                         p.txt-l Tomamos como base el concepto inspirado en el movimiento de la nueva imagen de Kia para representar la innovación en la marca creando en tiempo real patrones dinámicos a través de proyecciones en multicapas y veinte cuadriláteros luminosos en forma de pasaje.  
 
             section.galeria
-                .galeria--banner(data-bs-toggle="modal", data-bs-target="#exampleModal")
-                    picture 
-                        source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
-                        img.img-fluid.w-100(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+                .container-fluid
+                    h2 Experiencia inmersiva en domo 360°
+                    h3 Simulación de un viaje interespacial mediante contenidos audiovisuales creados en Unreal Engine. 
 
-                    h3.txt-xl.icon-icon-plus Ampliar
+                    #gallery-1.gallery.galleryid-78.gallery-columns-2.gallery-size-full
+                        dl.gallery-item
+                            dt.gallery-icon.landscape
+                            a
+                                img.attachment-full.size-full(width='605', height='394', src='img/IMG_2592.jpg' alt decoding='async', loading='lazy')
+                        dl.gallery-item
+                            dt.gallery-icon.landscape
+                            a
+                                img.attachment-full.size-full(width='605', height='394', src='img/2.jpg' alt decoding='async', loading='lazy')
+                        dl.gallery-item
+                            dt.gallery-icon.landscape
+                            a
+                                img.attachment-full.size-full(width='605', height='394', src='img/2.jpg' alt decoding='async', loading='lazy')
+
+                        dl.gallery-item
+                            dt.gallery-icon.landscape
+                            a
+                                img.attachment-full.size-full(width='1280', height='652', src="img/IMG_2551.jpg")
+                        dl.gallery-item
+                            dt.gallery-icon.landscape
+                            a
+                                img.attachment-full.size-full(width='1280', height='652', src="img/IMG_2551.jpg")
+                        br(style='clear: both')
+
+                    #gallery-2.gallery.galleryid-78.gallery-columns-3.gallery-size-full
+                        h2 oaoosoaao 
+                        dl.gallery-item
+                            dt.gallery-icon.landscape
+                            a
+                                img.attachment-full.size-full(width='605', height='394', src='img/2.jpg' alt decoding='async', loading='lazy')
+                        dl.gallery-item
+                            dt.gallery-icon.landscape
+                            a
+                                img.attachment-full.size-full(width='1280', height='652', src="img/IMG_2551.jpg")
+                        dl.gallery-item
+                            dt.gallery-icon.landscape
+                            a
+                                img.attachment-full.size-full(width='1280', height='652', src="img/IMG_2551.jpg")
+                        br(style='clear: both')
+
+                    //- p
+                    //-     picture 
+                    //-         source(srcset="img/2.webp", type="image/webp")
+                    //-         img.img-fluid(srcset="img/2.webp", alt="image/webp")
+                    //- p
+                    //-     picture 
+                    //-         source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
+                    //-         img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+
+                //- h3.txt-xl.icon-icon-plus Ampliar
 
                 .modal.fade#exampleModal(aria-labelledby='exampleModalLabel', aria-hidden='true')
                     .modal-dialog.modal-dialog-centered.modal-fullscreen
@@ -59,25 +109,33 @@ block content
                             .modal-body
                                 .swiper 
                                     .swiper-wrapper
-                                        .swiper-slide
-                                            picture 
-                                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
-                                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+                                        #gallery-1.gallery.galleryid-78.gallery-columns-3.gallery-size-full 
 
-                                        .swiper-slide
-                                            picture 
-                                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
-                                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+                                            dl.gallery-item
+                                                dt.gallery-icon.landscape
+                                                a
+                                                    img.attachment-full.size-full(width='605', height='394', src='img/2.jpg' alt decoding='async', loading='lazy')
 
-                                        .swiper-slide
-                                            picture 
-                                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
-                                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+                                            dl.gallery-item
+                                                dt.gallery-icon.landscape
+                                                a
+                                                    img.attachment-full.size-full(width='1280', height='652', src="img/IMG_2551.jpg")
+                                            dl.gallery-item
+                                                dt.gallery-icon.landscape
+                                                a
+                                                    img.attachment-full.size-full(width='1280', height='652', src="img/IMG_2551.jpg")
+                                            br(style='clear: both')
 
-                                        .swiper-slide
-                                            picture 
-                                                source(srcset="img/MONODATA_KIA_WTC-21.webp", type="image/webp")
-                                                img.img-fluid(srcset="img/MONODATA_KIA_WTC-21.webp", alt="image/webp")
+                                        #gallery-2.gallery.galleryid-78.gallery-columns-3.gallery-size-full
+                                            dl.gallery-item
+                                                dt.gallery-icon.landscape
+                                                a
+                                                    img.attachment-full.size-full(width='605', height='394', src='http://localhost/monodata/wp-content/uploads/2023/01/2.jpg' alt decoding='async', loading='lazy')
+                                            dl.gallery-item
+                                                dt.gallery-icon.landscape
+                                                a
+                                                    img.attachment-full.size-full(width='1280', height='652', src='http://localhost/monodata/wp-content/uploads/2023/01/DSC_4541_2.jpg' alt decoding='async', loading='lazy', srcset='http://localhost/monodata/wp-content/uploads/2023/01/DSC_4541_2.jpg 1280w, http://localhost/monodata/wp-content/uploads/2023/01/DSC_4541_2-768x391.jpg 768w', sizes='(max-width: 1280px) 100vw, 1280px')
+                                            br(style='clear: both')
 
                                     .swiper-button-prev
                                     .swiper-button-next
@@ -85,6 +143,12 @@ block content
 
 
             section.marquee 
+                .marquee-wrap
+                    .marquee-marquee.d-flex.align-items-center
+                        h2.txt-h1 Explora el encuentro entre forma y movimiento
+                        h2.txt-h1 Explora el encuentro entre forma y movimiento
+                        h2.txt-h1 Explora el encuentro entre forma y movimiento
+
                 .marquee-content
                     .marquee-data_info 
                         h5.txt-h6 Conceptualización, análisis de datos y dirección de arte
@@ -106,13 +170,6 @@ block content
                         h5.txt-h6 Producción en sitio
                             span Miguel Castañeda
 
-
-
-                .marquee-wrap
-                    .marquee-marquee.d-flex.align-items-center
-                        h2.txt-h1 Explora el encuentro entre forma y movimiento
-                        h2.txt-h1 Explora el encuentro entre forma y movimiento
-                        h2.txt-h1 Explora el encuentro entre forma y movimiento
 
 
             section.lista.related

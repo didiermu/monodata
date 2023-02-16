@@ -104,38 +104,37 @@ var playVideo = function playVideo() {
 
 
 playVideo(); // cursorPlay();
-
-var animTxt = function animTxt(elem, texto) {
-  // const dataApi = document.querySelectorAll(
-  //     ".info--api--content.info--api--content h6"
-  // );
-  // for (const dataApiElem of dataApi) {
-  //     console.log(dataApiElem.textContent);
-  //     let tween = gsap.to(".info--api--content h6", {
-  //         text: {
-  //             value: dataApiElem.textContent,
-  //         },
-  //         duration: 5,
-  //         delay: 1,
-  //         ease: "none",
-  //     });
-  // }
-  gsap.to(elem, {
-    duration: 2,
-    text: {
-      value: texto,
-      newClass: "class2" // delimiter: " ",
-
-    },
-    ease: "none"
-  });
-}; // animTxt("#one", "Ciudad de México 19:10 h");
+// const animTxt = (elem, texto) => {
+//     // const dataApi = document.querySelectorAll(
+//     //     ".info--api--content.info--api--content h6"
+//     // );
+//     // for (const dataApiElem of dataApi) {
+//     //     console.log(dataApiElem.textContent);
+//     //     let tween = gsap.to(".info--api--content h6", {
+//     //         text: {
+//     //             value: dataApiElem.textContent,
+//     //         },
+//     //         duration: 5,
+//     //         delay: 1,
+//     //         ease: "none",
+//     //     });
+//     // }
+//     gsap.to(elem, {
+//         duration: 2,
+//         text: {
+//             value: texto,
+//             newClass: "class2",
+//             // delimiter: " ",
+//         },
+//         ease: "none",
+//     });
+// };
+// animTxt("#one", "Ciudad de México 19:10 h");
 // animTxt("#two", "Elevación 2.240 m");
 // animTxt("#tre", "Superficie 1.485 km²");
 // animTxt("#fou", "22 °C");
 // animTxt("#fiv", "Viento del N a 18 km/h");
 // animTxt("#six", "Humedad 30%");
-
 
 var hoverServices = function hoverServices() {
   var itemsServices = document.querySelectorAll(".servicios__item");

@@ -1,5 +1,6 @@
 "use strict";
 
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 var swipOp = {
   // const swiper = new Swiper(slider, {
   direction: "horizontal",
@@ -94,9 +95,9 @@ var tablaExp = function tablaExp() {
       } else {
         wrapItem.classList.remove("lastItem");
       } // WRAP ACTIVE
+      // wrapItem.classList.add("wrapActive");
+      // ACTIVE SLIDER
 
-
-      document.querySelector(".tabla-wrap").classList.add("wrapActive"); // ACTIVE SLIDER
 
       mySwiper = new Swiper(this.querySelector(".swiper"), swipOp);
     });
@@ -123,7 +124,9 @@ var tablaExp = function tablaExp() {
 
   for (var i = 0; i < targetsClose.length; i++) {
     targetsClose[i].addEventListener("click", function () {
-      closeFlip(this);
+      closeFlip(this); // WRAP ACTIVE
+      // wrapItem.classList.remove("wrapActive");
+
       wrapItem.classList.remove("lastItem"); /// slider
 
       mySwiper.destroy(true, true);

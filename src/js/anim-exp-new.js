@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
 const swipOp = {
     // const swiper = new Swiper(slider, {
     direction: "horizontal",
@@ -89,7 +91,7 @@ const tablaExp = () => {
             }
 
             // WRAP ACTIVE
-            document.querySelector(".tabla-wrap").classList.add("wrapActive");
+            // wrapItem.classList.add("wrapActive");
 
             // ACTIVE SLIDER
 
@@ -120,6 +122,8 @@ const tablaExp = () => {
         targetsClose[i].addEventListener("click", function () {
             closeFlip(this);
 
+            // WRAP ACTIVE
+            // wrapItem.classList.remove("wrapActive");
             wrapItem.classList.remove("lastItem");
 
             /// slider
