@@ -94,7 +94,8 @@
     }
 }
 
-#modal-contact {
+#modal-contact,
+#modal-unete {
     .modal-content {
         background: var(--bg-sec);
     }
@@ -175,7 +176,8 @@
             font-size: xx-large;
         }
 
-        &#prev-form {
+        &#prev-form,
+        &#prev-form-u {
             color: var(--bg-prm);
             transform: rotate(180deg);
 
@@ -184,7 +186,8 @@
             }
         }
 
-        &#next-form {
+        &#next-form,
+        &#next-form-u {
             right: 0;
             background: var(--bg-opacity);
             border-radius: 50%;
@@ -267,7 +270,8 @@
         }
     }
 
-    #modal-contact {
+    #modal-contact,
+    #modal-unete {
         // .modal-body {
         //     place-items: flex-end;
         // }
@@ -304,6 +308,10 @@
                     line-height: 1.2;
                 }
             }
+
+            label {
+                font-size: var(--h4);
+            }
         }
 
         .nav-modal {
@@ -320,10 +328,12 @@
                 &::before {
                     font-size: large;
                 }
-                &#prev-form {
+                &#prev-form,
+                &#prev-form-u {
                     left: 0;
                 }
-                &#next-form {
+                &#next-form,
+                &#next-form-u {
                     right: 0;
                     margin-left: auto;
                 }

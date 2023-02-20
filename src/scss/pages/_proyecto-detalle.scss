@@ -1,4 +1,5 @@
 .proyecto-detalle {
+    overflow-x: hidden;
     @include listaProyecto;
     .info-detalle {
         padding-top: 256px;
@@ -125,7 +126,7 @@
                     margin: 0 !important;
                     float: left;
                     text-align: center;
-                    // position: relative;
+                    position: relative;
                     cursor: pointer;
 
                     &.imgMax {

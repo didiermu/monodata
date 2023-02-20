@@ -201,6 +201,36 @@
     }
 }
 
+.input--upload {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    .icon-icon-upload {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        font-size: large;
+
+        &.check {
+            &::before {
+                content: "✅";
+            }
+        }
+    }
+
+    label {
+        margin-bottom: 0 !important;
+        cursor: pointer;
+    }
+}
+
 .screen-reader-response,
 .wpcf7-response-output {
     display: none;

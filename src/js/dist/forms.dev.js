@@ -1,6 +1,7 @@
 "use strict";
 
-var myModal = new bootstrap.Modal(document.getElementById("modal-contact")); // myModal.show();
+var myModal = new bootstrap.Modal(document.getElementById("modal-contact"));
+var modalUnete = new bootstrap.Modal(document.getElementById("modal-unete")); // modalUnete.show();
 /// TEXTO
 
 var valText = function valText(nameInput) {
@@ -55,18 +56,16 @@ var valMail = function valMail(nameInput) {
       nameInput.closest(".input__group").querySelector(".error-input").classList.remove("show");
     }
   }
-};
+}; /// CONTACTO
 
-var formContacto = document.querySelector(".modal-body form");
+
+var formContacto = document.querySelector("#modal-contact form");
 var inputNombre = document.querySelector("#input-name");
-var inputEmpresa = document.querySelector("#input-empresa"); // const chips = document.querySelectorAll(".input__chip");
-// const chips = document.querySelectorAll(".input__group label");
-
-var chips = document.querySelectorAll(".input__group input"); // const chips = document.querySelectorAll(".input__group .chip");
-
+var inputEmpresa = document.querySelector("#input-empresa");
+var chips = document.querySelectorAll(".input__group input");
 var inputMail = document.querySelector("#input-email");
 var contador = 1;
-preguntas = document.querySelectorAll(".input__group");
+preguntas = document.querySelectorAll("#modal-contact .input__group");
 var btnPrev = document.querySelector("#prev-form");
 var btnNext = document.querySelector("#next-form");
 var _iteratorNormalCompletion = true;
@@ -99,8 +98,6 @@ try {
     }
   }
 }
-
-console.log("3");
 
 btnNext.onclick = function () {
   valText(inputNombre);
@@ -250,18 +247,163 @@ btnPrev.onclick = function () {
 
     document.querySelector("#input--group" + contador).classList.add("show");
   }
+}; /// UNETE
+
+
+var formContactoU = document.querySelector("#modal-unete form");
+var btnPrevU = document.querySelector("#prev-form-u");
+var btnNextU = document.querySelector("#next-form-u");
+var inputNombreU = document.querySelector("#input-name-unete");
+var inputMailU = document.querySelector("#input-email-unete");
+var inputAbout = document.querySelector("#input-about");
+var contadorU = 10;
+preguntasU = document.querySelectorAll("#modal-unete .input__group");
+
+btnNextU.onclick = function () {
+  valText(inputNombreU);
+  valMail(inputMailU);
+  valTextNum(inputAbout);
+  var msjsError = document.querySelectorAll("#modal-unete .input__group.show .error-input.show");
+  var msjsErrorHide = document.querySelectorAll("#modal-unete .error-input.show");
+
+  if (msjsError.length == 0) {
+    // form.submit();
+    // console.log("si");
+    contadorU = ++contadorU;
+
+    if (contadorU == 13) {
+      btnNextU.classList.add("send");
+    }
+
+    if (contadorU > 14) {
+      contadorU = 14;
+    } else {
+      var _iteratorNormalCompletion5 = true;
+      var _didIteratorError5 = false;
+      var _iteratorError5 = undefined;
+
+      try {
+        for (var _iterator5 = msjsErrorHide[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+          var msjsErrorHideElem = _step5.value;
+          msjsErrorHideElem.classList.remove("show");
+        }
+      } catch (err) {
+        _didIteratorError5 = true;
+        _iteratorError5 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
+            _iterator5["return"]();
+          }
+        } finally {
+          if (_didIteratorError5) {
+            throw _iteratorError5;
+          }
+        }
+      }
+
+      var _iteratorNormalCompletion6 = true;
+      var _didIteratorError6 = false;
+      var _iteratorError6 = undefined;
+
+      try {
+        for (var _iterator6 = preguntasU[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+          var preguntasElem = _step6.value;
+          preguntasElem.classList.remove("show");
+        }
+      } catch (err) {
+        _didIteratorError6 = true;
+        _iteratorError6 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion6 && _iterator6["return"] != null) {
+            _iterator6["return"]();
+          }
+        } finally {
+          if (_didIteratorError6) {
+            throw _iteratorError6;
+          }
+        }
+      }
+
+      document.querySelector("#modal-unete #input--group" + contadorU).classList.add("show");
+      btnPrevU.classList.remove("hide");
+      btnNextU.classList.remove("valid");
+    }
+
+    if (contadorU == 14) {
+      btnPrevU.classList.add("hide");
+      btnNextU.classList.add("hide");
+      setTimeout(function () {
+        formContactoU.submit();
+      }, 2000);
+    }
+
+    return true;
+  } else {
+    // console.log("no");
+    return false;
+  }
+};
+
+btnPrevU.onclick = function () {
+  contadorU = --contadorU; // console.log(contador);
+
+  if (contadorU == 10) {
+    contadorU = 10;
+    btnPrevU.classList.add("hide");
+  }
+
+  if (contadorU == 12) {
+    btnNextU.classList.remove("send");
+  }
+
+  if (contadorU > 13) {} else {
+    var _iteratorNormalCompletion7 = true;
+    var _didIteratorError7 = false;
+    var _iteratorError7 = undefined;
+
+    try {
+      for (var _iterator7 = preguntasU[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+        var preguntasElem = _step7.value;
+        preguntasElem.classList.remove("show");
+      }
+    } catch (err) {
+      _didIteratorError7 = true;
+      _iteratorError7 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion7 && _iterator7["return"] != null) {
+          _iterator7["return"]();
+        }
+      } finally {
+        if (_didIteratorError7) {
+          throw _iteratorError7;
+        }
+      }
+    }
+
+    document.querySelector("#input--group" + contadorU).classList.add("show");
+  }
+};
+
+var bntLoad = document.querySelector("#file-unete");
+
+bntLoad.onchange = function () {
+  console.log(bntLoad.value);
+  document.querySelector(".icon-icon-upload").classList.add("check");
 }; //////////////// FOCUS
 
 
 var focusInput = function focusInput() {
   var inputs = document.querySelectorAll(".input__group input");
-  var _iteratorNormalCompletion5 = true;
-  var _didIteratorError5 = false;
-  var _iteratorError5 = undefined;
+  var _iteratorNormalCompletion8 = true;
+  var _didIteratorError8 = false;
+  var _iteratorError8 = undefined;
 
   try {
     var _loop = function _loop() {
-      var inputsElem = _step5.value;
+      var inputsElem = _step8.value;
       inputsElem.addEventListener("click", function () {
         inputsElem.focus();
         inputsElem.parentNode.classList.add("active");
@@ -276,46 +418,46 @@ var focusInput = function focusInput() {
         }
 
         var msjsError = document.querySelectorAll(".error-input");
-        var _iteratorNormalCompletion6 = true;
-        var _didIteratorError6 = false;
-        var _iteratorError6 = undefined;
+        var _iteratorNormalCompletion9 = true;
+        var _didIteratorError9 = false;
+        var _iteratorError9 = undefined;
 
         try {
-          for (var _iterator6 = msjsError[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-            var msjsErrorElem = _step6.value;
+          for (var _iterator9 = msjsError[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+            var msjsErrorElem = _step9.value;
             msjsErrorElem.classList.remove("show");
           }
         } catch (err) {
-          _didIteratorError6 = true;
-          _iteratorError6 = err;
+          _didIteratorError9 = true;
+          _iteratorError9 = err;
         } finally {
           try {
-            if (!_iteratorNormalCompletion6 && _iterator6["return"] != null) {
-              _iterator6["return"]();
+            if (!_iteratorNormalCompletion9 && _iterator9["return"] != null) {
+              _iterator9["return"]();
             }
           } finally {
-            if (_didIteratorError6) {
-              throw _iteratorError6;
+            if (_didIteratorError9) {
+              throw _iteratorError9;
             }
           }
         }
       });
     };
 
-    for (var _iterator5 = inputs[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+    for (var _iterator8 = inputs[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
       _loop();
     }
   } catch (err) {
-    _didIteratorError5 = true;
-    _iteratorError5 = err;
+    _didIteratorError8 = true;
+    _iteratorError8 = err;
   } finally {
     try {
-      if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
-        _iterator5["return"]();
+      if (!_iteratorNormalCompletion8 && _iterator8["return"] != null) {
+        _iterator8["return"]();
       }
     } finally {
-      if (_didIteratorError5) {
-        throw _iteratorError5;
+      if (_didIteratorError8) {
+        throw _iteratorError8;
       }
     }
   }

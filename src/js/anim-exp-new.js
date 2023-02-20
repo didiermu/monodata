@@ -26,6 +26,26 @@ const tablaExp = () => {
 
     for (let index = 0; index < grid_items.length; index++) {
         grid_items[index].setAttribute("data-item", "item" + index);
+
+        if (grid_items.length >= 1) {
+            let lastElement = grid_items[grid_items.length - 1];
+            lastElement.classList.add("last");
+        }
+        if (grid_items.length >= 2) {
+            let penultimo = grid_items[grid_items.length - 2];
+            penultimo.classList.add("penu");
+        }
+        if (grid_items.length >= 3) {
+            let anteultimo = grid_items[grid_items.length - 3];
+            anteultimo.classList.add("ante");
+        }
+        if (grid_items.length >= 4) {
+            let terceultimo = grid_items[grid_items.length - 4];
+            terceultimo.classList.add("terc");
+        }
+        if (grid_items.length >= 5) {
+            wrapItem.classList.add("wrap5");
+        }
     }
 
     gsap.registerPlugin(Flip);
@@ -57,27 +77,17 @@ const tablaExp = () => {
     for (var i = 0; i < targets.length; i++) {
         targets[i].addEventListener("click", function () {
             if (this.closest(".grid-item").classList.contains("active")) {
-                console.log("si");
                 return false;
             } else {
-                console.log("no");
                 flip(this);
             }
 
             //// AGREGA ALTO EN LA FILA FINAL ESTO HAY QUE AJUSTARLO PARA QUE NO SEA FIJO A¿LAS CLASES
 
-            const item12 = document.querySelector(
-                ".grid-item[data-item=item12]"
-            );
-            const item13 = document.querySelector(
-                ".grid-item[data-item=item13]"
-            );
-            const item14 = document.querySelector(
-                ".grid-item[data-item=item14]"
-            );
-            const item15 = document.querySelector(
-                ".grid-item[data-item=item15]"
-            );
+            const item12 = document.querySelector(".grid-item.last");
+            const item13 = document.querySelector(".grid-item.penu");
+            const item14 = document.querySelector(".grid-item.ante");
+            const item15 = document.querySelector(".grid-item.terc");
 
             if (
                 item12.classList.contains("active") ||
@@ -91,7 +101,7 @@ const tablaExp = () => {
             }
 
             // WRAP ACTIVE
-            // wrapItem.classList.add("wrapActive");
+            wrapItem.classList.add("wrapActive");
 
             // ACTIVE SLIDER
 
@@ -123,7 +133,7 @@ const tablaExp = () => {
             closeFlip(this);
 
             // WRAP ACTIVE
-            // wrapItem.classList.remove("wrapActive");
+            wrapItem.classList.remove("wrapActive");
             wrapItem.classList.remove("lastItem");
 
             /// slider

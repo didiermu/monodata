@@ -104,37 +104,38 @@ var playVideo = function playVideo() {
 
 
 playVideo(); // cursorPlay();
-// const animTxt = (elem, texto) => {
-//     // const dataApi = document.querySelectorAll(
-//     //     ".info--api--content.info--api--content h6"
-//     // );
-//     // for (const dataApiElem of dataApi) {
-//     //     console.log(dataApiElem.textContent);
-//     //     let tween = gsap.to(".info--api--content h6", {
-//     //         text: {
-//     //             value: dataApiElem.textContent,
-//     //         },
-//     //         duration: 5,
-//     //         delay: 1,
-//     //         ease: "none",
-//     //     });
-//     // }
-//     gsap.to(elem, {
-//         duration: 2,
-//         text: {
-//             value: texto,
-//             newClass: "class2",
-//             // delimiter: " ",
-//         },
-//         ease: "none",
-//     });
-// };
-// animTxt("#one", "Ciudad de México 19:10 h");
+
+var animTxt = function animTxt(elem, texto) {
+  // const dataApi = document.querySelectorAll(
+  //     ".info--api--content.info--api--content h6"
+  // );
+  // for (const dataApiElem of dataApi) {
+  //     console.log(dataApiElem.textContent);
+  //     let tween = gsap.to(".info--api--content h6", {
+  //         text: {
+  //             value: dataApiElem.textContent,
+  //         },
+  //         duration: 5,
+  //         delay: 1,
+  //         ease: "none",
+  //     });
+  // }
+  gsap.to(elem, {
+    duration: 2,
+    text: {
+      value: texto,
+      newClass: "class2" // delimiter: " ",
+
+    },
+    ease: "none"
+  });
+}; // animTxt("#one", "Ciudad de México 19:10 h");
 // animTxt("#two", "Elevación 2.240 m");
 // animTxt("#tre", "Superficie 1.485 km²");
 // animTxt("#fou", "22 °C");
 // animTxt("#fiv", "Viento del N a 18 km/h");
 // animTxt("#six", "Humedad 30%");
+
 
 var hoverServices = function hoverServices() {
   var itemsServices = document.querySelectorAll(".servicios__item");
@@ -433,5 +434,33 @@ var swiper = new Swiper(".swiper-mobile", {
     el: ".swiper-pagination",
     type: "bullets"
   }
-});
+}); // PARRAFOD VACIOAS
+
+var parrafo = document.querySelectorAll(".servicios__item__contain p");
+var _iteratorNormalCompletion3 = true;
+var _didIteratorError3 = false;
+var _iteratorError3 = undefined;
+
+try {
+  for (var _iterator3 = parrafo[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+    var parrafoElem = _step3.value;
+
+    if (parrafoElem.innerHTML == "") {
+      parrafoElem.remove(); // parrafoElem.classList.add("vacio");
+    }
+  }
+} catch (err) {
+  _didIteratorError3 = true;
+  _iteratorError3 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+      _iterator3["return"]();
+    }
+  } finally {
+    if (_didIteratorError3) {
+      throw _iteratorError3;
+    }
+  }
+}
 //# sourceMappingURL=animations-home.dev.js.map

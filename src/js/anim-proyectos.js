@@ -177,8 +177,13 @@ todos.addEventListener("click", () => {
     }
 });
 
-$("select option").val(function (idx, val) {
-    $(this)
-        .siblings('[value="' + val + '"]')
-        .remove();
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        $("select option").val(function (idx, val) {
+            $(this)
+                .siblings('[value="' + val + '"]')
+                .remove();
+        });
+        console.log("pr1");
+    }, 500);
 });

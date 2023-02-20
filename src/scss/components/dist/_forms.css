@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .botonera .boton {
   margin: 0 15px;
 }
@@ -181,6 +182,34 @@
   padding-left: 24px;
   font-size: var(--xs);
   margin-top: 2em;
+}
+
+.input--upload {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.input--upload input {
+  display: none;
+}
+
+.input--upload .icon-icon-upload {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  font-size: large;
+}
+
+.input--upload .icon-icon-upload.check::before {
+  content: "✅";
+}
+
+.input--upload label {
+  margin-bottom: 0 !important;
+  cursor: pointer;
 }
 
 .screen-reader-response,

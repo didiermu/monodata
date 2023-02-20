@@ -1,0 +1,43 @@
+.modal.fade#modal-unete(aria-labelledby='exampleModalLabel', aria-hidden='true')
+    .modal-dialog.modal-dialog-centered.modal-fullscreen
+        .modal-content
+            img#logo(src="img/MD.svg", alt="")
+            button.btn-close.icon-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+
+            .modal-body
+                form.col-lg-10
+
+                    .input__group.show#input--group10
+                        label.h3 ¿Cuál es tu nombre?
+                        input#input-name-unete.txt-3xl(type="text", name="input-name-unete") 
+                        .error-input *Campo obligatorio
+
+
+                    .input__group#input--group11
+                        label.h3 Compártenos tu correo electrónico
+                        input#input-email-unete.txt-3xl(type="text", name="input-email-unete") 
+                        .error-input *Campo obligatorio
+
+                    .input__group#input--group12
+                        label.h3 Cuéntanos sobre ti. 
+                        input#input-about.txt-3xl(type="text", name="input-about") 
+                        .error-input *Campo obligatorio
+
+                    .input__group#input--group13
+                        label.h3 Compártenos el URL de tu portafolio / perfil profesional. (opcional)
+                        input#input-portafolio.txt-3xl(type="text", name="input-portafolio") 
+                        .input--upload
+                            input#file-unete(type="file" hidden name="file-unete")
+                            .icon-icon-upload
+                            label.h3(for="file-unete") Adjuntar archivo
+
+
+                    .input__group#input--group14
+                        h1.txt-4xl ¡Gracias por tu interés! 
+                            br
+                            | Te contactaremos muy pronto 😎
+
+
+                    .nav-modal
+                        .icon-arrow-64#prev-form-u.hide
+                        .icon-arrow-64#next-form-u(msg="Send")

@@ -347,7 +347,12 @@ todos.addEventListener("click", function () {
     }
   }
 });
-$("select option").val(function (idx, val) {
-  $(this).siblings('[value="' + val + '"]').remove();
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    $("select option").val(function (idx, val) {
+      $(this).siblings('[value="' + val + '"]').remove();
+    });
+    console.log("pr1");
+  }, 500);
 });
 //# sourceMappingURL=anim-proyectos.dev.js.map

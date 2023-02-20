@@ -181,7 +181,7 @@ window.addEventListener("resize", () => {
 //////////////////////// GRID IMAGES
 const imagenes = document.querySelectorAll(".gallery img");
 for (const imagenesElem of imagenes) {
-    if (imagenesElem.getAttribute("width") > 605) {
+    if (imagenesElem.getAttribute("width") > 1210) {
         imagenesElem.closest(".gallery-item").classList.add("imgMax");
     }
 }

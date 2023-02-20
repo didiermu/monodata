@@ -1,5 +1,6 @@
 var myModal = new bootstrap.Modal(document.getElementById("modal-contact"));
-// myModal.show();
+var modalUnete = new bootstrap.Modal(document.getElementById("modal-unete"));
+// modalUnete.show();
 
 /// TEXTO
 
@@ -99,17 +100,15 @@ const valMail = (nameInput) => {
     }
 };
 
-const formContacto = document.querySelector(".modal-body form");
+/// CONTACTO
+const formContacto = document.querySelector("#modal-contact form");
 const inputNombre = document.querySelector("#input-name");
 const inputEmpresa = document.querySelector("#input-empresa");
-// const chips = document.querySelectorAll(".input__chip");
-// const chips = document.querySelectorAll(".input__group label");
 const chips = document.querySelectorAll(".input__group input");
-// const chips = document.querySelectorAll(".input__group .chip");
 const inputMail = document.querySelector("#input-email");
 
 let contador = 1;
-preguntas = document.querySelectorAll(".input__group");
+preguntas = document.querySelectorAll("#modal-contact .input__group");
 const btnPrev = document.querySelector("#prev-form");
 const btnNext = document.querySelector("#next-form");
 
@@ -119,8 +118,6 @@ for (const chipsElem of chips) {
         chipsElem.classList.toggle("checked");
     });
 }
-
-console.log("3");
 
 btnNext.onclick = () => {
     valText(inputNombre);
@@ -231,6 +228,102 @@ btnPrev.onclick = () => {
     }
 };
 
+/// UNETE
+
+const formContactoU = document.querySelector("#modal-unete form");
+const btnPrevU = document.querySelector("#prev-form-u");
+const btnNextU = document.querySelector("#next-form-u");
+const inputNombreU = document.querySelector("#input-name-unete");
+const inputMailU = document.querySelector("#input-email-unete");
+const inputAbout = document.querySelector("#input-about");
+
+let contadorU = 10;
+preguntasU = document.querySelectorAll("#modal-unete .input__group");
+
+btnNextU.onclick = () => {
+    valText(inputNombreU);
+    valMail(inputMailU);
+    valTextNum(inputAbout);
+
+    let msjsError = document.querySelectorAll(
+        "#modal-unete .input__group.show .error-input.show"
+    );
+
+    let msjsErrorHide = document.querySelectorAll(
+        "#modal-unete .error-input.show"
+    );
+
+    if (msjsError.length == 0) {
+        // form.submit();
+        // console.log("si");
+        contadorU = ++contadorU;
+
+        if (contadorU == 13) {
+            btnNextU.classList.add("send");
+        }
+        if (contadorU > 14) {
+            contadorU = 14;
+        } else {
+            for (const msjsErrorHideElem of msjsErrorHide) {
+                msjsErrorHideElem.classList.remove("show");
+            }
+            for (const preguntasElem of preguntasU) {
+                preguntasElem.classList.remove("show");
+            }
+            document
+                .querySelector("#modal-unete #input--group" + contadorU)
+                .classList.add("show");
+            btnPrevU.classList.remove("hide");
+            btnNextU.classList.remove("valid");
+        }
+
+        if (contadorU == 14) {
+            btnPrevU.classList.add("hide");
+            btnNextU.classList.add("hide");
+
+            setTimeout(() => {
+                formContactoU.submit();
+            }, 2000);
+        }
+
+        return true;
+    } else {
+        // console.log("no");
+
+        return false;
+    }
+};
+
+btnPrevU.onclick = () => {
+    contadorU = --contadorU;
+    // console.log(contador);
+
+    if (contadorU == 10) {
+        contadorU = 10;
+        btnPrevU.classList.add("hide");
+    }
+
+    if (contadorU == 12) {
+        btnNextU.classList.remove("send");
+    }
+
+    if (contadorU > 13) {
+    } else {
+        for (const preguntasElem of preguntasU) {
+            preguntasElem.classList.remove("show");
+        }
+        document
+            .querySelector("#input--group" + contadorU)
+            .classList.add("show");
+    }
+};
+
+const bntLoad = document.querySelector("#file-unete");
+
+bntLoad.onchange = () => {
+    console.log(bntLoad.value);
+    document.querySelector(".icon-icon-upload").classList.add("check");
+};
 //////////////// FOCUS
 
 const focusInput = () => {

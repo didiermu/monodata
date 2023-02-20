@@ -270,7 +270,7 @@ try {
   for (var _iterator6 = imagenes[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
     var imagenesElem = _step6.value;
 
-    if (imagenesElem.getAttribute("width") > 605) {
+    if (imagenesElem.getAttribute("width") > 1210) {
       imagenesElem.closest(".gallery-item").classList.add("imgMax");
     }
   }

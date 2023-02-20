@@ -25,6 +25,30 @@ var tablaExp = function tablaExp() {
 
   for (var index = 0; index < grid_items.length; index++) {
     grid_items[index].setAttribute("data-item", "item" + index);
+
+    if (grid_items.length >= 1) {
+      var lastElement = grid_items[grid_items.length - 1];
+      lastElement.classList.add("last");
+    }
+
+    if (grid_items.length >= 2) {
+      var penultimo = grid_items[grid_items.length - 2];
+      penultimo.classList.add("penu");
+    }
+
+    if (grid_items.length >= 3) {
+      var anteultimo = grid_items[grid_items.length - 3];
+      anteultimo.classList.add("ante");
+    }
+
+    if (grid_items.length >= 4) {
+      var terceultimo = grid_items[grid_items.length - 4];
+      terceultimo.classList.add("terc");
+    }
+
+    if (grid_items.length >= 5) {
+      wrapItem.classList.add("wrap5");
+    }
   }
 
   gsap.registerPlugin(Flip);
@@ -77,27 +101,25 @@ var tablaExp = function tablaExp() {
   for (var i = 0; i < targets.length; i++) {
     targets[i].addEventListener("click", function () {
       if (this.closest(".grid-item").classList.contains("active")) {
-        console.log("si");
         return false;
       } else {
-        console.log("no");
         flip(this);
       } //// AGREGA ALTO EN LA FILA FINAL ESTO HAY QUE AJUSTARLO PARA QUE NO SEA FIJO A¿LAS CLASES
 
 
-      var item12 = document.querySelector(".grid-item[data-item=item12]");
-      var item13 = document.querySelector(".grid-item[data-item=item13]");
-      var item14 = document.querySelector(".grid-item[data-item=item14]");
-      var item15 = document.querySelector(".grid-item[data-item=item15]");
+      var item12 = document.querySelector(".grid-item.last");
+      var item13 = document.querySelector(".grid-item.penu");
+      var item14 = document.querySelector(".grid-item.ante");
+      var item15 = document.querySelector(".grid-item.terc");
 
       if (item12.classList.contains("active") || item13.classList.contains("active") || item14.classList.contains("active") || item15.classList.contains("active")) {
         wrapItem.classList.add("lastItem");
       } else {
         wrapItem.classList.remove("lastItem");
       } // WRAP ACTIVE
-      // wrapItem.classList.add("wrapActive");
-      // ACTIVE SLIDER
 
+
+      wrapItem.classList.add("wrapActive"); // ACTIVE SLIDER
 
       mySwiper = new Swiper(this.querySelector(".swiper"), swipOp);
     });
@@ -125,8 +147,8 @@ var tablaExp = function tablaExp() {
   for (var i = 0; i < targetsClose.length; i++) {
     targetsClose[i].addEventListener("click", function () {
       closeFlip(this); // WRAP ACTIVE
-      // wrapItem.classList.remove("wrapActive");
 
+      wrapItem.classList.remove("wrapActive");
       wrapItem.classList.remove("lastItem"); /// slider
 
       mySwiper.destroy(true, true);

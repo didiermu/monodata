@@ -108,32 +108,32 @@ const playVideo = () => {
 playVideo();
 // cursorPlay();
 
-// const animTxt = (elem, texto) => {
-//     // const dataApi = document.querySelectorAll(
-//     //     ".info--api--content.info--api--content h6"
-//     // );
-//     // for (const dataApiElem of dataApi) {
-//     //     console.log(dataApiElem.textContent);
-//     //     let tween = gsap.to(".info--api--content h6", {
-//     //         text: {
-//     //             value: dataApiElem.textContent,
-//     //         },
-//     //         duration: 5,
-//     //         delay: 1,
-//     //         ease: "none",
-//     //     });
-//     // }
+const animTxt = (elem, texto) => {
+    // const dataApi = document.querySelectorAll(
+    //     ".info--api--content.info--api--content h6"
+    // );
+    // for (const dataApiElem of dataApi) {
+    //     console.log(dataApiElem.textContent);
+    //     let tween = gsap.to(".info--api--content h6", {
+    //         text: {
+    //             value: dataApiElem.textContent,
+    //         },
+    //         duration: 5,
+    //         delay: 1,
+    //         ease: "none",
+    //     });
+    // }
 
-//     gsap.to(elem, {
-//         duration: 2,
-//         text: {
-//             value: texto,
-//             newClass: "class2",
-//             // delimiter: " ",
-//         },
-//         ease: "none",
-//     });
-// };
+    gsap.to(elem, {
+        duration: 2,
+        text: {
+            value: texto,
+            newClass: "class2",
+            // delimiter: " ",
+        },
+        ease: "none",
+    });
+};
 
 // animTxt("#one", "Ciudad de México 19:10 h");
 // animTxt("#two", "Elevación 2.240 m");
@@ -448,3 +448,14 @@ const swiper = new Swiper(".swiper-mobile", {
         type: "bullets",
     },
 });
+
+// PARRAFOD VACIOAS
+
+const parrafo = document.querySelectorAll(".servicios__item__contain p");
+
+for (const parrafoElem of parrafo) {
+    if (parrafoElem.innerHTML == "") {
+        parrafoElem.remove();
+        // parrafoElem.classList.add("vacio");
+    }
+}
