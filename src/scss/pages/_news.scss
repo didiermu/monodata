@@ -1,0 +1,39 @@
+.news {
+    .destacada {
+        padding: 80px 0;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--info {
+            justify-content: center;
+            margin-bottom: 48px;
+
+            h6 {
+                font-family: var(--sec-regular);
+                font-weight: 100;
+            }
+        }
+    }
+
+    .grid {
+        padding-bottom: 108px;
+        a {
+            &:nth-child(even) .grid__item {
+                flex-direction: row-reverse;
+            }
+        }
+
+        &__item {
+            padding: 80px 0;
+        }
+    }
+
+    .footer {
+        .contact {
+            padding-bottom: 0;
+        }
+    }
+}

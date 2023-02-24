@@ -346,7 +346,7 @@
                       <h3 class="icon-arrow-after">Cuéntanos sobre tu proyecto</h3></a>
                   </div>
                   <div class="col-lg-3 offset-lg-2">
-                    <h4>Crezcamos juntos</h4><a href=""> 
+                    <h4>Crezcamos juntos</h4><a data-bs-toggle="modal" data-bs-target="#modal-unete">
                       <h3 class="icon-arrow-after">Únete al equipo</h3></a>
                   </div>
                 </div>
@@ -497,6 +497,48 @@
                 <div class="nav-modal">
                   <div class="icon-arrow-64 hide" id="prev-form"></div>
                   <div class="icon-arrow-64" id="next-form" msg="Send"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modal-unete" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div class="modal-content"><img id="logo" src="img/MD.svg" alt="">
+            <button class="btn-close icon-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+              <form class="col-lg-10">
+                <div class="input__group show" id="input--group10">
+                  <label class="h3">¿Cuál es tu nombre?</label>
+                  <input class="txt-3xl" id="input-name-unete" type="text" name="input-name-unete">
+                  <div class="error-input">*Campo obligatorio</div>
+                </div>
+                <div class="input__group" id="input--group11">
+                  <label class="h3">Compártenos tu correo electrónico</label>
+                  <input class="txt-3xl" id="input-email-unete" type="text" name="input-email-unete">
+                  <div class="error-input">*Campo obligatorio</div>
+                </div>
+                <div class="input__group" id="input--group12">
+                  <label class="h3">Cuéntanos sobre ti. </label>
+                  <input class="txt-3xl" id="input-about" type="text" name="input-about">
+                  <div class="error-input">*Campo obligatorio</div>
+                </div>
+                <div class="input__group" id="input--group13">
+                  <label class="h3">Compártenos el URL de tu portafolio / perfil profesional. (opcional)</label>
+                  <input class="txt-3xl" id="input-portafolio" type="text" name="input-portafolio">
+                  <div class="input--upload">
+                    <input id="file-unete" type="file" hidden name="file-unete">
+                    <div class="icon-icon-upload"></div>
+                    <label class="h3" for="file-unete">Adjuntar archivo</label>
+                  </div>
+                </div>
+                <div class="input__group" id="input--group14">
+                  <h1 class="txt-4xl">¡Gracias por tu interés! <br>Te contactaremos muy pronto 😎</h1>
+                </div>
+                <div class="nav-modal">
+                  <div class="icon-arrow-64 hide" id="prev-form-u"></div>
+                  <div class="icon-arrow-64" id="next-form-u" msg="Send"></div>
                 </div>
               </form>
             </div>

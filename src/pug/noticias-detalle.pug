@@ -1,0 +1,52 @@
+extends includes/head.pug
+block head-page
+    title Monodata | Noticias
+    script(src="js/anim-news-detail.min.js" defer) 
+
+
+block content
+    -ruta = ""
+    -news =  "active"
+
+    #viewport
+        include includes/header
+
+        main.news.news-detail
+            section.destacada
+                .container
+                    .col-lg-11.destacada--info
+                        h6.txt-h6 24.09.2019
+                        h1.txt-4xl Nuestro último trabajo comisionado por @kiamexico para develar su nuevo logo.
+
+                .container-fluid.p-0
+                    .col-12
+                        .swiper 
+                            .swiper-wrapper
+                                .swiper-slide
+                                    picture 
+                                        source(srcset="img/MONODATA_KIA_WTC-2_1.webp", type="image/webp")
+                                        img.img-fluid.w-100(src="img/MONODATA_KIA_WTC-2_1.jpg", alt="")
+                                .swiper-slide
+                                    picture 
+                                        source(srcset="img/MONODATA_KIA_WTC-2_1.webp", type="image/webp")
+                                        img.img-fluid.w-100(src="img/MONODATA_KIA_WTC-2_1.jpg", alt="")
+                                .swiper-slide
+                                    picture 
+                                        source(srcset="img/MONODATA_KIA_WTC-2_1.webp", type="image/webp")
+                                        img.img-fluid.w-100(src="img/MONODATA_KIA_WTC-2_1.jpg", alt="")
+
+                        .swiper-pagination
+
+                .container-fluid.news-detail--parrafos
+                    .col-lg-9.offset-lg-3
+                        h2.txt-3xl It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+
+                        p.txt-l The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+
+                        p.txt-l The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+
+
+            include includes/footer
+
+        include includes/modal-contact.pug
+        include includes/modal-unete.pug

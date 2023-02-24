@@ -1,0 +1,67 @@
+extends includes/head.pug
+block head-page
+    title Monodata | Noticias
+    script(src="js/anim-news.min.js" defer) 
+
+
+block content
+    -ruta = ""
+    -news =  "active"
+
+    #viewport
+        include includes/header
+
+        main.news
+            section.destacada
+                .container 
+                    a(href="news-detalle.html") 
+                        .col-lg-11.destacada--info
+                            h6.txt-h6 24.09.2019
+                            h1.txt-4xl Nuestro último trabajo comisionado por @kiamexico para develar su nuevo logo.
+
+                        .offset-lg-6.col-lg-6                     
+                            picture 
+                                source(srcset="img/MONODATA_KIA_WTC-2_1.webp", type="image/webp")
+                                img.img-fluid.w-100(src="img/MONODATA_KIA_WTC-2_1.jpg", alt="")
+
+            section.grid
+                .container-fluid
+                    a(href="news-detalle.html") 
+                        .row.grid__item
+                            .col-lg-6                        
+                                picture 
+                                    source(srcset="img/image_3.webp", type="image/webp")
+                                    img.img-fluid.w-100(src="img/image_3.jpg", alt="")
+
+                            .offset-lg-1.col-lg-5
+                                h6.txt-h6 24.09.2019
+                                h1.txt-3xl Nuestro último trabajo comisionado por @kiamexico para develar su nuevo logo.
+                    a(href="news-detalle.html") 
+                        .row.grid__item
+                            .col-lg-6                        
+                                picture 
+                                    source(srcset="img/IMG_2592.webp", type="image/webp")
+                                    img.img-fluid.w-100(src="img/IMG_2592.jpg", alt="")
+
+                            .offset-lg-1.col-lg-5
+                                h6.txt-h6 24.09.2019
+                                h1.txt-3xl Nuestro último trabajo comisionado por @kiamexico para develar su nuevo logo.
+
+                    a(href="news-detalle.html") 
+                        .row.grid__item
+                            .col-lg-6                        
+                                picture 
+                                    source(srcset="img/image_3-2.webp", type="image/webp")
+                                    img.img-fluid.w-100(src="img/image_3-2.jpg", alt="")
+
+                            .offset-lg-1.col-lg-5
+                                h6.txt-h6 24.09.2019
+                                h1.txt-3xl Nuestro último trabajo comisionado por @kiamexico para develar su nuevo logo.
+
+            include includes/footer
+
+        include includes/modal-contact.pug
+        include includes/modal-unete.pug
+
+
+
