@@ -20,3 +20,10 @@ var mySwiper = new Swiper(document.querySelector(".swiper"), swipOp);
 if (window.location.pathname.includes("noticias")) {
     document.querySelector("body").classList.add("body-news");
 }
+
+
+const slides = document.querySelectorAll(".swiper-slide");
+console.log(slides.length);
+if(slides.length <= 1){
+    document.querySelector(".news-detail .swiper").classList.add("portada");
+}

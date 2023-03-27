@@ -180,7 +180,7 @@
                 }
 
                 p {
-                    width: 600px;
+                    width: calc(600px + 620 * ((100vw - 1280px) / 1024));
                     margin: 8px 0 32px;
                 }
             }
@@ -252,8 +252,22 @@
                     }
                 }
             }
+
+            &__contain{
+                p{
+                    width: calc(600px + 620 * (100vw - 1280px)/ 1920);
+                }
+            }
         }
     }
+}
+
+@media (max-width: 1024px) {
+    .home{
+        .servicios__item{
+            min-height: calc(720px + 210 * (100vw - 1024px)/ 768);
+        }
+    } 
 }
 
 @media (max-width: 768px) {

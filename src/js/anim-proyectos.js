@@ -117,6 +117,7 @@ for (const itemListaElem of itemLista) {
 if (window.location.pathname.includes("proyectos")) {
     document.querySelector("body").classList.add("body-projects");
 }
+
 //////////////////////// FILTROS
 
 const filtro = document.querySelectorAll(".filtros li");
@@ -124,8 +125,11 @@ const destacados = document.querySelector(".filtros #Destacados");
 const todos = document.querySelector(".filtros #todos");
 const lista = document.querySelector(".lista");
 const listaItems = document.querySelectorAll(".lista a");
-const comboTipo = document.querySelector("#combo-tipo select");
-const comboIndustria = document.querySelector("#combo-industria select");
+const comboTipo = document.querySelector("#filtros-proy #combo-tipo select");
+
+const comboIndustria = document.querySelector(
+    "#filtros-proy #combo-industria select"
+);
 
 for (const filtroElem of filtro) {
     filtroElem.onclick = () => {
@@ -136,32 +140,42 @@ for (const filtroElem of filtro) {
     };
 }
 
-comboTipo.onchange = () => {
-    lista.setAttribute("class", "lista lista-combo");
+const filtrosOld = () => {
+    comboTipo.onchange = () => {
+        lista.setAttribute("class", "lista lista-combo");
 
-    let valorCombo = comboTipo.value;
-    let itemActive = document.querySelectorAll(".lista a[" + valorCombo + "]");
-    for (const listaItemsElem of listaItems) {
-        listaItemsElem.classList.remove("active");
-    }
-    for (const itemActiveElem of itemActive) {
-        itemActiveElem.classList.add("active");
-    }
+        let valorCombo = comboTipo.value;
+        let itemActive = document.querySelectorAll(
+            ".lista a[" + valorCombo + "]"
+        );
+
+        for (const listaItemsElem of listaItems) {
+            listaItemsElem.classList.remove("active");
+        }
+        for (const itemActiveElem of itemActive) {
+            itemActiveElem.classList.add("active");
+        }
+    };
+
+    comboIndustria.onchange = () => {
+        lista.setAttribute("class", "lista lista-combo");
+        let valueIndustria = comboIndustria.value;
+        let itemActive = document.querySelectorAll(
+            ".lista a[industria='" + valueIndustria + "']"
+        );
+        for (const listaItemsElem of listaItems) {
+            listaItemsElem.classList.remove("active");
+        }
+        for (const itemActiveElem of itemActive) {
+            itemActiveElem.classList.add("active");
+        }
+    };
 };
 
-comboIndustria.onchange = () => {
-    lista.setAttribute("class", "lista lista-combo");
-    let valueIndustria = comboIndustria.value;
-    let itemActive = document.querySelectorAll(
-        ".lista a[industria='" + valueIndustria + "']"
-    );
-    for (const listaItemsElem of listaItems) {
-        listaItemsElem.classList.remove("active");
-    }
-    for (const itemActiveElem of itemActive) {
-        itemActiveElem.classList.add("active");
-    }
-};
+const itemDestacado = document.querySelectorAll(".Destacado");
+for (const itemDestacadoEl of itemDestacado) {
+    itemDestacadoEl.classList.add("active");
+}
 
 destacados.addEventListener("click", () => {
     lista.setAttribute("class", "lista lista-destacados");
@@ -171,19 +185,153 @@ destacados.addEventListener("click", () => {
 });
 
 todos.addEventListener("click", () => {
+    destacados.classList.remove("active");
+
     lista.setAttribute("class", "lista");
     for (const listaItemsElem of listaItems) {
         listaItemsElem.classList.remove("active");
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        $("select option").val(function (idx, val) {
-            $(this)
-                .siblings('[value="' + val + '"]')
-                .remove();
-        });
-        console.log("pr1");
-    }, 500);
-});
+// const customSelect = () => {
+//     /*
+// Reference: http://jsfiddle.net/BB3JK/47/
+// */
+
+// $('select').each(function(){
+//     var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+//     $this.addClass('select-hidden');
+//     $this.wrap('<div class="select"></div>');
+//     $this.after('<div class="select-styled"></div>');
+
+//     var $styledSelect = $this.next('div.select-styled');
+//     $styledSelect.text($this.children('option').eq(0).text());
+//     // $styledSelect.attr("valor",$this.children('option').eq(0).text());
+
+//     var $list = $('<ul />', {
+//         'class': 'select-options'
+//     }).insertAfter($styledSelect);
+
+//     for (var i = 0; i < numberOfOptions; i++) {
+//         $('<li />', {
+//             text: $this.children('option').eq(i).text(),
+//             rel: $this.children('option').eq(i).val()
+//         }).appendTo($list);
+//         //if ($this.children('option').eq(i).is(':selected')){
+//         //  $('li[rel="' + $this.children('option').eq(i).val() + '"]').addClass('is-selected')
+//         //}
+//     }
+
+//     var $listItems = $list.children('li');
+
+//     $styledSelect.click(function(e) {
+//         e.stopPropagation();
+//         $('div.select-styled.active').not(this).each(function(){
+//             $(this).removeClass('active').next('ul.select-options').hide();
+//             $(this).parents("li").removeClass("active");
+//         });
+//         $(this).toggleClass('active').next('ul.select-options').toggle();
+//         $(this).parents("li").toggleClass("active");
+//     });
+
+//     $listItems.click(function(e) {
+//         e.stopPropagation();
+//         $styledSelect.text($(this).text()).removeClass('active');
+//         $styledSelect.attr("valor", $(this).attr('rel'));
+//         $this.val($(this).attr('rel'));
+//         $list.hide();
+//         $(this).parents("li").removeClass("active");
+//         //console.log($this.val());
+//     });
+
+//     $(document).click(function() {
+//         $styledSelect.removeClass('active');
+//         $list.hide();
+//         $styledSelect.parents("li").removeClass("active");
+//     });
+
+// });
+// }
+
+// customSelect();
+
+const filtrosTipoNew = () => {
+    const comboTipoNew = document.querySelectorAll(
+        "#filtros-proy #combo-tipo .select-options li"
+    );
+
+    for (const comboTipoNewEl of comboTipoNew) {
+        comboTipoNewEl.onclick = () => {
+            lista.setAttribute("class", "lista lista-combo");
+            destacados.classList.remove("active");
+
+            let valorCombo = comboTipoNewEl.getAttribute("rel");
+
+            let itemActive = document.querySelectorAll(
+                ".lista a[" + valorCombo + "]"
+            );
+
+            for (const listaItemsElem of listaItems) {
+                listaItemsElem.classList.remove("active");
+            }
+            for (const itemActiveElem of itemActive) {
+                itemActiveElem.classList.add("active");
+            }
+        };
+    }
+};
+
+const filtrosIndustriaNew = () => {
+    const comboTipoNew = document.querySelectorAll(
+        "#filtros-proy #combo-industria .select-options li"
+    );
+
+    for (const comboTipoNewEl of comboTipoNew) {
+        comboTipoNewEl.onclick = () => {
+            destacados.classList.remove("active");
+            lista.setAttribute("class", "lista lista-combo");
+
+            let valueIndustria = comboTipoNewEl.getAttribute("rel");
+            let itemActive = document.querySelectorAll(
+                ".lista a[industria=" + valueIndustria + "]"
+            );
+
+            for (const listaItemsElem of listaItems) {
+                listaItemsElem.classList.remove("active");
+            }
+            for (const itemActiveElem of itemActive) {
+                itemActiveElem.classList.add("active");
+            }
+        };
+    }
+};
+
+filtrosTipoNew();
+filtrosIndustriaNew();
+
+// document.addEventListener("DOMContentLoaded", (event) => {
+//     const valorIdustria =  document.querySelectorAll(".lista select option");
+//     for (const valorIdustriaEl of valorIdustria) {
+
+//         if(valorIdustriaEl.value == ""){
+//             valorIdustriaEl.remove();
+//         }
+
+//         if(valorIdustriaEl.innerHTML == "Sin categoría"){
+//             valorIdustriaEl.remove();
+//         }
+//     }
+
+//         var optionValues =[];
+//         $('select option').each(function(){
+//            if($.inArray(this.value, optionValues) >-1){
+//               $(this).remove()
+//            }else{
+//               optionValues.push(this.value);
+//            }
+//         });
+
+//     console.log("load");
+
+// });

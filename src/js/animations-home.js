@@ -135,12 +135,7 @@ const animTxt = (elem, texto) => {
     });
 };
 
-// animTxt("#one", "Ciudad de México 19:10 h");
-// animTxt("#two", "Elevación 2.240 m");
-// animTxt("#tre", "Superficie 1.485 km²");
-// animTxt("#fou", "22 °C");
-// animTxt("#fiv", "Viento del N a 18 km/h");
-// animTxt("#six", "Humedad 30%");
+
 
 const hoverServices = () => {
     const itemsServices = document.querySelectorAll(".servicios__item");

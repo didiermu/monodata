@@ -102,7 +102,7 @@ var slideModal;
 const sliderResp = () => {
     const mediaquery = window.matchMedia("(max-width: 768px)");
     const galeria = document.querySelector(".galeria");
-    const modal = document.querySelector(".modal-body");
+    const modal = document.querySelector(".galeria .modal-body");
     const slider = document.querySelector(".swiper");
 
     if (mediaquery.matches) {
@@ -173,10 +173,10 @@ const triggeGaleria = () => {
 
 triggeGaleria();
 
-window.addEventListener("resize", () => {
+// window.addEventListener("resize", () => {
     // sliderResp();
     // sliderDetalle();
-});
+// });
 
 //////////////////////// GRID IMAGES
 const imagenes = document.querySelectorAll(".gallery img");
@@ -197,6 +197,16 @@ setTimeout(() => {
 
 //////////////////////// CLASS BODY
 
-if (window.location.pathname.includes("proyecto")) {
-    document.querySelector("body").classList.add("body-projects");
+const urlPage = () => {
+
+    if (window.location.pathname.includes("proyecto")) {
+        document.querySelector("body").classList.add("body-projects");
+    }
+    
+    if (window.location.pathname.split('/')[2] == "en") {
+        document.querySelector(".galeria").classList.add("galeria-en");
+    }
+
 }
+
+urlPage();

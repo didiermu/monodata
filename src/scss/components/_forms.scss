@@ -102,9 +102,9 @@
     }
 }
 
-.combo {
-    @include combo;
-}
+// .combo {
+//     @include combo;
+// }
 
 .input__group {
     display: flex;
@@ -234,4 +234,126 @@
 .screen-reader-response,
 .wpcf7-response-output {
     display: none;
+}
+
+
+// select
+
+$background: #e74c3c;
+$select-color: #fff;
+$select-background: #c0392b;
+$select-width: 220px;
+$select-height: 40px; 
+
+
+// p {
+//   margin-top: 200px;
+//   a {
+//     text-transform: uppercase;
+//     text-decoration: none;
+//     display: inline-block;
+//     color: #fff;
+//     padding: 5px 10px;
+//     margin: 0 5px;
+//     background-color: darken($select-background, 2);
+//     @include transition(all 0.2s ease-in);
+//     &:hover {
+//       background-color: darken($select-background, 5);
+//     }
+//   }
+// }
+
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.select {
+  cursor: pointer;
+  display: inline-block;
+//   position: relative;
+//   font-size: 16px;
+//   color: $select-color;
+//   width: $select-width;
+//   height: $select-height;
+}
+.select-styled {
+//   position: absolute; 
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   background-color: $select-background;
+//   padding: 8px 15px;
+  padding: 0 24px;
+  @include transition(all 0.2s ease-in);
+
+  &:after {
+    font-family: "icomoon" !important;
+    content: "\e90b";
+    font-size: x-small;
+    -webkit-text-stroke: 1px;
+    top: 16px;
+    margin-left: 10px;
+  }
+  
+    &:active, &.active {
+        
+        &:after{
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.select-options {
+    display: none;
+    padding: 0 20px 48px;
+    width: max-content;
+    gap: 8px;
+    height: max-content;
+    padding: 20px;
+    position: absolute;
+    top: 105%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    list-style: none;
+    background: #fff;
+
+  li {
+    margin: 0;
+    padding: 0 24px;
+    margin-bottom: 16px;
+    @include transition(all 0.15s ease-in);
+    // &:hover, 
+    // &.is-selected {
+    //   color: $select-background;
+    //   background: $select-color;
+    // }
+    &[rel="hide"],
+    &[rel="default"],
+    &[rel=""] {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+    .select-styled{
+        padding: 0;
+        width: max-content;
+    }
+
+    .select-options{
+        position: fixed;
+        top: 194px;
+        margin: auto;
+        width: 100%;
+
+        li{
+            margin: auto auto 20px;
+        }
+    }
 }

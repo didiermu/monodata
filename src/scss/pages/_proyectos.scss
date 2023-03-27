@@ -5,9 +5,9 @@
     top: 96px;
     background: #fff;
     z-index: 1;
-    overflow: hidden;
+    // overflow: hidden;
 
-    ul {
+    & > ul {
         list-style: none;
         display: flex;
         gap: 10px;
@@ -26,6 +26,7 @@
             font-family: var(--prm-regular);
             cursor: pointer;
             height: 48px;
+            position: relative;
 
             sup {
                 font-size: var(--s);
@@ -53,6 +54,7 @@
 
 .proyectos {
     padding-top: 256px;
+    overflow-x: hidden;
     // padding-bottom: 100px;
 
     @include listaProyecto;
@@ -102,10 +104,13 @@
 @media (max-width: 768px) {
     .filtros {
         padding: 18px 0;
+        top: 110px;
 
-        ul {
+        & > ul {
             overflow-x: scroll;
             scroll-snap-type: x mandatory;
+            overflow-y: hidden;
+            padding: 10px 0;
 
             li {
                 font-size: var(--s);

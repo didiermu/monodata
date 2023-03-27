@@ -11,7 +11,7 @@ block content
 
     #viewport
         include includes/header
-        nav.filtros 
+        nav.filtros#filtros-proy
             ul.container-fluid
                 li.active.chip#Destacados Destacados
                     sup 05
@@ -25,13 +25,16 @@ block content
                             option(selected hidden value="") Tipo de proyecto
                             option(value="iluminacion") iluminacion
                             option(value="estructura") estructura
-                            option(value="destacado") estructura
+                            option(value="evento-largo") evento largo
+                            
                 li 
                     .combo#combo-industria
                         select 
-                            option(selected hidden value="") Industria
+                            option(selected hidden value="default") Industria
+                            option(value="") 
                             option(value="Educación") Educación 
-                            option(value="Público") Público 
+                            option(value="Público") Publico 
+                            option(value="Educación") Educación 
                             option(value="Educación") Educación 
 
         main.proyectos
@@ -55,10 +58,11 @@ block content
                                 picture 
                                     source(srcset="img/pr1.webp", type="image/webp")
                                     img.img-fluid.w-100(src="img/pr1.jpg", alt="")
+     
                 - var n = 0;
                     while n < 3
                         - ++n
-                        a(href="proyecto-detalle.html" destacado industria="Público") 
+                        a(href="proyecto-detalle.html" destacado industria="Publico") 
                             .accordion-item
                                 h2.txt-4xl(id="heading"+n) Kia Motion
                                 .lista__data 
@@ -77,7 +81,7 @@ block content
                                             source(srcset="img/pr1.webp", type="image/webp")
                                             img.img-fluid.w-100(src="img/pr1.jpg", alt="")
 
-                        a(href="proyecto-detalle.html" iluminacion industria="Educación") 
+                        a(href="proyecto-detalle.html" evento-largo industria="Educación") 
                             .accordion-item
                                 h2.txt-4xl(id="heading"+n) Absence
                                 .lista__data 
@@ -119,3 +123,4 @@ block content
 
     include includes/modal-contact.pug
     include includes/modal-unete.pug
+    include includes/search.pug

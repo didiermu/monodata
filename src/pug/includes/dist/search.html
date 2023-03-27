@@ -1,0 +1,64 @@
+
+<div class="modal fade" id="modal-search" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content"><img id="logo" src="img/MD.svg" alt=""/>
+      <button class="btn-close icon-close" id="close-search" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body">
+        <form class="col-lg-10">
+          <div class="input__group show">
+            <label class="h3">Buscar por tipo de proyecto, industria o marca</label>
+            <input class="txt-3xl" id="input-search" type="text"/>
+            <div class="error-input">*Campo obligatorio</div>
+          </div>
+          <button class="boton icon-arrow-64 send" id="btn-search" msg="Buscar"></button>
+        </form>
+        <nav class="filtros" id="filtros-proy-search">
+          <ul class="container-fluid">
+            <li> 
+              <div class="combo" id="combo-tipo-s">
+                <select>
+                  <option selected="selected" hidden="hidden" value="">Tipo de proyecto</option>
+                  <option value="iluminacion">iluminacion</option>
+                  <option value="estructura">estructura</option>
+                  <option value="destacado">estructura</option>
+                </select>
+              </div>
+            </li>
+            <li> 
+              <div class="combo" id="combo-industria-s">
+                <select> 
+                  <option selected="selected" hidden="hidden" value="">Industria</option>
+                  <option value="Educación">Educación </option>
+                  <option value="Público">Público </option>
+                  <option value="Educación">Educación </option>
+                </select>
+              </div>
+            </li>
+          </ul>
+          <h6 class="txt-h5">Instalación lumínica · Video Maping · DataViz · Arte generativo</h6>
+          <div class="search--grid">
+            <h5 class="txt-l" id="info-resultado">Encontramos <span id="noResult">0 </span><b> resultados </b>para <span id="keySearch">Xajnjsn</span></h5><a href="" industria="Educacion" iluminacion="iluminacion"> 
+              <div class="search--result">
+                <picture> 
+                  <source srcset="img/2.webp" type="image/webp"/><img class="ing-fluid" srcset="img/2.jpg"/>
+                </picture>
+                <h4 class="txt-l">Adida edu ilum</h4>
+              </div></a><a href="" industria="Educacion" iluminacion="iluminacion"> 
+              <div class="search--result">
+                <picture> 
+                  <source srcset="img/2.webp" type="image/webp"/><img class="ing-fluid" srcset="img/2.jpg"/>
+                </picture>
+                <h4 class="txt-l">Título del proyecto</h4>
+              </div></a><a href="" industria="Público" estructura="estructura"> 
+              <div class="search--result">
+                <picture> 
+                  <source srcset="img/2.webp" type="image/webp"/><img class="ing-fluid" srcset="img/2.jpg"/>
+                </picture>
+                <h4 class="txt-l">Adida publico esctrucutra</h4>
+              </div></a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

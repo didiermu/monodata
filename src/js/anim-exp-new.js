@@ -143,3 +143,10 @@ const tablaExp = () => {
 };
 
 tablaExp();
+
+
+//////////////////////// CLASS BODY
+
+if (window.location.pathname.includes("experiment")) {
+    document.querySelector("body").classList.add("body-exp");
+}

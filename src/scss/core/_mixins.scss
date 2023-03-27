@@ -46,6 +46,8 @@
             h5 {
                 font-family: var(--sec-regular);
                 font-weight: 500;
+                flex-basis: calc(100% / 4);
+                padding-right: 16px;
                 // -webkit-text-stroke: 0.5px;
 
                 span {

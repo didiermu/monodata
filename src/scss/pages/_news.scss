@@ -21,6 +21,10 @@
     .grid {
         padding-bottom: 108px;
         a {
+            &:first-child{
+                display: none;
+            }
+            
             &:nth-child(even) .grid__item {
                 flex-direction: row-reverse;
             }

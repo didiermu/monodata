@@ -227,108 +227,99 @@ btnPrev.onclick = () => {
 /// UNETE
 
 const formContactoU = document.querySelector("#modal-unete form");
+const btnPrevU = document.querySelector("#prev-form-u");
+const btnNextU = document.querySelector("#next-form-u");
+const inputNombreU = document.querySelector("#input-name-unete");
+const inputMailU = document.querySelector("#input-email-unete");
+const inputAbout = document.querySelector("#input-about");
 
-// console.log(formContactoU);
-if (formContactoU !== null) {
-    console.log("si");
+let contadorU = 10;
+preguntasU = document.querySelectorAll("#modal-unete .input__group");
 
-    const btnPrevU = document.querySelector("#prev-form-u");
-    const btnNextU = document.querySelector("#next-form-u");
-    const inputNombreU = document.querySelector("#input-name-unete");
-    const inputMailU = document.querySelector("#input-email-unete");
-    const inputAbout = document.querySelector("#input-about");
+btnNextU.onclick = () => {
+    valText(inputNombreU);
+    valMail(inputMailU);
+    valTextNum(inputAbout);
 
-    let contadorU = 10;
-    preguntasU = document.querySelectorAll("#modal-unete .input__group");
+    let msjsError = document.querySelectorAll(
+        "#modal-unete .input__group.show .error-input.show"
+    );
 
-    btnNextU.onclick = () => {
-        valText(inputNombreU);
-        valMail(inputMailU);
-        valTextNum(inputAbout);
+    let msjsErrorHide = document.querySelectorAll(
+        "#modal-unete .error-input.show"
+    );
 
-        let msjsError = document.querySelectorAll(
-            "#modal-unete .input__group.show .error-input.show"
-        );
+    if (msjsError.length == 0) {
+        // form.submit();
+        // console.log("si");
+        contadorU = ++contadorU;
 
-        let msjsErrorHide = document.querySelectorAll(
-            "#modal-unete .error-input.show"
-        );
-
-        if (msjsError.length == 0) {
-            // form.submit();
-            // console.log("si");
-            contadorU = ++contadorU;
-
-            if (contadorU == 13) {
-                btnNextU.classList.add("send");
-            }
-            if (contadorU > 14) {
-                contadorU = 14;
-            } else {
-                for (const msjsErrorHideElem of msjsErrorHide) {
-                    msjsErrorHideElem.classList.remove("show");
-                }
-                for (const preguntasElem of preguntasU) {
-                    preguntasElem.classList.remove("show");
-                }
-                document
-                    .querySelector("#modal-unete #input--group" + contadorU)
-                    .classList.add("show");
-                btnPrevU.classList.remove("hide");
-                btnNextU.classList.remove("valid");
-            }
-
-            if (contadorU == 14) {
-                btnPrevU.classList.add("hide");
-                btnNextU.classList.add("hide");
-
-                setTimeout(() => {
-                    formContactoU.submit();
-                }, 2000);
-            }
-
-            return true;
+        if (contadorU == 13) {
+            btnNextU.classList.add("send");
+        }
+        if (contadorU > 14) {
+            contadorU = 14;
         } else {
-            // console.log("no");
-
-            return false;
-        }
-    };
-
-    btnPrevU.onclick = () => {
-        contadorU = --contadorU;
-        // console.log(contador);
-
-        if (contadorU == 10) {
-            contadorU = 10;
-            btnPrevU.classList.add("hide");
-        }
-
-        if (contadorU == 12) {
-            btnNextU.classList.remove("send");
-        }
-
-        if (contadorU > 13) {
-        } else {
+            for (const msjsErrorHideElem of msjsErrorHide) {
+                msjsErrorHideElem.classList.remove("show");
+            }
             for (const preguntasElem of preguntasU) {
                 preguntasElem.classList.remove("show");
             }
             document
-                .querySelector("#input--group" + contadorU)
+                .querySelector("#modal-unete #input--group" + contadorU)
                 .classList.add("show");
+            btnPrevU.classList.remove("hide");
+            btnNextU.classList.remove("valid");
         }
-    };
 
-    const bntLoad = document.querySelector("#file-unete");
+        if (contadorU == 14) {
+            btnPrevU.classList.add("hide");
+            btnNextU.classList.add("hide");
 
-    bntLoad.onchange = () => {
-        console.log(bntLoad.value);
-        document.querySelector(".icon-icon-upload").classList.add("check");
-    };
-} else {
-    console.log("no");
-}
+            setTimeout(() => {
+                formContactoU.submit();
+            }, 2000);
+        }
 
+        return true;
+    } else {
+        // console.log("no");
+
+        return false;
+    }
+};
+
+btnPrevU.onclick = () => {
+    contadorU = --contadorU;
+    // console.log(contador);
+
+    if (contadorU == 10) {
+        contadorU = 10;
+        btnPrevU.classList.add("hide");
+    }
+
+    if (contadorU == 12) {
+        btnNextU.classList.remove("send");
+    }
+
+    if (contadorU > 13) {
+    } else {
+        for (const preguntasElem of preguntasU) {
+            preguntasElem.classList.remove("show");
+        }
+        document
+            .querySelector("#input--group" + contadorU)
+            .classList.add("show");
+    }
+};
+
+const bntLoad = document.querySelector("#file-unete");
+
+bntLoad.onchange = () => {
+    console.log(bntLoad.value);
+    document.querySelector(".icon-icon-upload").classList.add("check");
+};
 //////////////// FOCUS
 
 const focusInput = () => {

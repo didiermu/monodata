@@ -1,0 +1,70 @@
+.modal.fade#modal-search(aria-labelledby='exampleModalLabel', aria-hidden='true')
+    .modal-dialog.modal-dialog-centered.modal-fullscreen
+        .modal-content
+            img#logo(src="img/MD.svg", alt="")
+            button.btn-close.icon-close#close-search(type='button', data-bs-dismiss='modal', aria-label='Close')
+
+            .modal-body
+                //- form.col-lg-10(role="search", method="get", action="index.html")
+                form.col-lg-10
+                    .input__group.show
+                        label.h3 Buscar por tipo de proyecto, industria o marca
+                        input#input-search.txt-3xl(type="text") 
+                        .error-input *Campo obligatorio
+                    //- label
+                    //-     span.is-screen-reader-text Search for:
+                    button.boton.icon-arrow-64#btn-search.send(msg="Buscar")
+                    //- button(type="submit", class="is-search-submit")
+                    //-     span(class="is-screen-reader-text") Search Button
+
+                nav.filtros#filtros-proy-search
+                    ul.container-fluid
+                        li 
+                            .combo#combo-tipo-s
+                                select
+                                    option(selected hidden value="") Tipo de proyecto
+                                    option(value="iluminacion") iluminacion
+                                    option(value="estructura") estructura
+                                    option(value="destacado") estructura
+                        li 
+                            .combo#combo-industria-s
+                                select 
+                                    option(selected hidden value="") Industria
+                                    option(value="Educación") Educación 
+                                    option(value="Público") Público 
+                                    option(value="Educación") Educación 
+                    h6.txt-h5 Instalación lumínica · Video Maping · DataViz · Arte generativo
+
+                    .search--grid
+                        h5.txt-l#info-resultado Encontramos 
+                            span#noResult 0 
+                            b  resultados 
+                            | para 
+                            span#keySearch Xajnjsn
+
+                        a(href="", industria="Educacion" iluminacion) 
+                            .search--result
+                                picture 
+                                    source(srcset="img/2.webp", type="image/webp")
+                                    img.ing-fluid(srcset="img/2.jpg")
+
+                                h4.txt-l Adida edu ilum
+
+
+                        a(href="", industria="Educacion" iluminacion) 
+                            .search--result
+                                picture 
+                                    source(srcset="img/2.webp", type="image/webp")
+                                    img.ing-fluid(srcset="img/2.jpg")
+
+                                h4.txt-l Título del proyecto
+
+                        a(href="", industria="Público" estructura) 
+                            .search--result
+                                picture 
+                                    source(srcset="img/2.webp", type="image/webp")
+                                    img.ing-fluid(srcset="img/2.jpg")
+
+                                h4.txt-l Adida publico esctrucutra
+
+
