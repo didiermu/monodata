@@ -174,8 +174,8 @@ const triggeGaleria = () => {
 triggeGaleria();
 
 // window.addEventListener("resize", () => {
-    // sliderResp();
-    // sliderDetalle();
+// sliderResp();
+// sliderDetalle();
 // });
 
 //////////////////////// GRID IMAGES
@@ -198,15 +198,13 @@ setTimeout(() => {
 //////////////////////// CLASS BODY
 
 const urlPage = () => {
-
     if (window.location.pathname.includes("proyecto")) {
         document.querySelector("body").classList.add("body-projects");
     }
-    
-    if (window.location.pathname.split('/')[2] == "en") {
+
+    if (window.location.pathname.split("/")[1] == "en") {
         document.querySelector(".galeria").classList.add("galeria-en");
     }
-
-}
+};
 
 urlPage();

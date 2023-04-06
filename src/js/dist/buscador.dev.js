@@ -181,40 +181,7 @@ var filtrosSearch = function filtrosSearch() {
 
     for (var _iterator2 = filtro[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
       _loop3();
-    } // const comboTipoNew = document.querySelectorAll(
-    //     "#modal-search #combo-tipo .select-options li"
-    // );
-    // for (const comboTipoNewEl of comboTipoNew) {
-    //     comboTipoNewEl.onclick = () => {
-    //         lista.setAttribute("class", "search--grid lista-combo");
-    //         destacados.classList.remove("active");
-    //         let valorCombo = comboTipoNewEl.getAttribute("rel");
-    //         // let itemActive = document.querySelectorAll(".lista a."+valorCombo);
-    //         let itemActive = document.querySelectorAll(
-    //             ".search--grid a[" + valorCombo + "]"
-    //         );
-    //         for (const listaItemsElem of listaItems) {
-    //             listaItemsElem.classList.remove("active");
-    //         }
-    //         for (const itemActiveElem of itemActive) {
-    //             itemActiveElem.classList.add("active");
-    //         }
-    //     };
-    // }
-    // comboIndustria.onchange = () => {
-    //     lista.setAttribute("class", "search--grid lista-combo");
-    //     let valueIndustria = comboIndustria.value;
-    //     let itemActive = document.querySelectorAll(
-    //         ".search--grid a[industria='" + valueIndustria + "']"
-    //     );
-    //     for (const listaItemsElem of listaItems) {
-    //         listaItemsElem.classList.remove("active");
-    //     }
-    //     for (const itemActiveElem of itemActive) {
-    //         itemActiveElem.classList.add("active");
-    //     }
-    // };
-
+    }
   } catch (err) {
     _didIteratorError2 = true;
     _iteratorError2 = err;

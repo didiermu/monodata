@@ -183,6 +183,7 @@
 
         &--row {
             justify-content: space-between;
+            list-style: none;
 
             & > * {
                 width: calc(100% / 3);
@@ -214,6 +215,18 @@
             //         content: "\e905";
             //     }
             // }
+        }
+
+        &.header-en {
+            .btn-ham::before {
+                content: "Menu";
+            }
+
+            &.open {
+                .btn-ham::before {
+                    content: "\e90c";
+                }
+            }
         }
 
         .icon-search {

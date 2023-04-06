@@ -148,46 +148,6 @@ const filtrosSearch = () => {
         };
     }
 
-    // const comboTipoNew = document.querySelectorAll(
-    //     "#modal-search #combo-tipo .select-options li"
-    // );
-
-    // for (const comboTipoNewEl of comboTipoNew) {
-    //     comboTipoNewEl.onclick = () => {
-    //         lista.setAttribute("class", "search--grid lista-combo");
-
-    //         destacados.classList.remove("active");
-
-    //         let valorCombo = comboTipoNewEl.getAttribute("rel");
-    //         // let itemActive = document.querySelectorAll(".lista a."+valorCombo);
-    //         let itemActive = document.querySelectorAll(
-    //             ".search--grid a[" + valorCombo + "]"
-    //         );
-
-    //         for (const listaItemsElem of listaItems) {
-    //             listaItemsElem.classList.remove("active");
-    //         }
-
-    //         for (const itemActiveElem of itemActive) {
-    //             itemActiveElem.classList.add("active");
-    //         }
-    //     };
-    // }
-
-    // comboIndustria.onchange = () => {
-    //     lista.setAttribute("class", "search--grid lista-combo");
-    //     let valueIndustria = comboIndustria.value;
-    //     let itemActive = document.querySelectorAll(
-    //         ".search--grid a[industria='" + valueIndustria + "']"
-    //     );
-    //     for (const listaItemsElem of listaItems) {
-    //         listaItemsElem.classList.remove("active");
-    //     }
-    //     for (const itemActiveElem of itemActive) {
-    //         itemActiveElem.classList.add("active");
-    //     }
-    // };
-
     const filtrosTipoNewSearch = () => {
         const comboTipoNew = document.querySelectorAll(
             "#filtros-proy-search #combo-tipo-s .select-options li"

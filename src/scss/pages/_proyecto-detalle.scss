@@ -150,22 +150,25 @@
 
                 .gallery-item {
                     width: 50%;
-                    margin: 0 !important;
+                    margin: 0 0 calc(0px + 10 * ((100vw - 1280px) / 1920)) !important;
                     float: left;
                     text-align: center;
                     position: relative;
                     cursor: pointer;
 
                     &.imgMax {
-                        width: auto !important;
+                        // width: auto !important;
+                        width: 100% !important;
                     }
 
                     img {
                         border: 0 !important;
                         max-width: 100%;
                         min-width: 50%;
-                        padding: 4px;
                         height: auto;
+                        width: 100%;
+                        padding: calc(10px + 0 * ((100vw - 1280px) / 1920))
+                            calc(10px + 10 * ((100vw - 1280px) / 1920));
                     }
 
                     a {
@@ -295,7 +298,7 @@
     }
 
     .galeria-en {
-        .container-fluid .gallery .gallery-item::after {
+        .container-fluid .gallery .gallery-item a::after {
             content: "View Gallery";
         }
     }

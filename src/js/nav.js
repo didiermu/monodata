@@ -7,15 +7,9 @@ const btnRemove = () => {
 
     const liSearch = document.querySelector("#li-search");
 
-    // const navbarNav = document.querySelector("nav");
-    // const navbarNavDesk = document.querySelector(".header--navegacion ul");
-    // const botonHeader = document.querySelector("#link-btn-header");
-
     if (mediaquery.matches) {
-        // headerRow.append(btnSearch);
         headerRow.append(liSearch);
     } else {
-        // headerTwo.append(btnSearch);
         headerTwo.append(liSearch);
     }
 };
@@ -30,9 +24,12 @@ const nav = () => {
 };
 
 window.onresize = () => {
-    console.log("resize");
     btnRemove();
 };
 
 btnRemove();
 nav();
+
+if (window.location.pathname.split("/")[1] == "en") {
+    document.querySelector(".header").classList.add("header-en");
+}

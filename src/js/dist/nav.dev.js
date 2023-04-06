@@ -5,15 +5,11 @@ var btnRemove = function btnRemove() {
   var btnSearch = document.querySelector(".icon-search");
   var headerRow = document.querySelector(".header--row");
   var headerTwo = document.querySelector(".header--two");
-  var liSearch = document.querySelector("#li-search"); // const navbarNav = document.querySelector("nav");
-  // const navbarNavDesk = document.querySelector(".header--navegacion ul");
-  // const botonHeader = document.querySelector("#link-btn-header");
+  var liSearch = document.querySelector("#li-search");
 
   if (mediaquery.matches) {
-    // headerRow.append(btnSearch);
     headerRow.append(liSearch);
   } else {
-    // headerTwo.append(btnSearch);
     headerTwo.append(liSearch);
   }
 };
@@ -29,10 +25,13 @@ var nav = function nav() {
 };
 
 window.onresize = function () {
-  console.log("resize");
   btnRemove();
 };
 
 btnRemove();
 nav();
+
+if (window.location.pathname.split("/")[1] == "en") {
+  document.querySelector(".header").classList.add("header-en");
+}
 //# sourceMappingURL=nav.dev.js.map
