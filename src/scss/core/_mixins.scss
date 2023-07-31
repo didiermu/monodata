@@ -124,7 +124,7 @@
             display: flex;
             align-items: center;
             height: 30px;
-            gap: 50px;
+            column-gap: 100px;
             animation: scrolling 30s linear infinite;
         }
 
@@ -133,6 +133,7 @@
             font-family: var(--sec-regular);
             color: var(--bg-sec);
             font-weight: 400;
+            font-size: var(--h6);
 
             span {
                 color: var(--bg-prm);

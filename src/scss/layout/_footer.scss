@@ -95,7 +95,7 @@
 }
 
 #modal-contact,
-#modal-unete, 
+#modal-unete,
 #modal-search {
     .modal-content {
         background: var(--bg-sec);
@@ -224,8 +224,8 @@
     }
 }
 
-#modal-search{
-    .modal-body{
+#modal-search {
+    .modal-body {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -233,65 +233,65 @@
         justify-content: center;
         padding-left: 8.33333333%;
 
-        &.active{
+        &.active {
             justify-content: flex-start;
             padding-top: 120px;
 
-            .filtros{
-                ul{
+            .filtros {
+                ul {
                     margin-bottom: 98px;
                 }
             }
         }
     }
 
-    form{
+    form {
         display: flex;
         align-items: flex-end;
         margin-bottom: 40px;
 
-        .input__group{
+        .input__group {
             flex-basis: 70%;
         }
 
-        .boton{
+        .boton {
             position: relative;
             bottom: auto;
         }
     }
 
-    .filtros{
+    .filtros {
         width: 100%;
         position: relative;
         top: auto;
         overflow: initial;
         background: transparent;
-        
-        & > ul{
+
+        & > ul {
             padding: 0;
-            
+
             // display: none;
         }
 
-        h6{
+        h6 {
             margin-top: 24px;
         }
 
-        form{
+        form {
             width: 83.33333333%;
 
-            label{
+            label {
                 width: 100%;
                 font-size: var(--h3);
-                line-height: 32px;         
+                line-height: 32px;
                 display: flex;
                 flex-direction: column;
 
-                span{
+                span {
                     margin-bottom: 32px;
                 }
 
-                input{
+                input {
                     appearance: none;
                     border: 1px solid;
                     border-width: 0 0 1px;
@@ -302,7 +302,7 @@
         }
     }
 
-    .is-search-submit{
+    .is-search-submit {
         display: flex;
         flex-direction: row-reverse;
         width: max-content;
@@ -311,9 +311,9 @@
         background: var(--bg-prm);
         color: var(--bg-sec);
         align-items: center;
-        
-        &:before{
-            content:"\e90e";
+
+        &:before {
+            content: "\e90e";
             font-size: xx-large;
             font-family: icomoon !important;
             speak: never;
@@ -326,91 +326,88 @@
             background: 0 0;
         }
 
-        &:after{
+        &:after {
             content: attr(msg);
-            font-family: var(--prm-regular)!important;
+            font-family: var(--prm-regular) !important;
             font-size: var(--2xl);
             margin-right: 24px;
         }
     }
 
-    .is-search-icon{
+    .is-search-icon {
         display: none;
     }
 
-    .search--grid{
+    .search--grid {
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
 
-        a{
+        a {
             display: none;
         }
 
-        &.lista-combo{
-            .match{
+        &.lista-combo {
+            .match {
                 display: none;
-                &.active{
+                &.active {
                     display: block;
                 }
             }
         }
 
-        .match{
+        .match {
             display: block;
 
-            &.active{
+            &.active {
                 display: block;
             }
         }
 
-        h5{
+        h5 {
             margin-bottom: 32px;
             flex-basis: 100%;
             display: none;
 
-            span{
+            span {
                 font-family: var(--prm-medium);
             }
 
-            &.active{
+            &.active {
                 display: block;
             }
         }
-
     }
-    
-    .search--result{
-        picture{
+
+    .search--result {
+        picture {
             display: block;
             width: 345px;
             height: 345px;
 
-            img{
+            img {
                 object-fit: cover;
                 object-position: center;
                 width: 100%;
                 height: 100%;
             }
-            
         }
     }
-    
-    #link-modal-close{
+
+    #link-modal-close {
         position: relative;
         margin-left: auto;
     }
 
-    .select-options{
+    .select-options {
         height: 25vh;
         overflow-y: scroll;
         top: 135%;
     }
-    
 }
 
-.modal-resultado{
-    .modal-body{
+.modal-resultado {
+    .modal-body {
         justify-content: flex-start !important;
         padding-top: 90px;
     }
@@ -536,38 +533,67 @@
         }
     }
 
-    #modal-search{
-        
-        form{
+    #modal-search {
+        form {
             height: auto;
             justify-content: initial;
+            align-items: flex-start;
         }
 
-        .filtros{
-            form{
+        .filtros {
+            visibility: hidden;
+            form {
                 width: 100%;
                 height: auto;
                 margin-bottom: 60px;
 
-                label{
+                label {
                     font-size: var(--h4);
                     line-height: 1.2;
                 }
             }
 
-            ul li{
+            ul li {
                 padding: 0 16px;
+                position: initial;
             }
         }
 
-        .modal-body{
+        .select-options {
+            top: 70px;
+            position: absolute;
+        }
+
+        .modal-body {
             padding-left: 0;
-            
-            #btn-search{
-                margin-top: 32px;
+
+            &.active {
+                padding-top: 70px;
+
+                .filtros {
+                    visibility: visible;
+                }
             }
-            
-            .is-search-submit{
+
+            #btn-search {
+                margin-top: 32px;
+
+                &.send {
+                    padding: 16px 28px;
+                    height: auto;
+
+                    &::before,
+                    &::after {
+                        font-size: 22px;
+                    }
+
+                    &::after {
+                        margin-right: 12px;
+                    }
+                }
+            }
+
+            .is-search-submit {
                 min-width: auto;
                 width: max-content;
                 height: 40px;
@@ -575,16 +601,16 @@
                 justify-content: center;
                 margin-top: 40px;
 
-                &::before{
+                &::before {
                     font-size: initial;
                 }
             }
-        }  
+        }
 
-        .search--result{
-            picture{
+        .search--result {
+            picture {
                 width: 100%;
             }
-        } 
-    } 
+        }
+    }
 }

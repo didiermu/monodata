@@ -3,7 +3,8 @@
 // var myModal = new bootstrap.Modal(document.getElementById("modal-contact"));
 // var modalUnete = new bootstrap.Modal(document.getElementById("modal-unete"));
 // modalUnete.show();
-/// TEXTO
+console.log("1"); /// TEXTO
+
 var valText = function valText(nameInput) {
   var regEx = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
   var validText = regEx.test(nameInput.value);
@@ -27,17 +28,7 @@ var valTextNum = function valTextNum(nameInput) {
   if (nameInput.value.length < 1) {
     nameInput.closest(".input__group").querySelector(".error-input").classList.add("show");
   } else {
-    // nameInput.siblings(".error-input").remove();
-    var regEx = /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/; // var regEx = /^[A-Za-z0-9 -_.]*[A-Za-z0-9][A-Za-z0-9 -_.]*$/;
-
-    var validText = regEx.test(nameInput.value);
-
-    if (!validText) {
-      nameInput.closest(".input__group").querySelector(".error-input").classList.add("show");
-      nameInput.closest(".input__group").querySelector(".error-input").innerText = "No se permiten caracteres especiales";
-    } else {
-      nameInput.closest(".input__group").querySelector(".error-input").classList.remove("show");
-    }
+    nameInput.closest(".input__group").querySelector(".error-input").classList.remove("show");
   }
 }; // MAIL
 

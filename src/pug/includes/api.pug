@@ -18,16 +18,17 @@ script.
     )
         .then((response) => response.json())
         .then((data) => {
-            // console.log(data.days);
+
 
             animTxt("#one", "Latitude:" + data.latitude);
             animTxt("#two", "Longitude:" + data.longitude);
             animTxt("#tre", data.resolvedAddress);
             data.days.map((item) => {
+                //- console.log(item.description.replace(".",""));
                 animTxt("#fou", "Humidity:" + item.humidity);
                 animTxt("#fiv", "Windspeed:" + item.windspeed);
                 animTxt("#six", "Solar radiation:" + item.solarradiation);
-                animTxt("#sev", "Description:" + item.description);
+                animTxt("#sev", "Description:" + item.description.replace(".",""));
                 animTxt("#eig", "Pressure:" + item.pressure);
                 animTxt("#nin", "Conditions:" + item.conditions);
             });
