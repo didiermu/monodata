@@ -538,38 +538,6 @@
             &.lastItem {
                 margin-bottom: 300px;
             }
-            // &.wrapActive {
-            //     .grid-item {
-            //         .tabla-wrap_item {
-            //             border: 0;
-            //             border-bottom: 1px solid;
-            //         }
-
-            //         &:nth-child(3n) {
-            //             .tabla-wrap_item {
-            //                 border-right: 0;
-            //             }
-            //         }
-
-            //         &:nth-child(2n) {
-            //             .tabla-wrap_item {
-            //                 border-right: 1px solid;
-            //             }
-            //         }
-
-            //         &:nth-last-child(-n + 2) {
-            //             .tabla-wrap_item {
-            //                 border-bottom: 1px solid;
-            //             }
-            //         }
-
-            //         &:last-child {
-            //             .tabla-wrap_item {
-            //                 border-bottom: 0;
-            //             }
-            //         }
-            //     }
-            // }
 
             .grid-item {
                 height: calc(374px + 182 * (100vw - 768px) / 360);
@@ -593,12 +561,6 @@
                     }
                 }
 
-                // &:nth-child(4n) {
-                //     .tabla-wrap_item {
-                //         border-left: 0;
-                //     }
-                // }
-
                 .icon-close {
                     top: 26px;
                     width: calc(25px - 120 * (100vw - 360px) / 768);
@@ -610,29 +572,14 @@
                     }
                 }
 
-                // &:nth-child(3n) {
-                //     .tabla-wrap_item {
-                //         border-right: 1px solid;
-                //     }
-                // }
-
-                // &:nth-child(2n) {
-                //     .tabla-wrap_item {
-                //         border-right: 0;
-                //     }
-                // }
-
-                // &:nth-last-child(-n + 2) {
-                //     .tabla-wrap_item {
-                //         border-bottom: 0;
-                //     }
-                // }
-
                 &.active {
                     width: 100% !important;
                     height: calc(
                         504px + 460 * (100vw - 360px) / 768
                     ) !important;
+                    // height: calc(
+                    //     544px + 460 * (100vw - 360px) / 768
+                    // ) !important;
                     margin-bottom: 24px;
 
                     &[data-item="item0"] {
@@ -716,6 +663,8 @@
                     }
 
                     .tabla-wrap_item {
+                        justify-content: space-between;
+
                         h2 {
                             font-size: var(--h3);
 
@@ -739,18 +688,24 @@
                         margin-bottom: 0;
                     }
 
+                    .swiper-wrapper {
+                        height: auto;
+                        top: auto;
+                    }
+
                     .swiper-pagination {
                         position: relative;
                         left: 0;
                         flex-direction: row;
-                        gap: 10px;
+                        gap: 16px;
                         justify-content: flex-start;
-                        margin: 0 0 32px;
+                        margin: 16px 0;
 
                         &-bullet {
-                            width: 28px;
-                            height: 28px;
+                            width: 16px;
+                            height: 16px;
                             margin: 0;
+                            color: transparent;
 
                             &:after {
                                 font-size: var(--h6);
@@ -785,8 +740,13 @@
 
             &_item {
                 padding: 14px;
+                row-gap: 0;
+                justify-content: flex-start;
                 // border-width: 0 1px 1px 1px;
 
+                .swiper {
+                    flex: 0 0 auto;
+                }
                 h2 {
                     font-size: var(--s);
                     padding: 6px;
@@ -801,8 +761,10 @@
                 }
 
                 picture {
-                    height: calc(60px + 182 * (100vw - 360px) / 768);
-                    width: calc(60px + 182 * (100vw - 360px) / 768);
+                    height: calc(75px + 182 * (100vw - 360px) / 768);
+                    width: calc(75px + 182 * (100vw - 360px) / 768);
+                    // height: calc(60px + 182 * (100vw - 360px) / 768); oct
+                    // width: calc(60px + 182 * (100vw - 360px) / 768); oct
                     // margin: 24px 0 16px !important;
                 }
 

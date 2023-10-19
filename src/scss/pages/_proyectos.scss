@@ -102,21 +102,27 @@
 
 @media (max-width: 768px) {
     .filtros {
-        padding: 18px 0;
+        padding: 18px 12px;
         top: 110px;
 
         & > ul {
             overflow-x: scroll;
             scroll-snap-type: x mandatory;
             overflow-y: hidden;
-            padding: 10px 0;
+            padding: 10px;
+
+            .chip {
+                padding: 16px;
+                height: auto;
+            }
 
             li {
                 font-size: var(--s);
-                height: 48px;
+                // height: 48px;
+                height: auto;
                 display: flex;
                 align-items: center;
-                padding: 0 24px;
+                padding: 16px;
                 scroll-snap-align: start;
 
                 sup {

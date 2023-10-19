@@ -144,7 +144,6 @@ const tablaExp = () => {
 
 tablaExp();
 
-
 //////////////////////// CLASS BODY
 
 if (window.location.pathname.includes("experiment")) {
